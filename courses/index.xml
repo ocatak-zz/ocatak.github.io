@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Courses on Dr. Ferhat Ozgur Catak</title>
+    <link>https://www.ozgurcatak.org/courses/</link>
+    <description>Recent content in Courses on Dr. Ferhat Ozgur Catak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020 Ferhat Ozgur Catak</copyright>
+    <lastBuildDate>Wed, 31 Jan 2018 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.ozgurcatak.org/courses/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SIB 552 - Siber Güvenlik İçin Veri Madenciliği</title>
+      <link>https://www.ozgurcatak.org/courses/sib552/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/courses/sib552/</guid>
+      <description>Gebze Teknik Üniversitesi
+Siber Güvenlik Yüksek Lisans
+Öğretim Görevlisi: Dr. Ferhat Özgür Çatak
+Dersin Amacı: Yeni siber saldırıların hızla artması, makine öğrenmesine dayalı teknikleri güvenlik tehditlerini tespit etmede kritik bir bileşen haline getirmiştir. Ders, makine öğrenmesi konusunun bilgisayar ve ağ güvenliği alanındaki çeşitli uygulamalarını kapsar. Ders içeriği: Bilgi güvenliğinin durumuna genel bakış; kötü amaçlı yazılım algılama; ağ ve bilgisayar saldırı tespiti; web, e-posta ve sosyal ağ güvenliği; kimlik doğrulama ve yetkilendirme anomali tespiti; uyarı korelasyonu; gizlilik sorunları gibi konular olacaktır.</description>
+    </item>
+    
+    <item>
+      <title>BGM 531 - Sızma Testleri ve Güvenlik Denetlemeleri</title>
+      <link>https://www.ozgurcatak.org/courses/bgm531/</link>
+      <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/courses/bgm531/</guid>
+      <description>İstanbul Şehir Üniversitesi
+Bilgi Güvenliği Mühendisliği Yüksek Lisans
+Öğretim Görevlisi: Dr. Ferhat Özgür Çatak - ozgur.catak[at]tubitak.gov.tr
+Dersin Amacı: Sızma testleri kavramını tanıtılması ve sızma testi aşamalarının öğrenilmesidir. Sızma testinin uygulandığı alanlarda kullanılan araçlar hakkında bilgi sahibi olarak, özellikle Linux işletim sistemi üzerinde betik dillerini kullanarak güvenlik testi, zaafiyet taraması yapabilecektir.
+Duyurular 3. ödev yayınlanmıştır. Teslim tarihi 31.12.2018 23:59. 2. ödev yayınlanmıştır. Teslim tarihi 03.12.2018 23:59. !!! Vize 23 Kasım 2018 tarihinde yapılacaktır.</description>
+    </item>
+    
+    <item>
+      <title>BGM 565 - Siber Güvenlik için Makine Öğrenme Yöntemleri</title>
+      <link>https://www.ozgurcatak.org/courses/bgm565/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/courses/bgm565/</guid>
+      <description>İstanbul Şehir Üniversitesi
+Bilgi Güvenliği Mühendisliği Yüksek Lisans
+Öğretim Görevlisi: Dr. Ferhat Özgür Çatak
+Dersin Amacı: Yeni siber saldırıların hızla artması, makine öğrenmesine dayalı teknikleri güvenlik tehditlerini tespit etmede kritik bir bileşen haline getirmiştir. Ders, makine öğrenmesi konusunun bilgisayar ve ağ güvenliği alanındaki çeşitli uygulamalarını kapsar. Ders içeriği: Bilgi güvenliğinin durumuna genel bakış; kötü amaçlı yazılım algılama; ağ ve bilgisayar saldırı tespiti; web, e-posta ve sosyal ağ güvenliği; kimlik doğrulama ve yetkilendirme anomali tespiti; uyarı korelasyonu; gizlilik sorunları gibi konular olacaktır.</description>
+    </item>
+    
+    <item>
+      <title>BGM553 - Sızma Testleri ve Guvenlik Denetlemeleri</title>
+      <link>https://www.ozgurcatak.org/courses/bgm553/</link>
+      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/courses/bgm553/</guid>
+      <description>Lecturer: Dr. Ferhat Ozgur Catak</description>
+    </item>
+    
+    <item>
+      <title>Malware Analysis</title>
+      <link>https://www.ozgurcatak.org/courses/cys5120/</link>
+      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/courses/cys5120/</guid>
+      <description> Lecturers: Dr. Ferhat Ozgur Catak, Mehmet Can Doslu
+Course Description This course provides a broad introduction to malware analysis concepts and practices. Starting with basic static analysis, additional lessons explore core technologies such as encryption, packing and anti-vm techniques. Topics include: static analysis, dynamic analysis, static/dynamic analysis blocking methods, Assembly language.
+Course Information Time and Location Friday 19:00 - 21:00
+Contact Information ozgur.catak@tubitak.gov.tr
+Reference Books  Practical Malware Analysis : The Hands-On Guide to Dissecting Malicious Software , Michael Sikorski, Andrew Honig - 2012 Malware Analyst&amp;rsquo;s Cookbook, Michael Hale Ligh, Matthew Richard, Steven Adair, Blake Hartstein – 2010  Grading Policy (Subject to change)    Exam Grading     Midterm 30%   Presentation &amp;amp; Report 20%   Attendance 10%   Final 40%    Presentations    Week No Materials     1 Introduction   2 Static Analysis - Linux-Malware   3 Behavior Analysis - Assembly   4 Code Analysis - Windows Malware Analysis - Static Analysis Blocking / Lab   6 Anti Dynamic Analysis - Packers and Unpacking   7 Malware Behaviour / Lab / Video (Password: infected)   8 Memory Forensics / Malicious Docs    </description>
+    </item>
+    
+  </channel>
+</rss>

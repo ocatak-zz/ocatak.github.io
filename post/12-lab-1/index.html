@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/12-lab-1/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f12-lab-1%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f12-lab-1%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f12-lab-1%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f12-lab-1%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f12-lab-1%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="12-hafta-lab-1-generative-adversarial-networks">12. Hafta Lab-1: Generative Adversarial Networks</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h2 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h2>
+
+<h3 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h3>
+
+<p>Bu lab çalışması kapsamında mnist veri kümesi kullanılarak GAN modeli (Çekişmeli Üretici Ağ) oluşturulacaktır.</p>
+
+<pre><code class="language-python">import numpy as np
+from tqdm import tqdm
+import matplotlib.pyplot as plt
+
+from keras.layers import Input
+from keras.models import Model, Sequential
+from keras.layers.core import Dense, Dropout
+from keras.layers.advanced_activations import LeakyReLU
+from keras.datasets import mnist
+from keras.optimizers import Adam
+from keras import backend as K
+from keras import initializers
+from keras.utils import plot_model
+from IPython.display import Image
+import sys
+
+from keras.optimizers import Adam
+</code></pre>
+
+<pre><code>c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+</code></pre>
+
+<h3 id="veri-kümesi">Veri kümesi</h3>
+
+<p>mnist veri kümesini yükleyerek normalizasyon işlemini gerçekleştirelim.</p>
+
+<pre><code class="language-python">(X_train, y_train), (X_test, y_test) = mnist.load_data()
+X_train = (X_train.astype(np.float32) - 127.5)/127.5
+X_train = X_train.reshape(60000, 784)
+
+adam = Adam(lr=0.0002, beta_1=0.5)
+</code></pre>
+
+<h3 id="metodlar">Metodlar</h3>
+
+<pre><code class="language-python"># Plot the loss from each batch
+def plotLoss(epoch):
+    plt.figure(figsize=(10, 8))
+    plt.plot(dLosses, label='Discriminitive loss')
+    plt.plot(gLosses, label='Generative loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
+    plt.savefig('images/gan_loss_epoch_%d.png' % epoch)
+
+# Create a wall of generated MNIST images
+def plotGeneratedImages(epoch, examples=100, dim=(10, 10), figsize=(10, 10)):
+    noise = np.random.normal(0, 1, size=[examples, randomDim])
+    generatedImages = generator.predict(noise)
+    generatedImages = generatedImages.reshape(examples, 28, 28)
+
+    plt.figure(figsize=figsize)
+    for i in range(generatedImages.shape[0]):
+        plt.subplot(dim[0], dim[1], i+1)
+        plt.imshow(generatedImages[i], interpolation='nearest', cmap='gray_r')
+        plt.axis('off')
+    plt.tight_layout()
+    plt.savefig('images/gan_generated_image_epoch_%d.png' % epoch)
+
+# Save the generator and discriminator networks (and weights) for later use
+def saveModels(epoch):
+    generator.save('models/gan_generator_epoch_%d.h5' % epoch)
+    discriminator.save('models/gan_discriminator_epoch_%d.h5' % epoch)
+</code></pre>
+
+<h3 id="generator-modelinin-oluşturulması">Generator modelinin oluşturulması</h3>
+
+<p>$\mathbf{x} \in \mathcal{R}^{100}$ birimden oluşan <em>gürültü (noise)</em> ile $\mathbf{y} \in \mathcal{R}^{784}, 784 = (28 \times 28)$ çıktı üretecek olan generator modeli</p>
+
+<pre><code class="language-python">randomDim = 100
+
+generator = Sequential()
+generator.add(Dense(128, input_dim=randomDim, kernel_initializer=initializers.RandomNormal(stddev=0.02)))
+generator.add(LeakyReLU(0.2))
+generator.add(Dense(256))
+generator.add(LeakyReLU(0.2))
+generator.add(Dense(512))
+generator.add(LeakyReLU(0.2))
+generator.add(Dense(784, activation='tanh'))
+generator.compile(loss='binary_crossentropy', optimizer=adam)
+generator.summary()
+</code></pre>
+
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 128)               12928     
+_________________________________________________________________
+leaky_re_lu_1 (LeakyReLU)    (None, 128)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 256)               33024     
+_________________________________________________________________
+leaky_re_lu_2 (LeakyReLU)    (None, 256)               0         
+_________________________________________________________________
+dense_3 (Dense)              (None, 512)               131584    
+_________________________________________________________________
+leaky_re_lu_3 (LeakyReLU)    (None, 512)               0         
+_________________________________________________________________
+dense_4 (Dense)              (None, 784)               402192    
+=================================================================
+Total params: 579,728
+Trainable params: 579,728
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<h3 id="discriminator-modelinin-oluşturulması">Discriminator modelinin oluşturulması</h3>
+
+<p>Girdi değerinin uzunluğu  $\mathbf{x} \in \mathcal{R}^{784}, 784 = (28 \times 28)$, çıktı değeri $y={0,1}$</p>
+
+<pre><code class="language-python">discriminator = Sequential()
+discriminator.add(Dense(512, input_dim=784, kernel_initializer=initializers.RandomNormal(stddev=0.02)))
+discriminator.add(LeakyReLU(0.2))
+discriminator.add(Dropout(0.3))
+discriminator.add(Dense(256))
+discriminator.add(LeakyReLU(0.2))
+discriminator.add(Dropout(0.3))
+discriminator.add(Dense(128))
+discriminator.add(LeakyReLU(0.2))
+discriminator.add(Dropout(0.3))
+discriminator.add(Dense(1, activation='sigmoid'))
+discriminator.compile(loss='binary_crossentropy', optimizer=adam)
+discriminator.summary()
+</code></pre>
+
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_5 (Dense)              (None, 512)               401920    
+_________________________________________________________________
+leaky_re_lu_4 (LeakyReLU)    (None, 512)               0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 512)               0         
+_________________________________________________________________
+dense_6 (Dense)              (None, 256)               131328    
+_________________________________________________________________
+leaky_re_lu_5 (LeakyReLU)    (None, 256)               0         
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 256)               0         
+_________________________________________________________________
+dense_7 (Dense)              (None, 128)               32896     
+_________________________________________________________________
+leaky_re_lu_6 (LeakyReLU)    (None, 128)               0         
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 128)               0         
+_________________________________________________________________
+dense_8 (Dense)              (None, 1)                 129       
+=================================================================
+Total params: 566,273
+Trainable params: 566,273
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<h3 id="ağların-birleşimi">Ağların birleşimi</h3>
+
+<p>Her iki ağ birleştirilecektir.</p>
+
+<pre><code class="language-python">discriminator.trainable = False
+ganInput = Input(shape=(randomDim,))
+x = generator(ganInput)
+ganOutput = discriminator(x)
+# birlesim
+gan = Model(inputs=ganInput, outputs=ganOutput)
+gan.compile(loss='binary_crossentropy', optimizer=&quot;adam&quot;)
+gan.summary()
+plot_model(gan,&quot;images/gan.png&quot;, show_shapes=True)
+Image(&quot;images/gan.png&quot;)
+</code></pre>
+
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 100)               0         
+_________________________________________________________________
+sequential_1 (Sequential)    (None, 784)               579728    
+_________________________________________________________________
+sequential_2 (Sequential)    (None, 1)                 566273    
+=================================================================
+Total params: 1,146,001
+Trainable params: 579,728
+Non-trainable params: 566,273
+_________________________________________________________________
+</code></pre>
+
+<p><img src="12-lab-1_files/12-lab-1_11_1.png" alt="png" /></p>
+
+<h3 id="history">History</h3>
+
+<p>Tarihçe için her bir ağ için bir dizi tanımla</p>
+
+<pre><code class="language-python">dLosses = []
+gLosses = []
+</code></pre>
+
+<h3 id="batch">Batch</h3>
+
+<pre><code class="language-python">batchSize = 128 # her bir eğitim adımında kullanılacak image sayısı
+epochs = 20
+batchCount = int(X_train.shape[0] / batchSize)
+print('Batches per epoch:', batchCount)
+</code></pre>
+
+<pre><code>Batches per epoch: 468
+</code></pre>
+
+<h3 id="pre-train">Pre-Train</h3>
+
+<pre><code class="language-python">'''
+imageBatch = X_train[np.random.randint(0, X_train.shape[0], size=batchSize)]
+
+# Pre-train the discriminator network ...
+noise = np.random.normal(0, 1, size=[batchSize, randomDim])
+generatedImages = generator.predict(noise)
+
+X = np.concatenate([imageBatch, generatedImages])
+
+yDis = np.zeros(2*batchSize)
+yDis[:batchSize] = 1.0
+
+# Discriminator'ı egit
+discriminator.trainable = True
+dloss = discriminator.train_on_batch(X, yDis)
+y_hat = discriminator.predict(X)
+'''
+</code></pre>
+
+<pre><code>&quot;\nimageBatch = X_train[np.random.randint(0, X_train.shape[0], size=batchSize)]\n\n# Pre-train the discriminator network ...\nnoise = np.random.normal(0, 1, size=[batchSize, randomDim])\ngeneratedImages = generator.predict(noise)\n\nX = np.concatenate([imageBatch, generatedImages])\n\nyDis = np.zeros(2*batchSize)\nyDis[:batchSize] = 1.0\n\n# Discriminator'ı egit\ndiscriminator.trainable = True\ndloss = discriminator.train_on_batch(X, yDis)\ny_hat = discriminator.predict(X)\n&quot;
+</code></pre>
+
+<pre><code class="language-python">for e in range(1, epochs+1):
+    print('-'*15, 'Epoch %d' % e, '-'*15)
+    for _ in tqdm(range(batchCount)):
+        # Get a random set of input noise and images
+        noise = np.random.normal(0, 1, size=[batchSize, randomDim])
+        #print(&quot;noise.shape \t :\r&quot;, noise.shape)
+        # Egitim veri kümesinden batch sayısı kadar rastgele image sec
+        imageBatch = X_train[np.random.randint(0, X_train.shape[0], size=batchSize)]
+        #print(&quot;imageBatch.shape :\r&quot;,imageBatch.shape)
+        
+        # Generator kullanarak fake MNIST resimleri olustur
+        generatedImages = generator.predict(noise)
+        
+        # Yeni X degerleri
+        X = np.concatenate([imageBatch, generatedImages])
+        #sys.stdout.flush()
+        
+        # cikti degerleri
+        yDis = np.zeros(2*batchSize)
+        yDis[:batchSize] = 1.0
+        
+        # Discriminator'ı egit
+        discriminator.trainable = True
+        dloss = discriminator.train_on_batch(X, yDis)
+        
+        # Generator'ı egit
+        noise = np.random.normal(0, 1, size=[batchSize, randomDim])
+        yGen = np.ones(batchSize)
+        discriminator.trainable = False
+        gloss = gan.train_on_batch(noise, yGen)
+        
+    dLosses.append(dloss)
+    gLosses.append(gloss)
+    plotGeneratedImages(e)
+    saveModels(e)
+plotLoss(e)
+</code></pre>
+
+<pre><code>--------------- Epoch 1 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:26&lt;00:00,  5.39it/s]
+
+
+--------------- Epoch 2 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:27&lt;00:00,  5.34it/s]
+
+
+--------------- Epoch 3 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:24&lt;00:00,  5.53it/s]
+
+
+--------------- Epoch 4 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:23&lt;00:00,  5.58it/s]
+
+
+--------------- Epoch 5 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:25&lt;00:00,  5.49it/s]
+
+
+--------------- Epoch 6 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:24&lt;00:00,  5.54it/s]
+
+
+--------------- Epoch 7 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:23&lt;00:00,  5.58it/s]
+
+
+--------------- Epoch 8 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:23&lt;00:00,  5.60it/s]
+
+
+--------------- Epoch 9 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:25&lt;00:00,  5.46it/s]
+
+
+--------------- Epoch 10 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:33&lt;00:00,  5.00it/s]
+
+
+--------------- Epoch 11 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:26&lt;00:00,  5.38it/s]
+
+
+--------------- Epoch 12 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:26&lt;00:00,  5.44it/s]
+
+
+--------------- Epoch 13 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:22&lt;00:00,  5.67it/s]
+
+
+--------------- Epoch 14 ---------------
+
+
+100%|█████████████████████████████████████████████████████████████████████████████| 468/468 [12:54:28&lt;00:00, 99.29s/it]
+
+
+--------------- Epoch 15 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:44&lt;00:00,  4.47it/s]
+
+
+--------------- Epoch 16 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:32&lt;00:00,  5.04it/s]
+
+
+--------------- Epoch 17 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:47&lt;00:00,  4.33it/s]
+
+
+--------------- Epoch 18 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:34&lt;00:00,  4.97it/s]
+
+
+--------------- Epoch 19 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:33&lt;00:00,  5.01it/s]
+
+
+--------------- Epoch 20 ---------------
+
+
+100%|████████████████████████████████████████████████████████████████████████████████| 468/468 [01:43&lt;00:00,  4.52it/s]
+c:\users\user\appdata\local\programs\python\python35\lib\site-packages\matplotlib\pyplot.py:528: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  max_open_warning, RuntimeWarning)
+</code></pre>
+
+<p><img src="12-lab-1_files/12-lab-1_18_40.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_41.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_42.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_43.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_44.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_45.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_46.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_47.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_48.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_49.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_50.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_51.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_52.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_53.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_54.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_55.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_56.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_57.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_58.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_59.png" alt="png" /></p>
+
+<p><img src="12-lab-1_files/12-lab-1_18_60.png" alt="png" /></p>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/13-lab-1/"><span
+      aria-hidden="true">&larr;</span> </a></li>
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/11-lab-3/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

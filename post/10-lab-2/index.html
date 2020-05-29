@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/10-lab-2/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    18 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-2%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-2%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-2%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-2%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-2%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="10-hafta-lab-3-tf-idf">10. Hafta Lab-3: TF-IDF</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h3 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h3>
+
+<h4 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h4>
+
+<p>Bu lab çalışması kapsamında dökümanlardan <strong>tf-idf</strong> matrisi oluşturulacaktır.</p>
+
+<pre><code class="language-python">from sklearn.datasets import fetch_20newsgroups
+from sklearn.svm import SVC
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.ensemble import BaggingClassifier
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+np.set_printoptions(threshold=np.nan)
+np.set_printoptions(linewidth=160)
+
+
+</code></pre>
+
+<h3 id="örnek-veri-kümesi-20-newsgroup-kullanılacaktır">Örnek veri kümesi 20 newsgroup kullanılacaktır.</h3>
+
+<pre><code class="language-python">twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
+twenty_train.target_names
+</code></pre>
+
+<pre><code>['alt.atheism',
+ 'comp.graphics',
+ 'comp.os.ms-windows.misc',
+ 'comp.sys.ibm.pc.hardware',
+ 'comp.sys.mac.hardware',
+ 'comp.windows.x',
+ 'misc.forsale',
+ 'rec.autos',
+ 'rec.motorcycles',
+ 'rec.sport.baseball',
+ 'rec.sport.hockey',
+ 'sci.crypt',
+ 'sci.electronics',
+ 'sci.med',
+ 'sci.space',
+ 'soc.religion.christian',
+ 'talk.politics.guns',
+ 'talk.politics.mideast',
+ 'talk.politics.misc',
+ 'talk.religion.misc']
+</code></pre>
+
+<pre><code class="language-python">twenty_train.data[0:2]
+</code></pre>
+
+<pre><code>[&quot;From: lerxst@wam.umd.edu (where's my thing)\nSubject: WHAT car is this!?\nNntp-Posting-Host: rac3.wam.umd.edu\nOrganization: University of Maryland, College Park\nLines: 15\n\n I was wondering if anyone out there could enlighten me on this car I saw\nthe other day. It was a 2-door sports car, looked to be from the late 60s/\nearly 70s. It was called a Bricklin. The doors were really small. In addition,\nthe front bumper was separate from the rest of the body. This is \nall I know. If anyone can tellme a model name, engine specs, years\nof production, where this car is made, history, or whatever info you\nhave on this funky looking car, please e-mail.\n\nThanks,\n- IL\n   ---- brought to you by your neighborhood Lerxst ----\n\n\n\n\n&quot;,
+ &quot;From: guykuo@carson.u.washington.edu (Guy Kuo)\nSubject: SI Clock Poll - Final Call\nSummary: Final call for SI clock reports\nKeywords: SI,acceleration,clock,upgrade\nArticle-I.D.: shelley.1qvfo9INNc3s\nOrganization: University of Washington\nLines: 11\nNNTP-Posting-Host: carson.u.washington.edu\n\nA fair number of brave souls who upgraded their SI clock oscillator have\nshared their experiences for this poll. Please send a brief message detailing\nyour experiences with the procedure. Top speed attained, CPU rated speed,\nadd on cards and adapters, heat sinks, hour of usage per day, floppy disk\nfunctionality with 800 and 1.4 m floppies are especially requested.\n\nI will be summarizing in the next two days, so please add to the network\nknowledge base if you have done the clock upgrade and haven't answered this\npoll. Thanks.\n\nGuy Kuo &lt;guykuo@u.washington.edu&gt;\n&quot;]
+</code></pre>
+
+<pre><code class="language-python">tfidf_transformer = TfidfVectorizer()
+X_train_tfidf = tfidf_transformer.fit_transform(twenty_train.data)
+</code></pre>
+
+<pre><code class="language-python">X_train_tfidf
+</code></pre>
+
+<pre><code>&lt;11314x130107 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 1787565 stored elements in Compressed Sparse Row format&gt;
+</code></pre>
+
+<pre><code class="language-python">tfidf_transformer.vocabulary_
+</code></pre>
+
+<pre><code>{'4x08': 14820,
+ '1qkcok': 7536,
+ '30347': 11446,
+ 'musselman': 85027,
+ '33l': 11873,
+ 'sector': 105777,
+ 'simchik': 107443,
+ 'replica': 101017,
+ 'adnt': 26220,
+ 'apokteiuo': 28769,
+ 'phast': 93469,
+ 'jonas_marten_fjallstam': 70556,
+ 'street': 110999,
+ '115511': 3249,
+ 'jview090': 71129,
+ 'ck8rlhzrmam': 40125,
+ 'kq': 73528,
+ 'qvax': 98497,
+ '1w8': 8138,
+ 'karine': 71809,
+ 'finnally': 55462,
+ 'welligton': 123764,
+ '9s4': 22926,
+ 'jerj7': 69870,
+ 'qrk': 98045,
+ 'caesar': 37304,
+ 'appreciato': 28935,
+ 'rosenblatt': 102973,
+ 'xenos': 126329,
+ '1r1r3ninnebn': 7875,
+ 'chzd6ei': 39757,
+ 'taxes': 113588,
+ 'pb': 92486,
+ 'fsh': 57085,
+ 'steiner': 110518,
+ 'rpem': 103144,
+ 'hskh8': 64479,
+ 'sherman': 106788,
+ 'inevitably': 67034,
+ 'serdijn': 106185,
+ 'chesterton': 39297,
+ '12231': 3525,
+ 'cbnewsd': 38311,
+ 'du0': 49298,
+ 'affirm': 26526,
+ '26224': 9905,
+ 'selbst': 105918,
+ 'cxtgc2': 44350,
+ 'pkr': 94162,
+ '44e145': 13747,
+ 'u7j': 117596,
+ 'polgyons': 94783,
+ 'dry': 49149,
+ '1go': 6893,
+ 'expedition': 53390,
+ 'cartographic': 37978,
+ 'babylonians': 31392,
+ '0zu': 2328,
+ '3602': 12202,
+ 'nghia': 87065,
+ 'whine': 124069,
+ '2f8c': 10759,
+ 's8b': 104103,
+ '8ba_': 20862,
+ '6pw6p': 17878,
+ 'volley': 122049,
+ 'microamperes': 81834,
+ 'ruckman': 103417,
+ '4tn': 14735,
+ 'checkered': 39176,
+ 'triunity': 116580,
+ 'a3mk': 24779,
+ 'casette': 38026,
+ 'halle': 61693,
+ 'unipr': 118923,
+ 'mjerger': 82667,
+ 'responded': 101346,
+ '_d9': 23674,
+ '170out': 5511,
+ '1r6g8finne88': 7938,
+ 'zwl': 130009,
+ '2966': 10469,
+ 'polonius': 94849,
+ 'uncomfortably': 118479,
+ 'azd': 30943,
+ 'beckett': 32431,
+ 'swix': 112430,
+ 'candidly': 37615,
+ 'xerrors': 126336,
+ 'ppppp': 95349,
+ 'mystique': 85464,
+ '606': 16523,
+ 'badge': 31512,
+ 'soot': 108882,
+ '_debates_': 23684,
+ 'benign': 32779,
+ 'unanimous': 118379,
+ 'definately': 45918,
+ '5500': 15345,
+ 'underhanded': 118600,
+ 'kjz72rz': 72918,
+ 'tu72pl': 116874,
+ 'argumentem': 29301,
+ 'refer': 100306,
+ 'nimeroff': 87328,
+ '09': 1494,
+ 'smsc': 108381,
+ 'japanese': 69515,
+ '65er': 16993,
+ 'idi': 65719,
+ 'jx7alqs': 71195,
+ 'defused': 45984,
+ '3700': 12312,
+ 'mandalian': 79215,
+ '50ohm': 14996,
+ 'checkpoint': 39187,
+ 'cmp': 40643,
+ '100024': 2376,
+ 'surrogate': 112092,
+ '5155': 15058,
+ '1pamva': 7130,
+ 'wizzard': 124684,
+ 'snot': 108523,
+ 'blaaa': 33657,
+ '2592': 9826,
+ '8en': 20981,
+ 'dvc3': 49569,
+ 'ki6yk': 72577,
+ '927': 21694,
+ '1z8': 8248,
+ 'viscaino': 121677,
+ 'kuenning': 73778,
+ 'calculater': 37366,
+ '1152x900': 3233,
+ 'nleudnlvzq': 87540,
+ 'unusually': 119360,
+ 'h4gpi1': 61300,
+ 'volkoff': 122045,
+ 'nslyn': 88238,
+ 'z4g': 128857,
+ 'untapable': 119315,
+ 'jjjjjjjh': 70210,
+ 'e72w': 49948,
+ '093914': 1544,
+ 'mr8e': 84262,
+ '1qulqa': 7756,
+ '162502': 5145,
+ 'umeg': 118285,
+ 'hospitality': 64088,
+ 'neurologic': 86791,
+ 'o7u': 88826,
+ 'jhesse': 70038,
+ 'radha': 98995,
+ 'filmrecorder': 55362,
+ 'wall': 123116,
+ 'kerder': 72260,
+ 'm3r7': 77928,
+ '5iu4c0': 16006,
+ '6cqv': 17434,
+ 've': 120941,
+ 'bard': 31825,
+ 'overwhelming': 91138,
+ 'yle': 128289,
+ 'testicular': 114256,
+ 'c5svup': 36927,
+ 'maridai': 79478,
+ '75ugg': 19064,
+ 'eec': 50566,
+ 'speeches': 109308,
+ 'unlv': 119056,
+ 'wgt': 123947,
+ 'a87wa86': 25005,
+ 'whithin': 124128,
+ 'geom_gcon': 58729,
+ 'mt471144': 84569,
+ '3g1h': 12782,
+ '213': 8755,
+ 'ibuprophen': 65501,
+ 'pg1': 93372,
+ 'j1d3k': 69078,
+ 'undeserving': 118671,
+ 'x0i': 125639,
+ 'reichsfuehrer': 100525,
+ 'eh6k0k': 50760,
+ 'contiguous': 42287,
+ 'dimple': 47335,
+ '9051467f': 21508,
+ 'devotees': 46868,
+ 'sidecar': 107243,
+ '5wu5': 16406,
+ '01101001b': 449,
+ 'nhn': 87131,
+ 'mr47': 84254,
+ 'vbqai': 120846,
+ 'bhz': 33174,
+ 'nm_z': 87566,
+ 'sukenick': 111642,
+ 'it5': 68772,
+ 'orm7y': 90474,
+ 'pvj': 97166,
+ 'probie': 96061,
+ 'outhouse': 90818,
+ 'neighbors': 86583,
+ 'zcjjj': 129143,
+ '0ct1t': 1657,
+ 'junyer': 71046,
+ 'schusman': 105220,
+ 'doctoral': 48398,
+ 'tessi': 114237,
+ 'i2': 65148,
+ 'oit': 89562,
+ 'cue': 43990,
+ 'illuminator': 66162,
+ 'welly': 123774,
+ 'corry': 42780,
+ 'stomped': 110808,
+ '735423628': 18793,
+ 'alaramor': 27226,
+ 'macweek': 78763,
+ 'cd13': 38448,
+ 'gmuvax2': 59540,
+ 'hungarian': 64693,
+ '57000bps': 15533,
+ 'patented': 92330,
+ 'fng': 56083,
+ '1phgakinn9pb': 7163,
+ 'mw7': 85207,
+ 'astronomisch': 29998,
+ 'qu0s5': 98194,
+ '1pik3i': 7182,
+ 'curling': 44103,
+ '16479': 5236,
+ '53b5': 15234,
+ 'augustana': 30383,
+ 'sanctified': 104542,
+ 'compensated': 41433,
+ 'ester': 52597,
+ 'dendrite': 46283,
+ 'all': 27436,
+ 'lj09': 76267,
+ '93cbr900rr': 21985,
+ 'constellation': 42155,
+ '183148': 5933,
+ 'moralistic': 83682,
+ 'types': 117304,
+ 'hardpressed': 61993,
+ 'micrographs': 81876,
+ 'rac': 98947,
+ 'w5iris4kq': 122808,
+ 'tzeghagron': 117356,
+ 'unbalanced': 118411,
+ '1r1eu1': 7862,
+ '613': 16601,
+ 'mqwtl': 84232,
+ '4av': 14226,
+ 'dscs': 49191,
+ 'darrell': 45094,
+ 'iu0': 68888,
+ 'myocardial': 85428,
+ 'netmail': 86728,
+ '180621': 5834,
+ 'lord': 76773,
+ 'w_height': 122935,
+ 'sharpe': 106629,
+ 'pppl': 95348,
+ 'experienced': 53418,
+ 'timeslip': 115159,
+ 'westbrook': 123835,
+ 'invasion': 68102,
+ 'impediment': 66418,
+ 'motorized': 83910,
+ 'metares': 81336,
+ '91d': 21631,
+ 'otp': 90712,
+ 'gerrold': 58804,
+ 'l1vl9': 74063,
+ 'mould': 83933,
+ 'resticted': 101390,
+ 'kuebelwagen': 73773,
+ 'stephe': 110564,
+ 'zut': 129964,
+ 'jrwaters': 70817,
+ 'm2nv': 77840,
+ 'cracked': 43200,
+ 'f1qvf1o': 53804,
+ 'bluelobster': 33950,
+ 'swobo': 112438,
+ '2dubav': 10714,
+ '4tm': 14733,
+ 'rocks': 102739,
+ 'lufy': 77248,
+ 'substantiating': 111439,
+ 'contoler': 42314,
+ 'moshing': 83815,
+ 'anglophile': 28255,
+ '6gle': 17648,
+ 'rcr6': 99656,
+ '348e22': 11972,
+ '8_h': 20824,
+ 'fro': 56967,
+ 'cjc0ry': 40094,
+ '1rfdz': 7989,
+ 'josli': 70607,
+ 'evas': 52894,
+ 't85wa7': 113054,
+ 'promisimg': 96303,
+ 'eleminates': 51077,
+ 'bandage': 31719,
+ 'kamlet': 71724,
+ 'expanse': 53370,
+ '260vdv': 9891,
+ 'f4_d': 53882,
+ 'vr8eky': 122224,
+ 'schon': 105179,
+ 'n__': 85873,
+ '2n2': 10979,
+ 'mkg': 82784,
+ 'milwaukeeans': 82172,
+ 'tyree': 117335,
+ 'lki': 76357,
+ 'aj0pgic': 27037,
+ 'newington': 86900,
+ '3v': 13231,
+ 'occipital': 89152,
+ 'bcr': 32246,
+ 'bony1': 34345,
+ 'jsh5374k': 70844,
+ 'outriggers': 90880,
+ '227151': 9144,
+ 'criticizing': 43465,
+ 'veryignitable': 121267,
+ 'torx': 115797,
+ 'determined': 46737,
+ '1w47': 8134,
+ 'lkbox': 76349,
+ 'striving': 111079,
+ 'borshevshky': 34484,
+ 'pb9': 92500,
+ 'jab': 69354,
+ 'k0': 71319,
+ 'glx': 59473,
+ 'hensley': 62789,
+ 'alweigel': 27715,
+ 'collaborative': 40969,
+ 'leases': 75063,
+ 'kjz': 72915,
+ '6100': 16584,
+ 'leetch': 75141,
+ 'axl': 30869,
+ 'dexxa': 46891,
+ 'fusv': 57383,
+ 'inhis': 67289,
+ 'mikael': 82029,
+ 'vessel': 121277,
+ 'anisotropy': 28301,
+ 'millitia': 82150,
+ 'xgif': 126420,
+ '1o5': 7080,
+ '84euf': 20431,
+ 'k5oz': 71453,
+ 'unreachable': 119170,
+ 'transskel': 116291,
+ '53766': 15223,
+ 'beku_pc': 32610,
+ 'j_6iy': 69325,
+ '7id': 19631,
+ 'adelaide': 26102,
+ 'dt642b1w165w': 49255,
+ 'monta': 83582,
+ 'bxa': 35952,
+ '80us': 20132,
+ '74s': 18932,
+ 'mtpbh': 84622,
+ '981': 22356,
+ 'bakerjn': 31606,
+ 'ihj': 65931,
+ 'edgardo': 50453,
+ '044018': 982,
+ 'locks': 76574,
+ 'hyperventilation': 64952,
+ '_rtma85': 24342,
+ 'nypd': 88592,
+ 'psygnosis': 96785,
+ 'formulated': 56450,
+ 'u9d': 117640,
+ 'ascend': 29646,
+ 'stabbed': 110120,
+ 'bn6top': 34061,
+ 'wupost': 125441,
+ 'mszl': 84544,
+ '34rj7': 12038,
+ 'groves': 60525,
+ '735139934': 18735,
+ 'oack': 88888,
+ 'prescience': 95718,
+ 'v912182': 120428,
+ 'c1v': 36149,
+ 'scleroderma': 105285,
+ 'cork': 42665,
+ 'interpersonal': 67901,
+ 'diminishing': 47325,
+ 'docket': 48384,
+ 'respected': 101331,
+ 't500': 112909,
+ '74140': 18860,
+ 'tma': 115388,
+ 'killen': 72654,
+ 'py8i2': 97262,
+ '8bv': 20887,
+ 'metaware': 81342,
+ 'recesses': 99976,
+ 'iapetus': 65438,
+ 'fjev': 55640,
+ 'observational': 89073,
+ 'realism': 99805,
+ 'cntrspy': 40712,
+ 'mozumder': 84029,
+ 'sommerfeld': 108834,
+ 'nonsystematic': 87804,
+ '165310': 5258,
+ '92k75s': 21718,
+ 'filthy': 55373,
+ 'uninterested': 118906,
+ 'convergence': 42429,
+ '13s0': 4131,
+ 'mqrpl': 84196,
+ 'prepaid': 95685,
+ '60015': 16462,
+ 'beowulf': 32821,
+ 'werke': 123804,
+ 'hdy4o': 62409,
+ 'h__255h': 61451,
+ 'o5kol6cl': 88780,
+ 'transparently': 116263,
+ 'se01': 105621,
+ 'mceachern': 80323,
+ '3p2c': 13082,
+ 'corrados': 42722,
+ 'voder': 121988,
+ 'hurvich': 64740,
+ 'movie': 83997,
+ 'revivers': 101644,
+ '5e94': 15849,
+ 'objectivists': 89010,
+ 'faq4': 54376,
+ 'tingling': 115201,
+ 'sdi': 105590,
+ 'vc8vf': 120872,
+ 'keais': 72101,
+ 'an780': 28028,
+ '175534': 5685,
+ 'zardali': 129078,
+ 'iiis': 65995,
+ 'c5i2s2': 36601,
+ 'itifada': 68831,
+ '01ll': 624,
+ 'lehtori': 75235,
+ 'toz': 115934,
+ 'integer': 67683,
+ 'dbr': 45366,
+ '1349': 3993,
+ 'pressed': 95772,
+ 'gw': 61040,
+ 'feid': 54810,
+ '71333': 18346,
+ 'sherwin': 106793,
+ 'k51h': 71438,
+ '1934': 6266,
+ '3zh': 13326,
+ 'pressures': 95783,
+ '16mmq5ok15o': 5429,
+ 'propitiation': 96402,
+ 'ofnmao_00iv1a6kyd2': 89451,
+ '23123': 9262,
+ 'lhod': 75605,
+ 'slqnqdq': 108189,
+ 'yw0ch': 128664,
+ 'lined': 76023,
+ 'autopsy': 30569,
+ '25849': 9817,
+ '5a8': 15752,
+ 'feminazis': 54878,
+ '1595': 4954,
+ 'c8vjjjj': 37155,
+ 'rkm': 102277,
+ 'cph': 43121,
+ 'alarmist': 27233,
+ '6okx': 17851,
+ 'realityengine2': 99812,
+ '100mg': 2500,
+ 'perestroika': 92980,
+ 'forced': 56298,
+ '020259': 635,
+ '234729': 9363,
+ 'o8': 88834,
+ '145ww7': 4468,
+ 'umd5': 118281,
+ 'xauth': 126134,
+ 'grossman': 60485,
+ 'xxxxx': 127533,
+ 'ypp': 128467,
+ 'lh6': 75585,
+ 'lackeys': 74348,
+ 'comapny': 41117,
+ 's6kg': 104061,
+ '0_e8': 1600,
+ 'christens': 39591,
+ 'pcboard': 92574,
+ 'packard': 91644,
+ 'requestors': 101147,
+ '5eze': 15898,
+ '9unb': 22989,
+ '406': 13395,
+ 'glovebox': 59446,
+ 'hyped': 64927,
+ 'decorated': 45729,
+ 'one_': 89885,
+ 'furnishes': 57336,
+ '_q0': 24264,
+ 'i65i16': 65255,
+ 'k_5o': 71595,
+ 'limited': 75951,
+ '215651': 8849,
+ 'cb1000': 38246,
+ 'batdude': 32043,
+ 'inquisitively': 67460,
+ 'isspace': 68734,
+ 'donu': 48600,
+ 'micahels': 81787,
+ 'purge': 97056,
+ 'anniston': 28347,
+ 'muck': 84688,
+ 'partnerships': 92205,
+ 'cae': 37299,
+ 'x2azd': 125727,
+ 'lucrative': 77226,
+ 'frammitzes': 56703,
+ 'correspondent': 42751,
+ 'identifying': 65704,
+ 'ipratroprium': 68287,
+ 'scrub': 105478,
+ 'lafg': 74382,
+ 'ik': 66059,
+ 'ci2cxegipg': 39791,
+ '6gl': 17646,
+ 'kjzlb9rnkhf': 72931,
+ 'willis': 124363,
+ 'x7pa32': 125916,
+ '6t471': 17987,
+ 'recound': 100109,
+ '1qi156innf9n': 7463,
+ '_mullen': 24096,
+ '232149': 9289,
+ 'vandalisms': 120644,
+ 'formulars': 56447,
+ 'jedeo': 69766,
+ 'bursters': 35750,
+ 'cancer': 37598,
+ 'bmerh794': 34017,
+ 'ulterior': 118217,
+ '77tl71xl': 19260,
+ 'topics': 115712,
+ '24564': 9543,
+ 'adventist': 26311,
+ '093952': 1545,
+ 'pol': 94761,
+ 'idni5u': 65750,
+ 'fihb': 55270,
+ 'drive': 49047,
+ '3is': 12913,
+ 'claude_lemieux': 40267,
+ 'evasive': 52896,
+ 'worketh': 125031,
+ 'ferris': 54952,
+ 'abt': 25489,
+ 'compli': 41501,
+ '2divbtm9': 10690,
+ 'perennial': 92976,
+ 'roomy': 102919,
+ 'powerplay': 95287,
+ 'nmd90': 87574,
+ '7137': 18348,
+ 'ifjp': 65832,
+ 'mithraic': 82560,
+ '12a': 3762,
+ 'xkgyt': 126584,
+ 'staal': 110116,
+ 'skeeter': 107802,
+ 'di1': 47003,
+ 'lioness': 76092,
+ 'everyday': 52950,
+ 'o9fet': 88850,
+ 'encina': 51542,
+ 'netherlands___________': 86718,
+ 'tcd': 113650,
+ 'dy8': 49706,
+ 'opal': 90010,
+ 'louisville': 76854,
+ 'belmonte': 32699,
+ 'lexidata': 75486,
+ 'z7euevo': 128930,
+ 'g_c': 57894,
+ '081052': 1390,
+ 'rend386': 100868,
+ 'spagthorpe': 109108,
+ 'app_context': 28804,
+ 'boulders': 34562,
+ '1980s': 6443,
+ 'refileing': 100330,
+ 'j74x': 69235,
+ 'asset': 29868,
+ 'simplistic': 107495,
+ 'ajrh': 27076,
+ 'subcommittee': 111289,
+ 'rchod9': 99581,
+ 'cis083': 39973,
+ 'recalled': 99935,
+ 'cann': 37636,
+ 'teamwork': 113765,
+ 'gnostic': 59565,
+ 'u6x145': 117585,
+ 'ic16': 65508,
+ 'uowtl': 119446,
+ 'inroads': 67468,
+ 'convice': 42458,
+ '3la': 12994,
+ 'rlk81': 102405,
+ 'v9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f': 120453,
+ 'omni': 89832,
+ 'journeyman': 70631,
+ 'misquoted': 82466,
+ 'girls': 59176,
+ 'h4r': 61307,
+ 'rlj1': 102384,
+ 'balked': 31655,
+ 'lybia': 77471,
+ 'validation': 120588,
+ 'iisi': 66012,
+ '6440': 16846,
+ 'wonnacott': 124946,
+ 'nitty': 87412,
+ '_xtscrollbarsetthumb': 24601,
+ 'gj9': 59247,
+ 'dsc3jfs': 49185,
+ '3mwieu4': 13032,
+ 'z317y0': 128819,
+ 'demonstrate': 46254,
+ 'clerk': 40357,
+ 'nlbxn': 87535,
+ 'porthole': 95049,
+ 'superfast': 111882,
+ 'delivers': 46130,
+ 'xsm': 126999,
+ 'capel': 37715,
+ 'apologists': 28784,
+ 'pamelor': 91831,
+ 'olk': 89737,
+ 'nvl': 88480,
+ '8cx_scx_gc': 20930,
+ 'v111qheg': 120238,
+ 'herot': 62884,
+ 'g7hwn': 57789,
+ '234838': 9367,
+ 'imp': 66380,
+ 'npd1': 88063,
+ 'emphasize': 51435,
+ '2i6': 10846,
+ '0otz': 1987,
+ 'darcym': 45048,
+ 's7j': 104081,
+ 'peat': 92709,
+ 'gersham': 58806,
+ 'bibliographies': 33208,
+ 'crystallizer': 43733,
+ '0458': 1010,
+ '44meg': 13756,
+ 'proposes': 96423,
+ '8t4xv3': 21311,
+ 'analogical': 28061,
+ 'uw24e': 120054,
+ 'olszowy': 89761,
+ 'ukans': 118151,
+ 'preparation': 95687,
+ 'bagirov': 31559,
+ 'duz': 49555,
+ 'kb4': 71972,
+ 'wendel': 123784,
+ 'relived': 100732,
+ 'adrienne': 26264,
+ 'pared': 92049,
+ '96z': 22281,
+ 'unlucky': 119055,
+ 'lhz06tov': 75625,
+ 'imtools': 66601,
+ 'ahura': 26873,
+ 'czjd': 44514,
+ 'myhc': 85405,
+ 'satanism': 104708,
+ 'tmp': 115406,
+ 'mrwyev': 84396,
+ 'pdial': 92644,
+ 'sivesh': 107687,
+ 'w5epplyj': 122804,
+ 'fl4c': 55688,
+ 'spartansandiego': 109171,
+ 'ck8rchzrmc': 40120,
+ '6apr93': 17380,
+ 'determininant': 46741,
+ 'leblanc': 75089,
+ 'ivan': 68927,
+ '27470': 10075,
+ 'melby': 80965,
+ '_act_': 23484,
+ 'richter': 101911,
+ 'dc2120': 45386,
+ 'pdxgate': 92662,
+ '2680': 9971,
+ 'corinthians': 42663,
+ 'flmurd': 55890,
+ 'proponants': 96409,
+ 'acad3': 25542,
+ 'fascinated': 54446,
+ 'feb': 54740,
+ '1ql8mdinn674': 7592,
+ 'stub': 111162,
+ '1298kb': 3758,
+ '3401p': 11897,
+ 'lewitt': 75480,
+ 'c5y66r': 37010,
+ 'sorumlulugu': 108939,
+ 'peacibly': 92688,
+ 'moderates': 83286,
+ '_u2': 24499,
+ '1qsii': 7719,
+ 'farenebt': 54398,
+ '1rk': 8006,
+ 'p0mk': 91311,
+ '591b': 15672,
+ '182l': 5924,
+ 'legge': 75187,
+ 'desqview': 46644,
+ 'wept': 123793,
+ '8wt': 21389,
+ 'effs': 50658,
+ '0df': 1673,
+ '02bp1m51': 759,
+ '313': 11571,
+ 'austcrypt': 30447,
+ 'selling': 105963,
+ 'x2g0': 125734,
+ 'fikpikzs': 55301,
+ 'consul': 42197,
+ 'invulnerability': 68183,
+ 'rollie': 102852,
+ '4k5': 14468,
+ 'schreiber': 105198,
+ 'xymask': 127552,
+ 'xxbq': 127488,
+ 'hneuf_': 63576,
+ '40h': 13422,
+ 'iqs45k': 68336,
+ '4et': 14344,
+ '2mr': 10968,
+ '4grkmk': 14396,
+ 'computrac': 41633,
+ 'permanet': 93069,
+ 'ihc': 65925,
+ 'jha': 70026,
+ 'benzene': 32813,
+ 'cookout': 42502,
+ 'removes': 100852,
+ 'g6e7': 57772,
+ 'pernicious': 93091,
+ '1d6ei': 6742,
+ 'neurosurgery': 86808,
+ 'jost': 70609,
+ 'o0ivf2l': 88652,
+ '5438': 15283,
+ 'gasoline': 58215,
+ 'fried': 56906,
+ 'protocol': 96528,
+ 'televideo': 113969,
+ 'nradrugs': 88142,
+ 'remaindering': 100765,
+ '4ud': 14756,
+ '0200': 632,
+ 'xhm': 126477,
+ 'okx7t': 89636,
+ 'b38': 31079,
+ '1pqgltinn9dg': 7264,
+ 'mutually': 85084,
+ 'scanfirstline': 104957,
+ 'm3t': 77930,
+ '1psrdn': 7351,
+ 'pci': 92586,
+ 'm9s': 78431,
+ 'expressly': 53529,
+ 'infuriates': 67219,
+ 'hthq': 64523,
+ '_b5': 23552,
+ 'b83ua': 31217,
+ 'summarises': 111690,
+ '680x1024': 17186,
+ 'coriolis': 42664,
+ '75u': 19053,
+ '47k': 14001,
+ 'widghet': 124244,
+ 'internals': 67870,
+ 'banking': 31760,
+ '2tc': 11190,
+ 'fashionable': 54455,
+ 'plbpex': 94346,
+ 'kroq': 73644,
+ 'outweigh': 90907,
+ 'jpwu': 70738,
+ 'bachlors': 31411,
+ 'seitzer': 105903,
+ 'w3qw145': 122708,
+ 'a1s': 24710,
+ '6h': 17663,
+ 'criticise': 43458,
+ 'smooth': 108365,
+ '92128': 21667,
+ '141148c09630gk': 4213,
+ 'convincing': 42478,
+ 'choqvf1': 39528,
+ 'evangelicals': 52878,
+ 'annias': 28337,
+ 'japan': 69513,
+ 'bhff9': 33113,
+ 'username': 119763,
+ 'chb': 39147,
+ 'jae2001': 69409,
+ 'afghanistan': 26555,
+ 'deductions': 45807,
+ 'humanity': 64628,
+ 'interchanges': 67770,
+ '1604': 5039,
+ 'ttq6': 116853,
+ 'kartonlar': 71850,
+ 'lightness': 75880,
+ 'j7t': 69264,
+ 'mdonahue': 80615,
+ 'pillaged': 93885,
+ '1v': 8100,
+ 'pres': 95714,
+ 'achzrlj1': 25801,
+ 'undergirding': 118590,
+ 'jbis': 69616,
+ 'worldlink': 125058,
+ 'fgp': 55113,
+ 'q6ax': 97511,
+ 'forester': 56356,
+ 'iq': 68307,
+ 'kosher': 73429,
+ 'peart': 92704,
+ 'migrating': 82014,
+ '4m': 14520,
+ 'wernher': 123809,
+ '1w45s17': 8129,
+ 'phong': 93596,
+ '214': 8796,
+ '27808': 10117,
+ 'poon': 94954,
+ 'delft': 46093,
+ '6649': 17059,
+ 'juana': 70911,
+ 'winken': 124491,
+ 'floater': 55895,
+ 'credentials': 43335,
+ '1000ff0e': 2399,
+ '0b': 1618,
+ 'jq2': 70746,
+ 'someones': 108811,
+ 'visibility': 121689,
+ 'suppression': 112001,
+ 'chonglab': 39509,
+ 'ld231782': 74959,
+ 'vax': 120804,
+ 'hsvg905c9e': 64502,
+ 'oversimplifying': 91092,
+ 'ase': 29678,
+ 'tzh': 117360,
+ 'directive': 47436,
+ 'codecrafters': 40819,
+ 'avergae': 30654,
+ 'adamski': 26022,
+ 'isgtec': 68582,
+ '02p4': 770,
+ 'translations': 116235,
+ 'nxy65': 88550,
+ 'selfcritisism': 105943,
+ 'cnbc': 40676,
+ 'exponentially': 53494,
+ 'heim': 62608,
+ 'tze': 117354,
+ 'px8j': 97239,
+ 's9': 104122,
+ 'destroying': 46676,
+ 'bucharest': 35408,
+ 'bornhuetter': 34466,
+ 'nkjzngvz': 87509,
+ 'rent': 100922,
+ 'bernadino': 32878,
+ 'utils820': 119907,
+ 'ripple': 102104,
+ 'bakker': 31611,
+ 'uok6': 119414,
+ 'romance': 102864,
+ 'mbs0tq6': 80142,
+ 'hooters': 63955,
+ 'insted': 67584,
+ 'ezy6': 53743,
+ '26510': 9944,
+ 'maher': 78932,
+ 'airhead': 26968,
+ 'vibes': 121409,
+ 'good': 59779,
+ '1_3': 6593,
+ 'fostma': 56528,
+ 'jvl': 71133,
+ '64kb': 16877,
+ 'scandinavium': 104954,
+ 'datadesk': 45157,
+ 'vjsq': 121800,
+ '11': 2927,
+ 'pms860': 94590,
+ 'slegge': 108063,
+ 'planters': 94269,
+ 'm8qt6': 78343,
+ '7ci2n1rl': 19493,
+ 'q25': 97393,
+ 'writ': 125263,
+ 'mi0mf9l0qax': 81754,
+ 'ab870': 25242,
+ 'distress': 47972,
+ 'rlu1u': 102436,
+ 'ecs8': 50390,
+ 'drhelpev': 49014,
+ 'whereas': 124033,
+ 'khufu': 72563,
+ 'potemkin': 95197,
+ 'rbi': 99519,
+ 'cholistasis': 39501,
+ 'hyf1': 64913,
+ 'husc11': 64749,
+ 'mountains': 83942,
+ 'presentations': 95735,
+ 'fredriksson': 56800,
+ 'agora': 26740,
+ 'srx250': 109941,
+ 'calm': 37452,
+ 'schumach': 105216,
+ 'duplicated': 49479,
+ '8494': 20423,
+ 'accentuate': 25589,
+ '5k': 16030,
+ '6244': 16685,
+ '18039': 5824,
+ 'scams': 104939,
+ 'fzz': 57600,
+ 'glxunlink': 59478,
+ 'pierrepoint': 93819,
+ 'tsavo': 116748,
+ 'csmil': 43822,
+ 'temperature': 114010,
+ '28254': 10197,
+ 'pyramids': 97285,
+ 'fastest': 54476,
+ 'dm75u': 48244,
+ 'quyd': 98486,
+ 'mom': 83452,
+ 'nawlins': 86230,
+ 'codex': 40830,
+ '2nkjznb': 10994,
+ 'everypost': 52958,
+ 'mwn': 85254,
+ 'x1p': 125692,
+ '595': 15691,
+ 'sportmax': 109579,
+ 'influences': 67149,
+ 'mogan': 83353,
+ 'armegedon': 29397,
+ 'polititians': 94818,
+ 'xzn': 127578,
+ 'radioisotope': 99023,
+ 'expresses': 53523,
+ 'nominaly': 87719,
+ 'allthe': 27530,
+ 'v4g9v': 120316,
+ 'pj0': 94090,
+ 'yessir': 128088,
+ 'o7': 88814,
+ 'expeditions': 53391,
+ 'hunan': 64680,
+ 'ais': 27012,
+ '93apr6024902': 21971,
+ 'bz': 36043,
+ 'purporting': 97078,
+ 'scucs': 105512,
+ ...}
+</code></pre>
+
+<pre><code class="language-python">tfidf_transformer.idf_[0:100]
+</code></pre>
+
+<pre><code>array([4.17690557, 4.31043697, 8.25444302, 8.9475902 , 9.64073738, 9.23527227, 8.54212509, 8.9475902 , 9.64073738, 9.64073738, 9.64073738, 9.64073738,
+       9.64073738, 9.64073738, 9.64073738, 9.64073738, 8.9475902 , 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738,
+       9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.23527227, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738,
+       9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738,
+       9.64073738, 9.64073738, 9.23527227, 9.64073738, 9.64073738, 9.64073738, 9.23527227, 8.03129947, 9.64073738, 9.64073738, 9.64073738, 9.64073738,
+       9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738,
+       9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738,
+       9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 9.64073738, 8.13665998, 9.64073738, 9.64073738, 7.50067121, 9.64073738, 9.64073738,
+       9.64073738, 8.9475902 , 9.64073738, 9.64073738])
+</code></pre>
+
+<h3 id="random-forest-sınıflandırma-algoritması">Random forest sınıflandırma algoritması</h3>
+
+<pre><code class="language-python">X_train, X_test, y_train, y_test = train_test_split(X_train_tfidf, twenty_train.target, test_size=0.3, random_state=42)
+clf = RandomForestClassifier(n_jobs=-1, verbose=1, n_estimators=50)
+clf.fit(X_train, y_train)
+</code></pre>
+
+<pre><code>[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   28.1s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:   32.5s finished
+
+
+
+
+
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=50, n_jobs=-1,
+            oob_score=False, random_state=None, verbose=1,
+            warm_start=False)
+</code></pre>
+
+<pre><code class="language-python">y_hat = clf.predict(X_test)
+cm = confusion_matrix(y_test, y_hat)
+print(cm)
+</code></pre>
+
+<pre><code>[[107   1   1   0   1   0   1   0   0   0   0   0   0   2   1  12   1   0   1   7]
+ [  0 117  19   0   7  11   5   1   0   1   1   0   1   2   1   0   0   0   0   0]
+ [  0  10 142   4   3   5   3   0   0   1   0   0   1   0   1   0   0   0   0   0]
+ [  0  14  25 112   5   6  10   3   0   2   0   0   4   0   0   0   1   0   0   0]
+ [  1   7   8  10 135   3   7   4   1   1   0   0   5   1   0   0   0   0   0   0]
+ [  0   7   5   4   2 146   1   0   0   0   0   0   3   1   0   0   0   0   0   0]
+ [  1   4   1   3   1   2 153   3   1   1   0   0   2   0   0   0   0   0   0   0]
+ [  0   5   2   2   3   5   3 160   2   3   2   0   2   0   1   0   0   0   1   0]
+ [  1   1   1   0   2   0   4   7 172   2   0   1   0   1   3   0   2   0   1   0]
+ [  0   4   2   0   0   1   5   0   0 145   9   1   0   1   0   0   0   0   0   0]
+ [  0   1   0   1   0   0   1   0   0  10 149   0   0   1   0   0   0   0   0   0]
+ [  0   3   2   1   0   1   0   0   1   0   0 180   1   1   0   1   2   1   1   0]
+ [  2  14   9  11   2   4   9   7   2   3   1   2 102   1   7   1   0   0   0   0]
+ [  0   7   3   1   0   1   4   1   2   3   0   1   6 141   1   1   0   0   0   0]
+ [  0   4   2   0   2   2   1   2   1   0   0   0   3   0 155   2   2   0   0   0]
+ [  3   5   2   1   1   0   2   1   0   2   1   0   3   0   0 157   1   1   1   1]
+ [  0   0   0   2   3   0   3   2   0   0   0   2   1   0   2   4 151   1   2   0]
+ [  4   1   0   1   0   0   1   0   0   4   0   0   0   1   1   2   1 144   0   0]
+ [  5   3   4   2   1   0   0   2   2   3   4   1   4   6   1   9   7   4  98   0]
+ [  5   1   0   0   0   2   2   4   0   1   1   3   0   2   1  23   9   1   1  51]]
+
+
+[Parallel(n_jobs=4)]: Done  42 tasks      | elapsed:    0.2s
+[Parallel(n_jobs=4)]: Done  50 out of  50 | elapsed:    0.2s finished
+</code></pre>
+
+<h3 id="deep-neural-network-sınıflandırma-modeli">Deep Neural Network Sınıflandırma Modeli</h3>
+
+<pre><code class="language-python">from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from sklearn.preprocessing import LabelEncoder
+from keras.utils import np_utils
+from keras.callbacks import ModelCheckpoint
+import matplotlib.pyplot as plt
+
+encoder = LabelEncoder()
+encoder.fit(y_train)
+encoded_Y = encoder.transform(y_train)
+dummy_Y = np_utils.to_categorical(encoded_Y)
+print(encoded_Y.shape)
+
+model = Sequential()
+model.add(Dense(50, input_dim=X_train.shape[1], activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.2))
+model.add(Dense(100, activation='tanh', kernel_initializer='uniform'))
+model.add(Dropout(0.2))
+model.add(Dense(50, input_dim=X_train.shape[1], activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.2))
+model.add(Dense(len(twenty_train.target_names), activation='softmax', kernel_initializer='uniform'))
+model.compile(loss=&quot;categorical_crossentropy&quot;, optimizer=&quot;adam&quot;, metrics=['accuracy'])
+
+model.summary()
+
+model.load_weights('weights-improvement-05-1.4409.hdf5')
+</code></pre>
+
+<pre><code>(7919,)
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_5 (Dense)              (None, 50)                6505400   
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 50)                0         
+_________________________________________________________________
+dense_6 (Dense)              (None, 100)               5100      
+_________________________________________________________________
+dropout_5 (Dropout)          (None, 100)               0         
+_________________________________________________________________
+dense_7 (Dense)              (None, 50)                5050      
+_________________________________________________________________
+dropout_6 (Dropout)          (None, 50)                0         
+_________________________________________________________________
+dense_8 (Dense)              (None, 20)                1020      
+=================================================================
+Total params: 6,516,570
+Trainable params: 6,516,570
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<h3 id="model-eğitiminde-her-bir-epoch-için-iyileşme-olması-durumunda-model-dosyasını-kaydet">Model eğitiminde her bir epoch için iyileşme olması durumunda model dosyasını kaydet</h3>
+
+<pre><code class="language-python">filepath=&quot;weights-improvement-{epoch:02d}-{loss:.4f}.hdf5&quot;
+checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+callbacks_list = [checkpoint]
+</code></pre>
+
+<h3 id="modeli-eğit">Modeli eğit</h3>
+
+<pre><code class="language-python">history = model.fit(X_train, dummy_Y, epochs=5, batch_size=500, verbose=1,
+                    validation_split=0.2, callbacks=callbacks_list )
+</code></pre>
+
+<pre><code>Train on 6335 samples, validate on 1584 samples
+Epoch 1/5
+6335/6335 [==============================] - 29s 5ms/step - loss: 1.2849 - acc: 0.6444 - val_loss: 1.4499 - val_acc: 0.5758
+
+Epoch 00001: loss improved from inf to 1.28489, saving model to weights-improvement-01-1.2849.hdf5
+Epoch 2/5
+6335/6335 [==============================] - 29s 5ms/step - loss: 1.1512 - acc: 0.7056 - val_loss: 1.3563 - val_acc: 0.6231
+
+Epoch 00002: loss improved from 1.28489 to 1.15124, saving model to weights-improvement-02-1.1512.hdf5
+Epoch 3/5
+6335/6335 [==============================] - 29s 5ms/step - loss: 1.0320 - acc: 0.7514 - val_loss: 1.2707 - val_acc: 0.6452
+
+Epoch 00003: loss improved from 1.15124 to 1.03203, saving model to weights-improvement-03-1.0320.hdf5
+Epoch 4/5
+6335/6335 [==============================] - 29s 5ms/step - loss: 0.9206 - acc: 0.8153 - val_loss: 1.1930 - val_acc: 0.6749
+
+Epoch 00004: loss improved from 1.03203 to 0.92058, saving model to weights-improvement-04-0.9206.hdf5
+Epoch 5/5
+6335/6335 [==============================] - 29s 5ms/step - loss: 0.8061 - acc: 0.8669 - val_loss: 1.1194 - val_acc: 0.6919
+
+Epoch 00005: loss improved from 0.92058 to 0.80612, saving model to weights-improvement-05-0.8061.hdf5
+</code></pre>
+
+<h3 id="model-sonuçları">Model sonuçları</h3>
+
+<pre><code class="language-python">y_hat = model.predict_classes(X_test)
+cm = confusion_matrix(y_test, y_hat)
+print('*'*40)
+print(cm)
+</code></pre>
+
+<pre><code>****************************************
+[[117   0   0   0   0   0   0   0   1   0   0   0   0   0   0  12   4   1   0   0]
+ [  0  93  28   3   7  13   7   0   0   0   0   1  12   0   2   0   0   0   0   0]
+ [  0  15 119  19   5  12   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
+ [  0  12  27 115  17   3   2   3   0   1   0   0   1   0   1   0   0   0   0   0]
+ [  0   7  13  28 120   2   6   1   3   0   0   0   2   0   0   1   0   0   0   0]
+ [  0   4  12   2   0 143   1   0   0   0   0   4   2   1   0   0   0   0   0   0]
+ [  0  18   2   7  30   1  88   3   2   0   2   1  13   0   4   0   0   1   0   0]
+ [  0   1   2  20  12   0   2  86  49   9   0   0   2   6   1   1   0   0   0   0]
+ [  0   0   1   4   3   0   0  23 149  16   1   0   0   0   1   0   0   0   0   0]
+ [  0   0   0   0   2   0   0   2   4 154   5   0   0   1   0   0   0   0   0   0]
+ [  0   0   0   0   1   0   0   0   3   2 155   0   1   0   1   0   0   0   0   0]
+ [  1   0   1   0   0   2   1   0   0   0   0 175   3   0   0   1   1   0   8   2]
+ [  0  13   3   5   5   4   6   3   1   0   0   1 126   2   8   0   0   0   0   0]
+ [  0   2   1   0   0   3   0   2   0   0   0   2   1 152   0   9   0   0   0   0]
+ [  0   0   0   0   0   0   3   0   0   0   0   1   5   0 164   0   0   3   0   0]
+ [  8   0   0   0   1   0   0   3   0   3   0   1   0   6   0 159   0   1   0   0]
+ [ 35   0   0   0   0   1   0   0   0   0   1   1   0   0   1   5 112   8   9   0]
+ [  3   0   0   0   0   0   0   0   0   0   2   0   0   0   3   0   0 152   0   0]
+ [ 13   0   0   0   0   0   0   0   0   0   0   7   3   0   0   3  41  19  69   1]
+ [ 21   0   0   0   1   0   0   0   0   1   0   5   0   1   0  20  32   5  20   1]]
+</code></pre>
+
+<h3 id="tarihçe">Tarihçe</h3>
+
+<pre><code class="language-python">plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<p><img src="10-lab-2_files/10-lab-2_21_0.png" alt="png" /></p>
+
+<p><img src="10-lab-2_files/10-lab-2_21_1.png" alt="png" /></p>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/10-lab-3/"><span
+      aria-hidden="true">&larr;</span> </a></li>
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/10-lab-1/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

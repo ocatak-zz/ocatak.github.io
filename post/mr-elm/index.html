@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/mr-elm/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title>Classification with Boosting of Extreme Learning Machine Over Arbitrarily Partitioned Data | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content="Classification with Boosting of Extreme Learning Machine Over Arbitrarily Partitioned Data - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Classification with Boosting of Extreme Learning Machine Over Arbitrarily Partitioned Data - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Classification with Boosting of Extreme Learning Machine Over Arbitrarily Partitioned Data</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2020-05-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2020-05-25
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    31 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Classification%20with%20Boosting%20of%20Extreme%20Learning%20Machine%20Over%20Arbitrarily%20Partitioned%20Data&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2fmr-elm%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2fmr-elm%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2fmr-elm%2f&amp;title=Classification%20with%20Boosting%20of%20Extreme%20Learning%20Machine%20Over%20Arbitrarily%20Partitioned%20Data"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2fmr-elm%2f&amp;title=Classification%20with%20Boosting%20of%20Extreme%20Learning%20Machine%20Over%20Arbitrarily%20Partitioned%20Data"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Classification%20with%20Boosting%20of%20Extreme%20Learning%20Machine%20Over%20Arbitrarily%20Partitioned%20Data&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2fmr-elm%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>abstract: |
+  Machine learning based computational intelligence methods are widely
+  used to analyze large scale data sets in this age of big data.
+  Extracting useful predictive modeling from these types of data sets is
+  a challenging problem due to their high complexity. Analyzing large
+  amount of streaming data that can be leveraged to derive business
+  value is another complex problem to solve. With high levels of data
+  availability (<em>i.e. Big Data</em>) automatic classification of them has
+  become an important and complex task. Hence, we explore the power of
+  applying MapReduce based Distributed AdaBoosting of Extreme Learning
+  Machine (ELM) to build a predictive bag of classification models.
+  Accordingly, (i) data set ensembles are created; (ii) ELM algorithm is
+  used to build weak learners (classifier functions); and (iii) builds a
+  strong learner from a set of weak learners. We applied this training
+  model to the benchmark knowledge discovery and data mining data sets.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>It is clear that there has been an unexpected increase in the quantity and variety of data generated worldwide by computers, mobile phones, and
+sensors. Just as computer technology evolved, the quantity and variety
+of data has also increased, becoming more focused on storing every type
+of data, the so-called Big Data. As the volume of data to build a
+predictive model increases, the complexity of that training increases
+too. As a result, building actionable predictive modeling of a large
+scale unstructured data set is a definitive Big Data problem. Predictive
+learning models try to discover patterns of training data and label new
+data instances to the correct output value. To efficiently handle
+unstructured large scale big data sets, it is critical to develop new
+machine learning methods that combine several boosting and
+classification algorithms.</p>
+
+<p>Extreme Learning Machine (ELM) was proposed by (G.-B. Huang, Zhu, and
+Siew 2006) based on generalized Single-hidden Layer Feedforward Networks
+(SLFNs). Main characteristics of ELM are small training time compared to
+traditional gradient-based learning methods, high generalization
+property of predicting unseen examples with multi-class labels and
+parameter free with randomly generated hidden nodes. ELM algorithm is
+used in many different areas including document classification (Zhao et
+al. 2011), bioinformatics (Wang, Zhao, and Wang 2008) multimedia
+recognition (Zong and Huang 2011; Lan et al. 2013).</p>
+
+<p>In recent years, much computational intelligence research has been
+devoted to building predictive modeling of distributed and parallel
+frameworks. In this research, the proposed learning model creates data
+chunks with varying size and bag of classifier functions using ELM
+algorithm trained with these arbitrary chosen sub data set with
+AdaBoosting method for large scale predictions. By creating data chunks
+from the training data set using the MapReduce paradigm, each subset of
+the training data set is used to find out the set of ELM ensembles as a
+single global classifier function.</p>
+
+<p>The main objective of this work is to train large scale data sets using
+ELM and AdaBoost. Another objective is to achieve the model&rsquo;s
+classification performance with same or close to the conventional ELM
+method. Conventional ELM training cannot be applied to large scale data
+sets on a single computer because of their complexity. Then experiments
+section is split into two subsections: \&ldquo;commonly used data sets\&rdquo; in
+Section <a href="#sec:commonds">5.1.1</a> and \&ldquo;large scale data sets\&rdquo; in Section
+<a href="#sec:commonlargeds">5.1.2</a>. Commonly used data sets are suitable for
+training on a single computer with the conventional ELM algorithm. We
+trained these data sets both conventional and proposed methods to show
+the classification performance changes of the proposed method.
+Classification performance results are shown in Section
+<a href="#sec:conv_elm">5.3</a>.</p>
+
+<p>The contributions of this paper are as follows:</p>
+
+<ul>
+<li><p>A generative MapReduce technique based AdaBoosted ELM classification
+model is proposed for learning, and thus, faster classification
+model training is achieved.</p></li>
+
+<li><p>This research proposes a new learning method for AdaBoosted ELM that
+achieves parallelization both in large scale data sets and reduced
+computational time of learning algorithm.</p></li>
+
+<li><p>Training computations of working nodes are independent from each
+other thus minimizing the data communication. The other approaches,
+including Support Vector Machine training need data communication
+for the support vector exchange. (Lu, Roychowdhury, and Vandenberghe
+2008; Sun and Fox 2012; Catak and Balaban 2013).</p></li>
+</ul>
+
+<p>The rest of the paper is organized as follows: Section
+<a href="#sec:related">2</a> briefly
+introduces some of the earlier works related to our problem. Section
+<a href="#sec:preliminaries">3</a> describes algorithm ELM, AdaBoost and
+MapReduce technique. Section <a href="#sec:approach">4</a> and Section
+<a href="#sec:experiments">5</a>
+evaluates the proposed learning model. Section
+<a href="#sec:conclusion">6</a>
+concludes this paper.</p>
+
+<h2 id="sec:related">Related work</h2>
+
+<p>In this section, we describe the general overview of literature review.
+Section <a href="#sec:litoverview">2.1</a> describes the general distributed ELM
+methods. Section <a href="#sec:mr-elm-methods">2.2</a> shows the MapReduce based ELM training
+methods.</p>
+
+<h3 id="sec:litoverview">Literature Review Overview</h3>
+
+<p>MapReduce based learning algorithms from distributed data chunks has
+been studied by many researchers. Many different MapReduce based
+learning solutions over arbitrary partitioned data have been proposed
+recently. Some popular MapReduce based solutions to train machine
+learning algorithms in the literature include the following. Panda et
+al. proposed a learning tree model which is based on series of
+distributed computations, and implements each one using the MapReduce
+model of distributed computation (Panda et al. 2009). Zhang et al.
+develops some algorithms using MapReduce to perform parallel data joins
+on large scale data sets (Zhang, Li, and Jestes 2012). Sun et al. use
+batch updating based hierarchical clustering to reduce computational
+time and data communication (Sun et al. 2009). Their approach uses
+co-occurence based feature selection to remove noisy features and
+decrease the dimension of the feature vectors. He et al. proposed
+parallel density based clustering algorithm (DBSCAN). They developed a
+partitioning strategy for large scale non-indexed data with a 4-stages
+MapReduce paradigm (He et al. 2011). Zhao et al. proposed parallel
+k-means clustering based on MapReduce (Zhao, Ma, and He 2009). Their
+approaches focus on implementing k-means with the read-only convergence
+heuristic in the MapReduce pattern.</p>
+
+<h2 id="mapreduce-based-elm-training-methods-sec-mr-elm-methods">MapReduce Based ELM Training Methods {#sec:mr-elm-methods}</h2>
+
+<p>Section <a href="#sec:elm-star">2.2.1</a> - Section
+<a href="#sec:elm-mr">2.2.5</a>
+describe five different MapReduce training methods of ELM algorithm.</p>
+
+<h3 id="sec:elm-star">ELM $\star$</h3>
+
+<p>Xin et al. proposed MapReduce based ELM training method called as
+ELM $^\ast$ (Xin et al. 2014). Main idea behind this method is to
+calculate matrix multiplication of ELM to find weight vector. They show
+that Moore-Penrose generalized inverse operator is the most expensive
+computation part of the algorithm. As we know, matrix multiplication can
+be divide into smaller part. Using this property, they proposed an
+efficient implementation of training phase to manage massive data sets.
+The final output of this method is a single classifier function. In this
+paper, they proposed two different versions of ELM $^\ast$, naive and
+improved. In naive-ELM $^\ast$, the algorithm has two classes, Class
+Mapper and Class Reducer. Both classes contain only one method. In
+improved ELM $^\ast$, they decompose the calculation of matrix
+multiplication using MapReduce framework. Moreover, the proposed
+algorithm decreases the computation and communication cost. In the
+experimental platform, they used their synthetic data sets to evaluate
+the performance of the proposed algorithms with MapReduce framework.</p>
+
+<h3 id="sec:oselm">OS-ELM based Classification in Hierarchical P2P Network</h3>
+
+<p>Sun et al. proposed OS-ELM (Liang et al. 2006) based distributed
+ensemble classification in P2P networks (Sun, Yuan, and Wang 2011). They
+apply the incremental learning principle of OS-ELM to hierarchical P2P
+network. They proposed two different versions of the ensemble classifier
+in hierarchical P2P, <em>one-by-one</em> ensemble classification and <em>parallel</em>
+ensemble classification. In <em>one-by-one</em> learning method, each peer, one
+by one, calculates the classifier with all the data. Therefore, this
+approach has a large network delay. In the <em>parallel</em> ensemble learning,
+all the classifiers are learnt from all the data in parallel manner.
+Conversely to ELM $^\ast$, their experimental results are based on three
+different real data sets downloaded from the UCI repository.</p>
+
+<h3 id="sec:pos-elm">Parallel online sequential ELM: POS-ELM</h3>
+
+<p>Wang et al. have been proposed parallel online sequential extreme
+learning machine (POS-ELM) method (Wang et al. 2015). Main idea behind
+in this approach is to analyze the dependency relationships and the
+matrix calculations of OS-ELM (Liang et al. 2006). Their experimental
+results are based on nine different real data sets downloaded from the
+UCI repository.</p>
+
+<h3 id="distributed-and-kernelized-elm-dk-elm">Distributed and Kernelized ELM: DK-ELM</h3>
+
+<p>Bi et al. have been proposed both distributed and kernelized ELM
+(DK-ELM) based on MapReduce (Bi et al. 2015). The difference between ELM
+and Kernelized ELM is that K-ELM applies kernels opposite to create
+random feature mappings. They provide a distributed implementation RBF
+kernel matrix calculation in massive data learning applications. Their
+experimental results are based on four different real data sets
+downloaded from the UCI repository and four synthetic data sets.</p>
+
+<h3 id="sec:elm-mr">ELM-MapReduce</h3>
+
+<p>Chen et al. have been proposed MapReduce based ELM ensemble classifier
+called ELM-MapReduce, for large scale land cover classification of
+remote sensing data (Chen, Zheng, and Chen 2013). Their approach
+contains two sequential phases: parallel training of multiple ELM
+classifiers and voting mechanism. In parallel training phase of proposed
+method, each $Map$ function computes an ELM classifier with a given
+training data set. In second phase called voting mechanism, a new
+MapReduce job is executed with a new partitioned test set into each
+$Map$ function with notation $data_j$. In $Reduce$ function of this
+phase, each $data_j$ is predicted with each ELM classifier trained in
+parallel training phase. Final classification predictions are the output
+of final $Reduce$ function. Therefore, this approach has a high
+communication cost. Their experimental results are based synthetic
+remote sensing image of training data.</p>
+
+<h2 id="the-differences-between-proposed-model-and-literature-review">The Differences Between Proposed Model and Literature Review</h2>
+
+<p>The main differences are:</p>
+
+<ul>
+<li><p>In ELM $\star$, they use matrix multiplication decomposition. Each
+$Map$ function is responsible to calculate the Moore-Penrose
+generalized inverse operation. And their method produces one single
+classifier. In the proposed model in our paper, each $Reduce$
+function produces ensemble classifier based on AdaBoost method. The
+final output ensemble classifier is a voting based combination of
+ensemble classifier trained in each $Reduce$ phase.</p></li>
+
+<li><p>In OS-ELM based classification in hierarchical P2P Network, POS-ELM
+and DK-ELM, they propose ensemble classifier that combines multiple
+classifier trained with data chunks. Each peer classifier is learned
+from the local data. Therefore, each peer produces a single ELM
+classifier. In our method, each node (or peer) produces ensemble
+classifier to increase the classification accuracy.</p></li>
+
+<li><p>In ELM-MapReduce, they propose ensemble classifier with two
+different MapReduce jobs. In first MpaReduce job, their approach
+produces a single ELM classifier in each $Map$ function. In second
+MapReduce job, the test set is partitioned into each $Map$ function
+and produces final predicted labels based on the voting mechanism of
+ELM classifiers that are trained in the first MapReduce job. In our
+method, prediction is not included, our aim is to create a final
+ensemble classifier in only one MapReduce job.</p></li>
+</ul>
+
+<p>Table <a href="#tbl:litcompare">1</a> shows the main differences of all proposed
+methods. There are five different columns that are <em>ensemble methods,
+single pass MapReduce, matrix multiplication, entire data set</em> and
+<em>network communication</em>. <em>Ensemble</em> column shows that the method builds
+a set of classifier function (i.e. ensemble model) to improve the
+accuracy performance of the final classification model. If an ensemble
+method is applied, then the performance of final model will have better
+accuracy result (Kuncheva and Whitaker 2003). <em>Single Pass MapReduce</em>
+column shows that an iterative approach is not applied to the model.
+Entire learning phase is performed in a single pass of data through the
+job. <em>Matrix Multiplication</em> column shows the <em>hidden layer matrix</em> is
+calculated in each $Map$ function. The hidden layer matrix computation
+is a compute intensive operation. <em>Entire Data Set</em> column shows each
+$Map$ operation needs entire data set to build a final classifier model.
+<em>Network Communication</em> column shows that each $MapReduce$ job needs to
+communicate with another job. Network communication will affect
+negatively on training time of the algorithm.</p>
+
+<p>Table: The Differences Between Proposed Model and Literature Review.</p>
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th align="center">Ensemble</th>
+<th align="right">Single Pass MR</th>
+<th align="right">Matrix Mult.</th>
+<th align="right">Entire DS</th>
+<th align="right">Network Comm.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ELM $\star$</td>
+<td align="center">No</td>
+<td align="right">Yes</td>
+<td align="right">No</td>
+<td align="right">Yes</td>
+<td align="right">No</td>
+</tr>
+
+<tr>
+<td>OS-ELM</td>
+<td align="center">Yes</td>
+<td align="right">Yes</td>
+<td align="right">No</td>
+<td align="right">No</td>
+<td align="right">Yes</td>
+</tr>
+
+<tr>
+<td>POS-ELM</td>
+<td align="center">Yes</td>
+<td align="right">Yes</td>
+<td align="right">No</td>
+<td align="right">Yes</td>
+<td align="right">No</td>
+</tr>
+
+<tr>
+<td>DK-ELM</td>
+<td align="center">Yes</td>
+<td align="right">Yes</td>
+<td align="right">No</td>
+<td align="right">Yes</td>
+<td align="right">No</td>
+</tr>
+
+<tr>
+<td>ELM-MapReduce</td>
+<td align="center">Yes</td>
+<td align="right">No</td>
+<td align="right">No</td>
+<td align="right">Yes</td>
+<td align="right">Yes</td>
+</tr>
+
+<tr>
+<td>Proposed Method</td>
+<td align="center">Yes</td>
+<td align="right">Yes</td>
+<td align="right">No</td>
+<td align="right">No</td>
+<td align="right">No</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="sec:preliminaries">Preliminaries</h2>
+
+<p>In this section, we introduce preliminary knowledge of ELM, AdaBoost and
+MapReduce briefly.</p>
+
+<h3 id="sec:ELM">Extreme learning machine</h3>
+
+<p>ELM was originally proposed for the single-hidden layer feedforward
+neural networks (G.-b. Huang, Zhu, and Siew 2006; G.-B. Huang, Chen, and
+Siew 2006; G.-B. Huang, Zhu, and Siew 2006) . Then, ELM was extended to
+the generalized single-hidden layer feedforward networks where the
+hidden layer may not be neuron like (Huang and Chen 2007; G.-B. Huang
+and Chen 2008). The main advantages of the ELM classification algorithm
+are that ELM can be trained hundred times faster than traditional neural
+network or support vector machine algorithm since its input weights and
+hidden node biases are randomly created and output layer weights can be
+analytically calculated by using a least-squares method (Tang et al.
+2015; G.-B. Huang et al. 2008). The most noticeable feature of ELM is
+that its hidden layer parameters are selected randomly.</p>
+
+<p>Given a set of training data
+$\mathcal{D}={(\mathbf{x}_i, y_i)\mid i=1,&hellip;,n},\mathbf{x}_i \in \mathbb{R}^p, y_i \in {1, 2,&hellip;,K}$
+sampled independently and identically distributed (i.i.d.) from some
+unknown distribution. The goal of a neural network is to learn a
+function $f:\mathcal{X} \rightarrow \mathcal{Y}$ where $\mathcal{X}$ is
+instance and $\mathcal{Y}$ is the set of all possible labels. The output
+label of an single hidden-layer feedforward neural networks (SLFNs) with
+$N$ hidden nodes can be described as <img src="http://www.sciweavers.org/tex2img.php?eq=f_N%28%5Cmathbf%7Bx%7D%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7BN%7D%20%5Cbeta_iG%28%5Cmathbf%7Ba%7D_i%2Cb_i%2C%5Cmathbf%7Bx%7D%29%20%2C%20%5C%2C%20%5Cmathbf%7Bx%7D%20%5Cin%20%5Cmathbb%7BR%7D%5En%2C%20%5C%2C%20%5Cmathbf%7Ba%7D_i%20%5Cin%20%5Cmathbb%7BR%7D%5En&amp;bc=White&amp;fc=Black&amp;im=jpg&amp;fs=12&amp;ff=arev&amp;edit=0" alt="equation" />
+where $\mathbf{a}_i$ and $b_i$ are the learning parameters of hidden
+nodes and $\beta_i$ is the weight connecting the $i$th hidden node to
+the output node.</p>
+
+<p>The output function of ELM for generalized SLFNs can be identified by
+<img src="http://www.sciweavers.org/tex2img.php?eq=f_N%28%5Cmathbf%7Bx%7D%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7BN%7D%5Cbeta_iG%28%5Cmathbf%7Ba%7D_i%2Cb_i%2C%5Cmathbf%7Bx%7D%29%20%3D%20%5Cmathbf%7B%5Cbeta%7D%20%5Ctimes%20h%28%5Cmathbf%7Bx%7D%29&amp;bc=White&amp;fc=Black&amp;im=jpg&amp;fs=12&amp;ff=arev&amp;edit=0" alt="equation" /></p>
+
+<p>For the binary classification applications, the decision function of ELM
+becomes
+<img src="http://www.sciweavers.org/tex2img.php?eq=f_N%28%5Cmathbf%7Bx%7D%29%20%3D%20sign%5Cleft%28%20%5Csum_%7Bi%3D1%7D%5E%7BN%7D%5Cbeta_iG%28%5Cmathbf%7Ba%7D_i%2Cb_i%2C%5Cmathbf%7Bx%7D%29%20%5Cright%29%20%3D%20sign%5Cleft%28%5Cmathbf%7B%5Cbeta%7D%20%5Ctimes%20h%28%5Cmathbf%7Bx%7D%29%20%5Cright%29&amp;bc=White&amp;fc=Black&amp;im=jpg&amp;fs=12&amp;ff=arev&amp;edit=0" alt="equation" /></p>
+
+<p>Equation <a href="#eq:slfnsgen">[eq:slfnsgen]</a>can be written in another form as
+$$\label{eq:elm}
+H\beta=T$$ $H$ and $T$ are respectively hidden layer matrix and output
+matrix. Hidden layer matrix can be described as</p>
+
+<p><img src="http://www.sciweavers.org/tex2img.php?eq=H%28%5Ctilde%7Ba%7D%2C%5Ctilde%7Bb%7D%2C%5Ctilde%7Bx%7D%29%3D%20%5Cbegin%7Bbmatrix%7D%20G%28a_1%2Cb_1%2Cx_1%29%20%26%20%5Ccdots%20%26%20G%28a_L%2Cb_L%2Cx_1%29%20%5C%5C%20%5Cvdots%20%26%20%5Cddots%20%26%20%5Cvdots%20%5C%5C%20G%28a_1%2Cb_1%2Cx_N%29%20%26%20%5Ccdots%20%26%20G%28a_L%2Cb_L%2Cx_N%29%20%5Cend%7Bbmatrix%7D_%7BN%20%5Ctimes%20L%7D&amp;bc=White&amp;fc=Black&amp;im=jpg&amp;fs=12&amp;ff=arev&amp;edit=0" alt="equation" /></p>
+
+<p>where $\tilde{a}=a_1,&hellip;,a_L$, $\tilde{b}=b_1,&hellip;,b_L$,
+$\tilde{x}=x_1,&hellip;,x_N$. Output matrix can be described as $T= \begin{bmatrix} t_1  \cdots  t_N \end{bmatrix}^T$. The hidden nodes
+of SLFNs can be randomly generated. They can be independent of the
+training data.</p>
+
+<h3 id="sec:AdaBoost">AdaBoost</h3>
+
+<p>The AdaBoost (Freund and Schapire 1995) is a supervised learning
+algorithm designed to solve classification problems (Freund, Schapire,
+and Abe 1999). The algorithm takes as input a training set
+$(\mathbf{x}_1, y_1),&hellip;,(\mathbf{x}_n, y_n)$ where the input sample
+$\mathbf{x}_i \in \mathbb{R}^p$, and the output value, $y_i$, in a
+finite space $y\in {1,&hellip;K}$. AdaBoost algorithm assumes, like ELM, a
+set of training data sampled independently and identically distributed
+(i.i.d.) from some unknown distribution $\mathcal{X}$.</p>
+
+<p>Given a space of feature vectors $X$ and two possible class labels,
+$y \in {-1,+1}$, AdaBoost goal is to learn a strong classifier
+$H(\mathbf{x})$ as a weighted ensemble of weak classifiers
+$\mathbf{h}$ predicting the label of any instance
+$\mathbf{x} \in X$ (Landesa-Vázquez and Alba-Castro 2013).
+$$\label{eq:adaboost}
+H(\mathbf{x}) = sign(f(\mathbf{x}))=sign\left(\sum_{t=1}^{T}\alpha_t h_t(\mathbf{x}) \right)$$
+Pseudocode for AdaBoost is given in Alg.
+<a href="#alg:adaboost">[alg:adaboost]</a>.</p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/mr-elm-alg1.png" alt="" /><em>Algorithm-1</em></p>
+
+<h3 id="sec:MapReduce">MapReduce</h3>
+
+<p>MapReduce is a new programming model to run parallel applications for
+large scale data sets processing to support data-intensive applications.
+It is derived from the map and reduce function combination from
+functional programming. Users specify a map function that processes a
+key/value pair to generate a set of intermediate key/value pairs, and a
+reduce function that merges all intermediate values associated with the
+same intermediate key. The MapReduce was originally developed by Google
+and built on principles in parallel manner (Dean and Ghemawat 2008). The
+MapReduce framework first takes the input, divides it into smaller data
+chunks, and distributes them to worker nodes. MapReduce is divided into
+three major phases called map, reduce and a separated internal shuffle
+phase. The MapReduce framework automatically executes all those
+functions in a parallel manner over any number of processors/servers
+(Schatz 2009).</p>
+
+<p>Pseudo code of MapReduce framework is shown in Eq.
+<a href="#eq:mapreduce">[eq:mapreduce]</a>{reference-type=&ldquo;ref&rdquo;
+reference=&ldquo;eq:mapreduce&rdquo;}. $$\label{eq:mapreduce}
+\begin{split}
+map(key_1,value_1) &amp; \rightarrow list(key_2,value_2) <br />
+reduce(key_2,list(value_2)) &amp; \rightarrow list(key_3,value_3)
+\end{split}$$</p>
+
+<p>Mapreduce programming technique is widely used on different scientific
+fields, i.e. cyber-security (Choi et al. 2014; Ogiela, Castiglione, and
+You 2014), high energy physics (Bhimji, Bristow, and Washbrook 2014),
+biology (Xu et al. 2014).</p>
+
+<h2 id="sec:approach">Proposed Approach</h2>
+
+<p>In this section we provide the details of the MapReduce based
+distributed AdaBoosted ELM algorithm. The basic idea of AdaBoost-ELM
+based on MapReduce technique is introduced in Section
+<a href="#sec:BasicIdea">4.1</a>.
+The MapReduce implementation of AdaBoosted ELM is described in Section
+<a href="#sec:Implementation">4.3</a>.</p>
+
+<h3 id="sec:BasicIdea">Basic Idea</h3>
+
+<p>Our main task is to parallel and distributed execute the computation of
+AdaBoosted ELM classification method. AdaBoosted ELM&rsquo;s basic idea is to
+calculate ensemble of classifier functions over partitioned data
+$(X_m,Y_m)$ in parallel manner. In Table
+<a href="#tbl:notation">2</a>{reference-type=&ldquo;ref&rdquo; reference=&ldquo;tbl:notation&rdquo;}, a
+summary of commonly used variables and notations to assess the
+classifier model performance of the AdaBoosted ELM method is given for
+convenience.</p>
+
+<p><strong>Table</strong>: Commonly used variables and notations.</p>
+
+<table>
+<thead>
+<tr>
+<th>Variables/Notation</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>$M$</td>
+<td align="center">Data chunck split size</td>
+</tr>
+
+<tr>
+<td>$h$</td>
+<td align="center">A single classifier function</td>
+</tr>
+
+<tr>
+<td>$X_m$</td>
+<td align="center">Data chunck $m$ of <em>input</em> values of $\mathcal{D}$</td>
+</tr>
+
+<tr>
+<td>$Y_m$</td>
+<td align="center">Data chunck $m$ of <em>output</em> values of $\mathcal{D}$</td>
+</tr>
+
+<tr>
+<td>$\epsilon$</td>
+<td align="center">Error rate</td>
+</tr>
+
+<tr>
+<td>Chunk</td>
+<td align="center">Number of data chunk</td>
+</tr>
+
+<tr>
+<td>$T$</td>
+<td align="center">AdaBoost $T$ size</td>
+</tr>
+
+<tr>
+<td>H. Nodes</td>
+<td align="center">Number of hidden nodes used in ELM</td>
+</tr>
+
+<tr>
+<td>Acc</td>
+<td align="center">Accuracy of classifier hypothesis</td>
+</tr>
+
+<tr>
+<td>$k$</td>
+<td align="center">Number of classes</td>
+</tr>
+</tbody>
+</table>
+
+<p>:</p>
+
+<h3 id="sec:analysisofalg">Analysis of the proposed algorithm</h3>
+
+<p>Barlett showed that the size of the weights is more important than the
+size of the neural network (Bartlett 1998). Kragh et al. also showed
+that ensemble methods of neural networks get better accuracy performance
+over unseen examples (Krogh and Vedelsby 1995). The main motivation of
+the this work is the idea that small size ELM ensembles can obtain more
+accurate classifier model that are comparable to individual classifiers.</p>
+
+<p>In the proposed model, at every data chunk, there is a set of classifier
+functions that acts as a single classification model. The single model
+at every data chunk $m$ is defined as follows: <img src="http://www.sciweavers.org/tex2img.php?eq=f%5E%7B%28m%29%7D%28%5Cmathbf%7Bx%7D%29%20%3D%20%5Cmathop%7B%5Cmathrm%7Barg%5C%2Cmax%7D%7D_k%20%5Csum_%7Bt%3D1%7D%5E%7BT%7D%7B%5Calpha_t%20h_t%28%5Cmathbf%7Bx%7D%29%7D&amp;bc=White&amp;fc=Black&amp;im=jpg&amp;fs=12&amp;ff=arev&amp;edit=0" alt="equation" />
+The selected ensemble ELM classifier models from the reduce phase of
+MapReduce algorithm are combined into one single classification model.
+<img src="http://www.sciweavers.org/tex2img.php?eq=%5Chat%7Bh%7D%28%5Cmathbf%7Bx%7D%29%20%3D%20%5Cmathop%7B%5Cmathrm%7Barg%5C%2Cmax%7D%7D_k%20%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%7Bf%5E%7B%28m%29%7D%28%5Cmathbf%7Bx%7D%29%7D&amp;bc=White&amp;fc=Black&amp;im=jpg&amp;fs=12&amp;ff=arev&amp;edit=0" alt="equation" /></p>
+
+<h3 id="sec:Implementation">Implementation of the Model</h3>
+
+<p>The pseudocodes of MapReduce-based AdaBoost ELM are shown in Algorithm
+<a href="#alg:map">[alg:map]</a> and
+Algorithm <a href="#alg:reduce">[alg:reduce]</a>. The $Map$ procedure of our training model is
+implemented based on random assignment of each row of the training data
+set with split size of data, $M$, in line 2 of Algorithm
+<a href="#alg:map">[alg:map]</a>. The
+input, $\mathbf{x}$ , is a row of traing data set $\mathcal{D}$. $Map$
+procedure partition the input matrix by row, producing
+$(randomSplitId,\mathbf{x})$ key-value pairs. $randomSplitId$ is the
+identifier of the data chunk and is transferred as the input key to
+$Reduce$ phase.</p>
+
+<p>$k \gets rand(0,M)$ $Output(k,(\mathbf{x},y))$</p>
+
+<p>The pseudo code of $Reduce$ phase is shown in Algorithm
+<a href="#alg:reduce">[alg:reduce]</a>. $Reduce$ procedure is implemented based on the
+for-loop of lines 3 &mdash; 8 of Algorithm
+<a href="#alg:reduce">[alg:reduce]</a>. The output ELM classifier of sub data set
+$(\mathbf{X}_k,\mathbf{y}_k)$ is calculated using AdaBoost constantly
+block by block, so every reduce task completes training phase and
+outputs an AdaBoosted set of classifier functions. The $mapper$&rsquo;s input
+$k$ is the $randomSplitId$ to create the data chunk and created in the
+$Map$ phase of our training model.</p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/mr-elm-alg2.png" alt="" /><em>Algorithm-2</em>
+.</p>
+
+<h2 id="sec:experiments">Experiments</h2>
+
+<p>In this section, we perform experiments on real-world data sets from the
+public available data set repositories. Public data sets are used to
+evaluate the proposed learning method. Then, classification models of
+each data set are compared for accuracy results with the single instance
+of learning algorithm performance.</p>
+
+<p>In Section <a href="#sec:expsetup">5.1</a> we explain the data sets and parameters that
+are used in experiments. The conventional ELM is applied all data sets
+and we find the accuracy performance over number of hidden nodes in
+Section <a href="#sec:conv_elm">5.3</a>. In Section
+<a href="#sec:eval">5.2</a>, we show the
+empirical results of proposed distributed adaboost ELM training
+algorithm.</p>
+
+<h3 id="sec:expsetup">Experimental setup</h3>
+
+<p>In this section we apply our approach to five different data sets to
+verify its effectivity and efficiency. To demonstrate the effectiveness
+and performance of the proposed model, we apply it on various
+classification data sets from public data set repositories. To obtain an
+optimal value of Mapper size, $m$, we range it in the range from 20 to
+100.</p>
+
+<h3 id="sec:commonds">Commonly Used Classification Data Sets</h3>
+
+<p>We experiment on five public data sets which are summarized in Table
+<a href="#tbl:dslist">3</a>, including
+Pendigit, Letter, Statlog, Page-blocks and Waveform. They are all
+multiclass data sets. All experiments are repeated 5 times and the
+results are averaged. All data sets are publicly available in svmlight
+format on the LIBSVM web site (LIBSVM 2015).</p>
+
+<p><em>Pendigit</em> data set is a collection of pen-based recognition of
+handwritten digits (Alimoglu and Alpaydin 1996). The data set contains
+250 samples from 44 people. The first 7494 instances written by 30
+people are used for the training data set, and the digits written by
+other 14 people are used for the independent testing purpose.</p>
+
+<p><em>Skin</em> data set is a collection of skin segmentation constructed over R,
+G, B color space (Bhatt et al. 2009). The data set contains face images
+of different age groups (young, middle, old), genders and racial groups
+(White, Black, Asian). The data set contains 245057 instances; out of
+which 50859 is the skin labeled instances and 194198 is non-skin
+instances.</p>
+
+<p><em>Statlog / Shuttle</em> data set is a collection of space shuttle created by
+NASA (Hsu and Lin 2002). The data set contains 43500 training instances
+and 14500 testing instances. 80% of the data belongs to class 1.</p>
+
+<p><em>Page Blocks</em> data set is a collection of page layout of a document that
+has been detected by a segmentation process (Malerba, Esposito, and
+Semeraro 1996). The data set contains 4500 training instances and 973
+testing instances.</p>
+
+<p><em>Waveform</em> data set is a collection of Breiman&rsquo;s waveform domains of
+CART book&rsquo;s (Breiman et al. 1984). The data set contains 4400 training
+instances and 600 testing instances.</p>
+
+<p><strong>Table</strong>: Description of the testing data sets used in the experiments.</p>
+
+<table>
+<thead>
+<tr>
+<th>Data set</th>
+<th align="center">#Train</th>
+<th align="center">#Test</th>
+<th align="center">#Classes</th>
+<th align="center">#Attributes</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Pendigit</td>
+<td align="center">7494</td>
+<td align="center">3498</td>
+<td align="center">10</td>
+<td align="center">16</td>
+</tr>
+
+<tr>
+<td>Skin</td>
+<td align="center">220543</td>
+<td align="center">24507</td>
+<td align="center">2</td>
+<td align="center">3</td>
+</tr>
+
+<tr>
+<td>Statlog / Shuttle</td>
+<td align="center">43500</td>
+<td align="center">14500</td>
+<td align="center">7</td>
+<td align="center">9</td>
+</tr>
+
+<tr>
+<td>Page-blocks</td>
+<td align="center">4500</td>
+<td align="center">973</td>
+<td align="center">5</td>
+<td align="center">10</td>
+</tr>
+
+<tr>
+<td>Waveform</td>
+<td align="center">4400</td>
+<td align="center">600</td>
+<td align="center">3</td>
+<td align="center">21</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="sec:commonlargeds">Large Scale Classification Data Sets</h3>
+
+<p>We experiment on three public large scale data sets which are summarized
+in Table <a href="#tbl:dslistlarge">4</a>, including \&rdquo;<em>Record Linkage Comparison
+Patterns (Donation)</em> \&ldquo;, \&rdquo;<em>SUSY</em>\&rdquo; and \&rdquo;<em>HIGGS</em>\&ldquo;. All experiments are
+repeated 5 times and the results are averaged.</p>
+
+<p><em>Donation</em> represent individual data, including first and family name,
+sex, date of birth and postal code, which were collected through
+iterative insertions in the course of several years. The comparison
+patterns in this data set are based on a sample of 100.000 records
+dating from 2005 to 2008 (Schmidtmann et al. 2009). The data set
+contains 5,749,132 training instances and 1,000,000 testing instances.
+The data set is available on UCI web site (UCI 2011).</p>
+
+<p><em>SUSY</em> is a classification data set that distinguish between a signal
+process which produces supersymmetric particles and a background process
+which does not (Baldi, Sadowski, and Whiteson 2014). The first 8
+features are kinematic properties measured by the particle detectors in
+the accelerator. The last ten features are functions of the first 8
+features. The data set contains 5,000,000 training instances and 50,000
+testing instances. The data set is available on UCI web site (UCI
+2014b).</p>
+
+<p><em>HIGSS</em> is a classification problem to distinguish between a signal
+process which produces Higgs bosons and a background process which does
+not (Baldi, Sadowski, and Whiteson 2014). The first 21 features (columns
+2-22) are kinematic properties measured by the particle detectors in the
+accelerator. The last seven features are functions of the first 21
+features. The data set contains 11,000,000 training instances and
+500,000 testing instances. The data set is available on UCI web site
+(UCI 2014a).</p>
+
+<p><strong>Table</strong>: Description of the testing large scale data sets used in the experiments.</p>
+
+<table>
+<thead>
+<tr>
+<th>Data set</th>
+<th align="center">#Train</th>
+<th align="center">#Test</th>
+<th align="center">#Classes</th>
+<th align="center">#Attributes</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Donation</td>
+<td align="center">5,749,132</td>
+<td align="center">1,000,000</td>
+<td align="center">2</td>
+<td align="center">12</td>
+</tr>
+
+<tr>
+<td>SUSY</td>
+<td align="center">5,000,000</td>
+<td align="center">50,000</td>
+<td align="center">2</td>
+<td align="center">18</td>
+</tr>
+
+<tr>
+<td>HIGSS</td>
+<td align="center">11,000,000</td>
+<td align="center">1,000,000</td>
+<td align="center">2</td>
+<td align="center">28</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="sec:eval">Evaluation</h3>
+
+<p>Since the data sets that are used in our experiments are highly
+imbalanced, traditional accuracy based performance evaluation is not
+enough to find out an optimal classifier. We used four different
+metrics, the overall prediction accuracy, average recall, average
+precision (Turpin and Scholer 2006) and $F$-score, to evaluate the
+classification accuracy which are common measurement metrics in
+information retrieval (Manning, Raghavan, and Schütze 2008; Makhoul et
+al. 1999).</p>
+
+<p>Precision is defined as the fraction of retrieved samples that are
+relevant. Precision is shown in Eq.
+<a href="#eqn:prec">[eqn:prec]</a>.
+$$\label{eqn:prec}
+Precision = \frac{Correct}{Correct + False}$$ Recall is defined as the
+fraction of relevant samples that is retrieved. Recall is shown in Eq.
+<a href="#eqn:recall">[eqn:recall]</a>. $$\label{eqn:recall}
+Precision = \frac{Correct}{Correct + Missed}$$ The proposed evaluation
+model calculates the precision and recall for each class from prediction
+scores then finds their mean. Average precision and recall is shown in
+Eq. <a href="#eqn:avgprec">[eqn:avgprec]</a> and Eq.
+<a href="#eqn:avgrecall">[eqn:avgrecall]</a>.
+$$Precision-avg = \frac{1}{n-{classes}}\sum{Prec}$$</p>
+
+<p>$$Recall-avg = \frac{1}{n-{classes}}\sum{Recall}$$
+$F$-measure is defined as the harmonic mean of precision and recall. The
+$$F_1 = 2 \times \frac{Prec-{avg} \times Recall-{avg}}{Prec-{avg} + Recall-{avg}}$$</p>
+
+<h3 id="sec:conv_elm">Data set results with conventional ELM</h3>
+
+<p>Figure <a href="#fig:convelm">[fig:convelm]</a> shows that the accuracy performance of ELM for
+experimental data sets becomes steady-state after a threshold value of
+$N$. The testing classification performance is measured through
+accuracy, precision, recall and $F_1$ measure. $N$ varies from 150 to
+500.</p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/statlog_conv.png" alt="" /><em>Statlog data set.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/skin_conv.png" alt="" /><em>Skin data set.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/pendigit_conv.png" alt="" /><em>Pen digit data set.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/waveform_conv.png" alt="" /><em>Waveform data set.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/page-blocks_conv.png" alt="" /><em>Page blocks data set.</em></p>
+
+<p>Table <a href="#tbl:dsconvtab">5</a> shows the best performance of the
+conventional ELM method of each data set.</p>
+
+<p><strong>Table</strong>: Data set results with conventional ELM.</p>
+
+<table>
+<thead>
+<tr>
+<th>Data set</th>
+<th align="center">$F_1$</th>
+<th align="center">Recall</th>
+<th align="center">Precision</th>
+<th align="center">Accuracy</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Pendigit</td>
+<td align="center">0.8404</td>
+<td align="center">0.8393</td>
+<td align="center">0.8416</td>
+<td align="center">0.8407</td>
+</tr>
+
+<tr>
+<td>Skin</td>
+<td align="center">0.9754</td>
+<td align="center">0.9956</td>
+<td align="center">0.9583</td>
+<td align="center">0.9894</td>
+</tr>
+
+<tr>
+<td>Statlog</td>
+<td align="center">0.8871</td>
+<td align="center">0.8556</td>
+<td align="center">0.9237</td>
+<td align="center">0.9757</td>
+</tr>
+
+<tr>
+<td>Page-blocks</td>
+<td align="center">0.9873</td>
+<td align="center">0.9764</td>
+<td align="center">0.9988</td>
+<td align="center">0.9977</td>
+</tr>
+
+<tr>
+<td>Waveform</td>
+<td align="center">0.8372</td>
+<td align="center">0.8368</td>
+<td align="center">0.8375</td>
+<td align="center">0.8376</td>
+</tr>
+</tbody>
+</table>
+
+<p>The conventional ELM training algorithm can be applied only in Section
+<a href="#sec:commonds">5.1.1</a>.
+The large scale data sets in Section
+<a href="#sec:commonlargeds">5.1.2</a> are not feasible to train on a single
+computer.</p>
+
+<h3 id="testing-accuracy-analysis">Testing Accuracy Analysis</h3>
+
+<p>Because of two different data set type (\&ldquo;commonly used\&ldquo;, \&ldquo;large
+scale\&ldquo;) are used, the results are divided into two different sections.
+In Section <a href="#sec:cucds">5.4.1</a>, the figures and the plots show the
+implementation results of commonly used classification data sets.
+Section <a href="#sec:lsdsacc">5.4.2</a> shows the large scale data sets results.</p>
+
+<h4 id="sec:cucds">Commonly Used Classification Data Sets</h4>
+
+<p>The results of accuracy and performance tests with real data are shown
+in Table <a href="#tbl:bestres">6</a>
+and Figure <a href="#fig:statlogres">[fig:statlogres]</a> - Figure
+<a href="#fig:waveformres">[fig:waveformres]</a>. According to the these results, AdaBoost
+$T$ size and Mapper size have more impact on the accuracy of ensemble
+ELM classifier than number of hidden nodes in ELM network.</p>
+
+<p>Accuracy of classification models are visualized by heatmap color coding
+according to</p>
+
+<ul>
+<li>Map size ($M$) - AdaBoost size ($T$)</li>
+<li>Map size ($M$) - Number of hidden nodes ($nh$)</li>
+<li>AdaBoost size ($T$) - Number of hidden nodes ($nh$)</li>
+</ul>
+
+<p>Figure <a href="#fig:statlogres">[fig:statlogres]</a> - Figure
+<a href="#fig:waveformres">[fig:waveformres]</a> are used to plot the quantitative
+differences in accuracy score of each data set. Heatmaps are two
+dimensional graphical representations of data with a pre-defined
+colormap to display values of a matrix (Khomtchouk, Van Booven, and
+Wahlestedt 2014). Heatmaps can be used to understand what parameters
+affect the accuracy of the classification model. The figures are used to
+comparatively illustrate accuracy levels across a number of different
+parameters including Map size, AdaBoost size and the number of hidden
+nodes in ELM algorithm obtained from the proposed learning method.</p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/statlog_map_T.png" alt="" /><em>Figure: Split size and adaboost $T$ size</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/statlog_map_nh.png" alt="" /><em>Figure: Split size and number of $nh$.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/statlog_T_nh.png" alt="" /><em>Figure: Adaboost $T$ size and number of $nh$.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/pendigit_map_T.png" alt="" /><em>Figure: Split size and adaboost $T$ size</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/pendigit_map_nh.png" alt="" /><em>Figure: Split size and number of $nh$.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/pendigit_T_nh.png" alt="" /><em>Figure: Adaboost $T$ size and number of $nh$.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/skin_map_T.png" alt="" /><em>Figure: Split size and adaboost $T$ size</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/skin_map_nh.png" alt="" /><em>Figure: Split size and number of $nh$.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/skin_T_nh.png" alt="" /><em>Figure: Adaboost $T$ size and number of $nh$.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/pageblocks_map_T.png" alt="" /><em>Split size and adaboost $T$ size</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/pageblocks_map_nh.png" alt="" /><em>Figure: Split size and number of $nh$.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/pageblocks_T_nh.png" alt="" /><em>Figure: Adaboost $T$ size and number of $nh$.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/waveform_map_T.png" alt="" /><em>Figure: Split size and adaboost $T$ size</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/waveform_map_nh.png" alt="" /><em>Figure: Split size and number of $nh$.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/waveform_T_nh.png" alt="" /><em>Figure: Adaboost $T$ size and number of $nh$.</em></p>
+
+<p><strong>Table:</strong> Best performance results of data sets</p>
+
+<table>
+<thead>
+<tr>
+<th>Data set</th>
+<th># C.</th>
+<th>T</th>
+<th># H.N.</th>
+<th>Acc</th>
+<th>Prec.</th>
+<th>Recall</th>
+<th>$F_1$</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Pendigit</td>
+<td>20</td>
+<td>10</td>
+<td>21</td>
+<td>0,8256</td>
+<td>0,8369</td>
+<td>0,8234</td>
+<td>0,8301</td>
+</tr>
+
+<tr>
+<td>Skin</td>
+<td>21</td>
+<td>5</td>
+<td>21</td>
+<td>0,9892</td>
+<td>0,9773</td>
+<td>0,9913</td>
+<td>0,9842</td>
+</tr>
+
+<tr>
+<td>Statlog</td>
+<td>11</td>
+<td>2</td>
+<td>21</td>
+<td>0,9103</td>
+<td>0,7486</td>
+<td>0,5069</td>
+<td>0,6045</td>
+</tr>
+
+<tr>
+<td>Page Blocks</td>
+<td>1</td>
+<td>1</td>
+<td>340</td>
+<td>0,9404</td>
+<td>0,9027</td>
+<td>0,5756</td>
+<td>0,7030</td>
+</tr>
+
+<tr>
+<td>Waveform</td>
+<td>19</td>
+<td>6</td>
+<td>40</td>
+<td>0,862</td>
+<td>0,8680</td>
+<td>0,8605</td>
+<td>0,8642</td>
+</tr>
+</tbody>
+</table>
+
+<p>According to Table <a href="#tbl:comparison">7</a>{reference-type=&ldquo;ref&rdquo;
+reference=&ldquo;tbl:comparison&rdquo;}, classification performance results of the
+proposed method have almost the same values with the conventional ELM
+method.</p>
+
+<h3 id="sec:lsdsacc">Large Scale Classification Data Sets</h3>
+
+<p>Figure <a href="#fig:ds_large_scale_speed_up">21</a> shows the speed up on mapper
+size over proposed method on large scale data sets. To asses the
+effectiveness of the learning algorithm, the time is measured with
+varying mapper size. Because of high dimensionality, the data sets
+cannot be trained on a single computer. Then, the standart speed up
+percentage is modifed such that:</p>
+
+<p><img src="http://www.sciweavers.org/tex2img.php?eq=S_p%20%3D%20%5Cfrac%7Bt_%7B%5Cmathop%7B%5Cmathrm%7Barg%5C%2Cmin%7D%7D%7Bm%7D%20%5Cin%20M%20%7D%7D%7Bt_p%7D&amp;bc=White&amp;fc=Black&amp;im=jpg&amp;fs=12&amp;ff=arev&amp;edit=0" alt="equation" /></p>
+
+<p>where $t_{\mathop{\mathrm{arg\,min}}{m} \in M }$ is the total time on minimum
+mapper that can be achieved to build a classifier model.</p>
+
+<p>As can be seen from the figure, the data sets achives performance
+improvement in learning time of the algorithm. By examining the trends
+observed as the number of mappers increases, one can see that
+<em>non-linear</em> speed up is achieved.</p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/large_scale_ds.png" alt="" /><em>Stability analysis of ensemble ELM classifiers with Mapper size.</em></p>
+
+<h2 id="stability-analysis">Stability Analysis</h2>
+
+<p>Standard deviation of testing accuracy of the method is shown in Figure
+<a href="#fig:stability_M">22</a>
+and Figure <a href="#fig:stability_T">23</a>. We analyzed the stability of ensemble ELM
+classifier with two aspects, Mapper size and AdaBoost $T$ size. Mapper
+size is the most important variable for the model stability according to
+the Figure <a href="#fig:stability_M">22</a>. From Figure
+<a href="#fig:stability_M">22</a>
+and Figure <a href="#fig:stability_T">23</a>, we can find that standard deviation of
+testing accuracy decreases enormously with the increasing of Mapper
+function size. Through this analysis, one can argue that a model with
+high Mapper function size do has higher stability than low Mapper
+function size.</p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/stability.png" alt="" /><em>Stability analysis of ensemble ELM classifiers with Mapper size.</em></p>
+
+<p><img src="https://www.ozgurcatak.org/post/mr-elm/stability_T.png" alt="" /><em>Figure: Stability analysis of ensemble ELM classifiers with AdaBoost $T$ size.</em></p>
+
+<h2 id="sec:conclusion">Conclusion and Future Works</h2>
+
+<p>In this paper,a parallel AdaBoost extreme learning machine algorithm
+implementation has been proposed for massive data learning. By creating
+the overall data set into data chunks, MapReduce based learning
+algorithm reduces the training time of ELM classification. To overcome
+the accuracy performance decreasing, distributed ELM is enhanced with
+AdaBoost method. The experimental results show that AdaBoosted ELM not
+only reduce the training time of large-scale data sets, but also
+evaluation metrics of accuracy performance compared with the
+conventional ELM.</p>
+
+<p>The proposed AdaBoost based ELM has three different trade-off parameters
+which are (i) data chunk split size, $M$, (ii) maximum number of
+iterations, $T$,in AdaBoost Algorithm and lastly (iii) number of hidden
+layer nodes $nh$ in ELM algorithm. The empirical results in heatmap
+figures show that parameters $M$ and $T$ are more dominant than
+parameter $nh$ for the classification accuracy of the hypothesis.</p>
+
+<p>The algorithm is designed to deal with large scale data set ELM training
+problems. Another objective is to achieve the model&rsquo;s classification
+performance with same or close to the conventional ELM method.
+Classification performance results are shown in Section
+<a href="#sec:conv_elm">5.3</a>. The
+empirical results show us that classification performance results of the
+proposed method have almost the same values with the conventional ELM
+method.</p>
+
+<h2 id="references">References</h2>
+
+<p>Alimoglu, Fevzi, and Ethem Alpaydin. 1996. &ldquo;Methods of Combining
+Multiple Classifiers Based on Different Representations for Pen-Based
+Handwritten Digit Recognition.&rdquo; In <em>Proceedings of the Fifth Turkish
+Artificial Intelligence and Artificial Neural Networks Symposium (Tainn
+96</em>.</p>
+
+<p>Baldi, Pierre, Peter Sadowski, and Daniel Whiteson. 2014. &ldquo;Searching for
+Exotic Particles in High-Energy Physics with Deep Learning.&rdquo; <em>Nature
+Communications</em> 5.</p>
+
+<p>Bartlett, P. L. 1998. &ldquo;The Sample Complexity of Pattern Classification
+with Neural Networks: The Size of the Weights Is More Important Than the
+Size of the Network.&rdquo; <em>Information Theory, IEEE Transactions on</em> 44 (2):
+525&ndash;36. <a href="https://doi.org/10.1109/18.661502" target="_blank">https://doi.org/10.1109/18.661502</a>.</p>
+
+<p>Bhatt, R. B., G. Sharma, A. Dhall, and S. Chaudhury. 2009. &ldquo;Efficient
+Skin Region Segmentation Using Low Complexity Fuzzy Decision Tree
+Model.&rdquo; In <em>India Conference (Indicon), 2009 Annual Ieee</em>, 1&ndash;4.
+<a href="https://doi.org/10.1109/INDCON.2009.5409447" target="_blank">https://doi.org/10.1109/INDCON.2009.5409447</a>.</p>
+
+<p>Bhimji, W, T Bristow, and A Washbrook. 2014. &ldquo;HEPDOOP: High-Energy
+Physics Analysis Using Hadoop.&rdquo; In <em>Journal of Physics: Conference
+Series</em>, 513:022004. IOP Publishing.</p>
+
+<p>Bi, Xin, Xiangguo Zhao, Guoren Wang, Pan Zhang, and Chao Wang. 2015.
+&ldquo;Distributed Extreme Learning Machine with Kernels Based on Mapreduce.&rdquo;
+<em>Neurocomputing</em> 149, Part A (0): 456&ndash;63.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2014.01.070" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2014.01.070</a>.</p>
+
+<p>Breiman, Leo, Jerome Friedman, Charles J Stone, and Richard A Olshen.
+1984. <em>Classification and Regression Trees</em>. CRC press.</p>
+
+<p>Catak, F.Ozgur, and M.Erdal Balaban. 2013. &ldquo;CloudSVM: Training an Svm
+Classifier in Cloud Computing Systems.&rdquo; In <em>Pervasive Computing and the
+Networked World</em>, edited by Qiaohong Zu, Bo Hu, and Atilla Elçi,
+7719:57&ndash;68. Lecture Notes in Computer Science. Springer Berlin
+Heidelberg. <a href="https://doi.org/10.1007/978-3-642-37015-1_6" target="_blank">https://doi.org/10.1007/978-3-642-37015-1_6</a>.</p>
+
+<p>Chen, Jiaoyan, Guozhou Zheng, and Huajun Chen. 2013. &ldquo;ELM-Mapreduce:
+MapReduce Accelerated Extreme Learning Machine for Big Spatial Data
+Analysis.&rdquo; In <em>Control and Automation (Icca), 2013 10th Ieee
+International Conference on</em>, 400&ndash;405.
+<a href="https://doi.org/10.1109/ICCA.2013.6565081" target="_blank">https://doi.org/10.1109/ICCA.2013.6565081</a>.</p>
+
+<p>Choi, Junho, Chang Choi, Byeongkyu Ko, and Pankoo Kim. 2014. &ldquo;A Method
+of Ddos Attack Detection Using Http Packet Pattern and Rule Engine in
+Cloud Computing Environment.&rdquo; <em>Soft Computing</em> 18 (9): 1697&ndash;1703.
+<a href="https://doi.org/10.1007/s00500-014-1250-8" target="_blank">https://doi.org/10.1007/s00500-014-1250-8</a>.</p>
+
+<p>Dean, Jeffrey, and Sanjay Ghemawat. 2008. &ldquo;MapReduce: Simplified Data
+Processing on Large Clusters.&rdquo; <em>Commun. ACM</em> 51 (1): 107&ndash;13.
+<a href="https://doi.org/10.1145/1327452.1327492" target="_blank">https://doi.org/10.1145/1327452.1327492</a>.</p>
+
+<p>Freund, Yoav, Robert Schapire, and N Abe. 1999. &ldquo;A Short Introduction to
+Boosting.&rdquo; <em>Journal-Japanese Society for Artificial Intelligence</em> 14
+(771-780): 1612.</p>
+
+<p>Freund, Yoav, and Robert E Schapire. 1995. &ldquo;A Desicion-Theoretic
+Generalization of on-Line Learning and an Application to Boosting.&rdquo; In
+<em>Computational Learning Theory</em>, 23&ndash;37. Springer.</p>
+
+<p>He, Yaobin, Haoyu Tan, Wuman Luo, Huajian Mao, Di Ma, Shengzhong Feng,
+and Jianping Fan. 2011. &ldquo;MR-Dbscan: An Efficient Parallel Density-Based
+Clustering Algorithm Using Mapreduce.&rdquo; In <em>Parallel and Distributed
+Systems (Icpads), 2011 Ieee 17th International Conference on</em>, 473&ndash;80.
+<a href="https://doi.org/10.1109/ICPADS.2011.83" target="_blank">https://doi.org/10.1109/ICPADS.2011.83</a>.</p>
+
+<p>Hsu, Chih-Wei, and Chih-Jen Lin. 2002. &ldquo;A Comparison of Methods for
+Multiclass Support Vector Machines.&rdquo; <em>Trans. Neur. Netw.</em> 13 (2):
+415&ndash;25. <a href="https://doi.org/10.1109/72.991427" target="_blank">https://doi.org/10.1109/72.991427</a>.</p>
+
+<p>Huang, Guang-Bin, and Lei Chen. 2007. &ldquo;Convex Incremental Extreme
+Learning Machine.&rdquo; <em>Neurocomputing</em> 70 (16&ndash;18): 3056&ndash;62.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2007.02.009" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2007.02.009</a>.</p>
+
+<p>&mdash;&mdash;&mdash;. 2008. &ldquo;Enhanced Random Search Based Incremental Extreme
+Learning Machine.&rdquo; <em>Neurocomputing</em> 71 (16&ndash;18): 3460&ndash;8.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2007.10.008" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2007.10.008</a>.</p>
+
+<p>Huang, Guang-Bin, Lei Chen, and Chee-Kheong Siew. 2006. &ldquo;Universal
+Approximation Using Incremental Constructive Feedforward Networks with
+Random Hidden Nodes.&rdquo; <em>Neural Networks, IEEE Transactions on</em> 17 (4):
+879&ndash;92. <a href="https://doi.org/10.1109/TNN.2006.875977" target="_blank">https://doi.org/10.1109/TNN.2006.875977</a>.</p>
+
+<p>Huang, Guang-Bin, Ming-Bin Li, Lei Chen, and Chee-Kheong Siew. 2008.
+&ldquo;Incremental Extreme Learning Machine with Fully Complex Hidden Nodes.&rdquo;
+<em>Neurocomputing</em> 71 (4&ndash;6): 576&ndash;83.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2007.07.025" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2007.07.025</a>.</p>
+
+<p>Huang, Guang-Bin, Qin-Yu Zhu, and Chee-Kheong Siew. 2006. &ldquo;Extreme
+Learning Machine: Theory and Applications.&rdquo; <em>Neurocomputing</em> 70 (1&ndash;3):
+489&ndash;501.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2005.12.126" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2005.12.126</a>.</p>
+
+<p>Huang, Guang-bin, Qin-yu Zhu, and Chee-kheong Siew. 2006. &ldquo;Extreme
+Learning Machine: A New Learning Scheme of Feedforward Neural Networks.&rdquo;
+In <em>IN Proc. INT. JOINT Conf. NEURAL Netw</em>, 985&ndash;90.</p>
+
+<p>Khomtchouk, BohdanB, DerekJ Van Booven, and Claes Wahlestedt. 2014.
+&ldquo;HeatmapGenerator: High Performance Rnaseq and Microarray Visualization
+Software Suite to Examine Differential Gene Expression Levels Using an R
+and C++ Hybrid Computational Pipeline.&rdquo; <em>Source Code for Biology and
+Medicine</em> 9 (1). <a href="https://doi.org/10.1186/s13029-014-0030-2" target="_blank">https://doi.org/10.1186/s13029-014-0030-2</a>.</p>
+
+<p>Krogh, Anders, and Jesper Vedelsby. 1995. &ldquo;Neural Network Ensembles,
+Cross Validation, and Active Learning.&rdquo; In <em>Advances in Neural
+Information Processing Systems</em>, 231&ndash;38. MIT Press.</p>
+
+<p>Kuncheva, Ludmila I, and Christopher J Whitaker. 2003. &ldquo;Measures of
+Diversity in Classifier Ensembles and Their Relationship with the
+Ensemble Accuracy.&rdquo; <em>Machine Learning</em> 51 (2): 181&ndash;207.</p>
+
+<p>Lan, Yuan, Zongjiang Hu, Yeng Chai Soh, and Guang-Bin Huang. 2013. &ldquo;An
+Extreme Learning Machine Approach for Speaker Recognition.&rdquo; <em>Neural
+Computing and Applications</em> 22 (3-4): 417&ndash;25.</p>
+
+<p>Landesa-Vázquez, Iago, and José Luis Alba-Castro. 2013. &ldquo;Double-Base
+Asymmetric Adaboost.&rdquo; <em>Neurocomputing</em> 118 (0): 101&ndash;14.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2013.02.019" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2013.02.019</a>.</p>
+
+<p>Liang, Nan-Ying, Guang-Bin Huang, P. Saratchandran, and N. Sundararajan.
+2006. &ldquo;A Fast and Accurate Online Sequential Learning Algorithm for
+Feedforward Networks.&rdquo; <em>Neural Networks, IEEE Transactions on</em> 17 (6):
+1411&ndash;23. <a href="https://doi.org/10.1109/TNN.2006.880583" target="_blank">https://doi.org/10.1109/TNN.2006.880583</a>.</p>
+
+<p>LIBSVM. 2015. &ldquo;LIBSVM Data: Classification, Regression, and
+Multi-Label.&rdquo; <a href="http://ntucsu.csie.ntu.edu.tw/" target="_blank">http://ntucsu.csie.ntu.edu.tw/</a>.</p>
+
+<p>Lu, Yumao, V. Roychowdhury, and L. Vandenberghe. 2008. &ldquo;Distributed
+Parallel Support Vector Machines in Strongly Connected Networks.&rdquo;
+<em>Neural Networks, IEEE Transactions on</em> 19 (7): 1167&ndash;78.
+<a href="https://doi.org/10.1109/TNN.2007.2000061" target="_blank">https://doi.org/10.1109/TNN.2007.2000061</a>.</p>
+
+<p>Makhoul, John, Francis Kubala, Richard Schwartz, and Ralph Weischedel.
+1999. &ldquo;Performance Measures for Information Extraction.&rdquo; In <em>In
+Proceedings of Darpa Broadcast News Workshop</em>, 249&ndash;52.</p>
+
+<p>Malerba, Donato, Floriana Esposito, and Giovanni Semeraro. 1996. &ldquo;A
+Further Comparison of Simplification Methods for Decision-Tree
+Induction.&rdquo; In <em>In d. Fisher and H. Lenz (Eds.), Learning</em>, 365&ndash;74.
+Springer-Verlag.</p>
+
+<p>Manning, Christopher D., Prabhakar Raghavan, and Hinrich Schütze. 2008.
+<em>Introduction to Information Retrieval</em>. New York, NY, USA: Cambridge
+University Press.</p>
+
+<p>Ogiela, MarekR., Aniello Castiglione, and Ilsun You. 2014. &ldquo;Soft
+Computing for Security Services in Smart and Ubiquitous Environments.&rdquo;
+<em>Soft Computing</em> 18 (9): 1655&ndash;8.
+<a href="https://doi.org/10.1007/s00500-014-1380-z" target="_blank">https://doi.org/10.1007/s00500-014-1380-z</a>.</p>
+
+<p>Panda, Biswanath, Joshua S. Herbach, Sugato Basu, and Roberto J.
+Bayardo. 2009. &ldquo;PLANET: Massively Parallel Learning of Tree Ensembles
+with Mapreduce.&rdquo; <em>Proc. VLDB Endow.</em> 2 (2): 1426&ndash;37.
+<a href="https://doi.org/10.14778/1687553.1687569" target="_blank">https://doi.org/10.14778/1687553.1687569</a>.</p>
+
+<p>Schatz, Michael C. 2009. &ldquo;CloudBurst: highly sensitive read mapping with
+MapReduce.&rdquo; <em>Bioinformatics (Oxford, England)</em> 25 (11): 1363&ndash;9.
+<a href="https://doi.org/10.1093/bioinformatics/btp236" target="_blank">https://doi.org/10.1093/bioinformatics/btp236</a>.</p>
+
+<p>Schmidtmann, Irene, Gaël Hammer, Murat Sariyar, Aslihan Gerhold-Ay, and
+Körperschaft des öffentlichen Rechts. 2009. &ldquo;Evaluation Des
+Krebsregisters Nrw&ndash;Schwerpunkt Record Linkage.&rdquo; <em>Abschlußbericht Vom</em>
+11.</p>
+
+<p>Sun, Tianyang, Chengchun Shu, Feng Li, Haiyan Yu, L. Ma, and Yitong
+Fang. 2009. &ldquo;An Efficient Hierarchical Clustering Method for Large
+Datasets with Map-Reduce.&rdquo; In <em>Parallel and Distributed Computing,
+Applications and Technologies, 2009 International Conference on</em>,
+494&ndash;99. <a href="https://doi.org/10.1109/PDCAT.2009.46" target="_blank">https://doi.org/10.1109/PDCAT.2009.46</a>.</p>
+
+<p>Sun, Yongjiao, Ye Yuan, and Guoren Wang. 2011. &ldquo;An Os-Elm Based
+Distributed Ensemble Classification Framework in {P2p} Networks.&rdquo;
+<em>Neurocomputing</em> 74 (16): 2438&ndash;43.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2010.12.040" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2010.12.040</a>.</p>
+
+<p>Sun, Zhanquan, and Geoffrey Fox. 2012. &ldquo;Study on Parallel Svm Based on
+Mapreduce.&rdquo; In <em>International Conference on Parallel and Distributed
+Processing Techniques and Applications</em>, 16&ndash;19. Citeseer.</p>
+
+<p>Tang, Jiexiong, Chenwei Deng, Guang-Bin Huang, and Baojun Zhao. 2015.
+&ldquo;Compressed-Domain Ship Detection on Spaceborne Optical Image Using Deep
+Neural Network and Extreme Learning Machine.&rdquo; <em>Geoscience and Remote
+Sensing, IEEE Transactions on</em> 53 (3): 1174&ndash;85.
+<a href="https://doi.org/10.1109/TGRS.2014.2335751" target="_blank">https://doi.org/10.1109/TGRS.2014.2335751</a>.</p>
+
+<p>Turpin, Andrew, and Falk Scholer. 2006. &ldquo;User Performance Versus
+Precision Measures for Simple Search Tasks.&rdquo; In <em>Proceedings of the 29th
+Annual International Acm Sigir Conference on Research and Development in
+Information Retrieval</em>, 11&ndash;18. SIGIR &lsquo;06. New York, NY, USA: ACM.
+<a href="https://doi.org/10.1145/1148170.1148176" target="_blank">https://doi.org/10.1145/1148170.1148176</a>.</p>
+
+<p>UCI. 2011. &ldquo;Record Linkage Comparison Patterns Data Set.&rdquo;</p>
+
+<p>&mdash;&mdash;&mdash;. 2014a. &ldquo;Higgs Data Set.&rdquo;</p>
+
+<p>&mdash;&mdash;&mdash;. 2014b. &ldquo;Susy Data Set.&rdquo;</p>
+
+<p>Wang, Botao, Shan Huang, Junhao Qiu, Yu Liu, and Guoren Wang. 2015.
+&ldquo;Parallel Online Sequential Extreme Learning Machine Based on
+Mapreduce.&rdquo; <em>Neurocomputing</em> 149, Part A (0): 224&ndash;32.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2014.03.076" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2014.03.076</a>.</p>
+
+<p>Wang, Guoren, Yi Zhao, and Di Wang. 2008. &ldquo;A Protein Secondary Structure
+Prediction Framework Based on the Extreme Learning Machine.&rdquo;
+<em>Neurocomputing</em> 72 (1&ndash;3): 262&ndash;68.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2008.01.016" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2008.01.016</a>.</p>
+
+<p>Xin, Junchang, Zhiqiong Wang, Chen Chen, Linlin Ding, Guoren Wang, and
+Yuhai Zhao. 2014. &ldquo;ELM: Distributed Extreme Learning Machine with
+Mapreduce.&rdquo; <em>World Wide Web</em> 17 (5): 1189&ndash;1204.
+<a href="https://doi.org/10.1007/s11280-013-0236-2" target="_blank">https://doi.org/10.1007/s11280-013-0236-2</a>.</p>
+
+<p>Xu, Lei, Hanyee Kim, Xi Wang, Weidong Shi, and Taeweon Suh. 2014.
+&ldquo;Privacy Preserving Large Scale Dna Read-Mapping in Mapreduce Framework
+Using Fpgas.&rdquo; In <em>Field Programmable Logic and Applications (Fpl), 2014
+24th International Conference on</em>, 1&ndash;4. IEEE.</p>
+
+<p>Zhang, Chi, Feifei Li, and Jeffrey Jestes. 2012. &ldquo;Efficient Parallel kNN
+Joins for Large Data in Mapreduce.&rdquo; In <em>Proceedings of the 15th
+International Conference on Extending Database Technology</em>, 38&ndash;49. EDBT
+&lsquo;12. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/2247596.2247602" target="_blank">https://doi.org/10.1145/2247596.2247602</a>.</p>
+
+<p>Zhao, Weizhong, Huifang Ma, and Qing He. 2009. &ldquo;Parallel K-Means
+Clustering Based on Mapreduce.&rdquo; In <em>Cloud Computing</em>, edited by
+MartinGilje Jaatun, Gansen Zhao, and Chunming Rong, 5931:674&ndash;79.
+Lecture Notes in Computer Science. Springer Berlin Heidelberg.
+<a href="https://doi.org/10.1007/978-3-642-10665-1_71" target="_blank">https://doi.org/10.1007/978-3-642-10665-1_71</a>.</p>
+
+<p>Zhao, Xiang-guo, Guoren Wang, Xin Bi, Peizhen Gong, and Yuhai Zhao.
+2011. &ldquo;XML Document Classification Based on Elm.&rdquo; <em>Neurocomputing</em> 74
+(16): 2444&ndash;51.</p>
+
+<p>Zong, Weiwei, and Guang-Bin Huang. 2011. &ldquo;Face Recognition Based on
+Extreme Learning Machine.&rdquo; <em>Neurocomputing</em> 74 (16): 2541&ndash;51.
+<a href="https://doi.org/http://dx.doi.org/10.1016/j.neucom.2010.12.041" target="_blank">https://doi.org/http://dx.doi.org/10.1016/j.neucom.2010.12.041</a>.</p>
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/mal-api-2019/"><span
+      aria-hidden="true">&larr;</span> Lab-4:kNN - Karar Sınırları.</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

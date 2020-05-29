@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+  <link rel="alternate" href="https://www.ozgurcatak.org/post/index.xml" type="application/rss+xml" title="Dr. Ferhat Ozgur Catak">
+  <link rel="feed" href="https://www.ozgurcatak.org/post/index.xml" type="application/rss+xml" title="Dr. Ferhat Ozgur Catak">
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title>Posts | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content="Posts - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Posts - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="universal-wrapper">
+
+  <h2>Posts</h2>
+
+  
+
+  
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/mr-elm/" itemprop="url">Classification with Boosting of Extreme Learning Machine Over Arbitrarily Partitioned Data</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2020-05-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2020-05-25
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    31 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    <p>Hadoop Mapreduce based Extreme learning machine for Big Data</p>
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/mr-elm/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/mal-api-2019/" itemprop="url">Lab-4:kNN - Karar Sınırları.</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2019-08-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2019-08-10
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/mal-api-2019/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/mal-api-2019/" itemprop="url">Malware dataset for security researchers, data scientists.</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2019-08-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2019-08-10
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/mal-api-2019/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/siu2019_ozel_oturum/" itemprop="url">Siber Güvenlik için Makine Öğrenmesi ve Güvenli Model Eğitimi</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2019-02-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2019-02-22
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/siu2019_ozel_oturum/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/01-lin_reg/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    1. Hafta Lab: Doğrusal Regresyon BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında doğrusal regresyon yöntemini sentetik bir kümesine uygulayacağız.
+# kutuphaleri yukle import pandas as pd import matplotlib.pyplot as plt  Pandas kütüphanesi kullanarak ds1.txt dosyası verikumesi degişkenine (dataframe) atanmaktadır. verikumesi değişkenin boyutları (21,2) olduğu bulunur. 21 satır ve 2 sütundan oluşmaktadır. $verikumesi \in \mathbb{R}^{21 \times 2}$
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/01-lin_reg/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/02-lab1/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    2. Hafta Lab-1: Analitik Çözüm - Normal Denklem BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında doğrusal regresyon probleminin analitik çözümünde kullanılan normal denklemi sentetik bir kümesine uygulayacağız.
+import pandas as pd import numpy as np  Pandas kütüphanesi kullanarak ds2.txt dosyası verikumesi degişkenine (dataframe) atanmaktadır.
+# veri kumesini oku verikumesi = pd.read_csv(&quot;ds2.txt&quot;,delimiter=&quot;\t&quot;) verikumesi   .
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/02-lab1/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/02-lab2/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    2. Hafta Lab-2: Regularization BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında doğrusal regresyon probleminin gradient descent çözümünde kullanılan regularization yöntemini sentetik bir kümesine uygulayacağız.
+import numpy as np import pandas as pd from sklearn.linear_model import SGDRegressor  Pandas kütüphanesi kullanarak ds2.txt dosyası verikumesi degişkenine (dataframe) atanmaktadır.
+# veri kumesini oku verikumesi = pd.read_csv(&quot;ds2.txt&quot;,delimiter=&quot;\t&quot;) X = verikumesi.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/02-lab2/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/02-lab3/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    2. Hafta Lab-3: Lojistik Regresyon BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında lojistik regresyon sınıflandırma yöntemini sentetik bir kümesine uygulayacağız.
+import numpy as np import pandas as pd from sklearn.linear_model import LogisticRegression from sklearn.model_selection import train_test_split # veri kumesini oku verikumesi = pd.read_csv(&quot;ds_logreg.txt&quot;,delimiter=&quot;\t&quot;) # ilk 10 satiri goster verikumesi.head(10)   .dataframe tbody tr th:only-of-type { vertical-align: middle; } .
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/02-lab3/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/02-lab4/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    2. Hafta Lab-4: KDDCUP&rsquo;99 Veri kümesi - Lojistik Regresyon BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında KDDCUP&rsquo;99 veri kümesinin lojistik regresyon algoritmasıyla sınıflandırma modelini oluşturacağız.
+import numpy as np import pandas as pd from sklearn.linear_model import LogisticRegression from sklearn.metrics import confusion_matrix from sklearn.model_selection import train_test_split  Pandas kütüphanesi sıkıştırılmış formatlardan veri okuyabilemktedir.
+# veri kumesini oku kolon_adlari = ['duration','protocol_type','service','flag','src_bytes','dst_bytes','land','wrong_fragment','urgent', 'hot','num_failed_logins','logged_in','num_compromised','root_shell','su_attempted','num_root','num_file_creations', 'num_shells','num_access_files','num_outbound_cmds','is_host_login','is_guest_login','count','srv_count', 'serror_rate','srv_serror_rate','rerror_rate','srv_rerror_rate','same_srv_rate','diff_srv_rate','srv_diff_host_rate', 'dst_host_count','dst_host_srv_count','dst_host_same_srv_rate','dst_host_diff_srv_rate','dst_host_same_src_port_rate', 'dst_host_srv_diff_host_rate','dst_host_serror_rate','dst_host_srv_serror_rate','dst_host_rerror_rate', 'dst_host_srv_rerror_rate','label'] verikumesi = pd.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/02-lab4/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/03-lab-1/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    3. Hafta Lab-1: $L2$ Regularization vs $\lambda$ BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında lojistik regresyon algoritmasında $L2$ regularization yönteminde $\lambda$ değeriyle ağırlık vektörünün $\mathbf{w}$ değişimi KDDCUP&rsquo;99 veri kümesinde uygulayacağız.
+import numpy as np import pandas as pd from sklearn.linear_model import LogisticRegression import matplotlib.pyplot as plt  KDDCUP&rsquo;99 veri kumesini oku
+# veri kumesini oku kolon_adlari = ['duration','protocol_type','service','flag','src_bytes','dst_bytes','land','wrong_fragment','urgent', 'hot','num_failed_logins','logged_in','num_compromised','root_shell','su_attempted','num_root','num_file_creations', 'num_shells','num_access_files','num_outbound_cmds','is_host_login','is_guest_login','count','srv_count', 'serror_rate','srv_serror_rate','rerror_rate','srv_rerror_rate','same_srv_rate','diff_srv_rate','srv_diff_host_rate', 'dst_host_count','dst_host_srv_count','dst_host_same_srv_rate','dst_host_diff_srv_rate','dst_host_same_src_port_rate', 'dst_host_srv_diff_host_rate','dst_host_serror_rate','dst_host_srv_serror_rate','dst_host_rerror_rate', 'dst_host_srv_rerror_rate','label'] verikumesi = pd.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/03-lab-1/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+
+  
+<nav>
+  <ul class="pager">
+    
+    
+    <li><a href="https://www.ozgurcatak.org/post/page/2/">&gt;</a></li>
+    
+  </ul>
+</nav>
+
+
+
+</div>
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

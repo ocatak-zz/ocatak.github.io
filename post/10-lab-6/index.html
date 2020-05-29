@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/10-lab-6/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-6%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-6%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-6%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-6%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-6%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="10-hafta-lab-6-android-zararlı-yazılım-sınıflandırma">10. Hafta Lab-6: Android Zararlı Yazılım Sınıflandırma</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h3 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h3>
+
+<h4 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h4>
+
+<p>Bu lab çalışması kapsamında android zararlı yazılımlarının (andorid malware)  sınıflandırma modeli oluşturulacaktır. <em>Mobile Malware Classification</em></p>
+
+<pre><code class="language-python">from arff2pandas import a2p
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from sklearn.preprocessing import LabelEncoder
+from keras.utils import np_utils
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.metrics import confusion_matrix
+
+np.set_printoptions(linewidth=260)
+</code></pre>
+
+<pre><code>c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+</code></pre>
+
+<h3 id="android-malware-verikümesi">Android malware verikümesi</h3>
+
+<p>Veri kümesi arff formatındadır. Bunu pandas dataframe formatına çevirlmesi gerekmektedir.</p>
+
+<pre><code class="language-python">f = &quot;drebin_reduced.arff&quot;
+df = a2p.load(open(f,'r'))
+print(df.shape)
+</code></pre>
+
+<pre><code>(1919, 1122)
+</code></pre>
+
+<pre><code class="language-python">df.head(10)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>@NUMERIC</th>
+      <th>APP_NAME@STRING</th>
+      <th>SMS_MMS__SMS_MMS@NUMERIC</th>
+      <th>SMS_MMS__FILE_INFORMATION@NUMERIC</th>
+      <th>SMS_MMS__UNIQUE_IDENTIFIER@NUMERIC</th>
+      <th>SMS_MMS__FILE@NUMERIC</th>
+      <th>SMS_MMS__BLUETOOTH@NUMERIC</th>
+      <th>SMS_MMS__BLUETOOTH_INFORMATION@NUMERIC</th>
+      <th>SMS_MMS__EMAIL@NUMERIC</th>
+      <th>SMS_MMS__VOIP@NUMERIC</th>
+      <th>...</th>
+      <th>ACTION_REBOOT@NUMERIC</th>
+      <th>ACTION_DOCK_EVENT@NUMERIC</th>
+      <th>ACTION_GET_RESTRICTION_ENTRIES@NUMERIC</th>
+      <th>ACTION_USER_INITIALIZE@NUMERIC</th>
+      <th>ACTION_USER_FOREGROUND@NUMERIC</th>
+      <th>ACTION_USER_BACKGROUND@NUMERIC</th>
+      <th>ACTION_QUICK_CLOCK@NUMERIC</th>
+      <th>ACTION_OPEN_DOCUMENT@NUMERIC</th>
+      <th>ACTION_CREATE_DOCUMENT@NUMERIC</th>
+      <th>class@{Plankton,GinMaster,Kmin,Glodream,BaseBridge,Nyleaker,Gappusin,Geinimi,Imlog,DroidKungFu,Iconosys,Adrd,DroidDream,Dougalek,MobileTx,FakeInstaller,ExploitLinuxLotoor,Steek,Opfake,Nandrobox,Xsider,Yzhc,Fatakr,FakeRun,Mobilespy,Hamob,Jifake,Fakengry,SMSreg}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>a8621506344640b8cc0d40d9bc3a124ddfeae48eeac5a8...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Plankton</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>00002d74a9faa53f5199c910b652ef09d3a7f6bd42b693...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>GinMaster</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>54b826480d096543873e31cbcf42f78706b48d5034b105...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Kmin</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.0</td>
+      <td>10c5916590dac85bb7e14691a0b77114b7de9c33fa5878...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Glodream</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6.0</td>
+      <td>13cbfc8772cfd18eebf87bba0e1f5280f220c5daa4d6ab...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>BaseBridge</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7.0</td>
+      <td>6f1af02b1836ac348e90b0ac69cd57f1f396b9b1d886be...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Nyleaker</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8.0</td>
+      <td>b387fee6de2400fb045b100437f82bcaf10dfa605eedeb...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Gappusin</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>9.0</td>
+      <td>6337b2ed626ae2ff6f9bd7e09a90abf78cc61c301d5dd1...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Geinimi</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>11.0</td>
+      <td>b439f642007bd707ac806ba3f71e7b2a022e261fbd9b5d...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Imlog</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>12.0</td>
+      <td>f4ccbe2c567e1f7fd9eaca2a92d5230956aa8b5a2d9b79...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>DroidKungFu</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 1122 columns</p>
+</div>
+
+<h3 id="zararlı-yazılım-ailesi">Zararlı yazılım ailesi</h3>
+
+<pre><code class="language-python">df['app_label'] = df.iloc[:,1121]
+df['app_label'].head(30)
+</code></pre>
+
+<pre><code>0        Plankton
+1       GinMaster
+2            Kmin
+3        Glodream
+4      BaseBridge
+5        Nyleaker
+6        Gappusin
+7         Geinimi
+8           Imlog
+9     DroidKungFu
+10       Plankton
+11       Glodream
+12       Iconosys
+13           Adrd
+14    DroidKungFu
+15           Adrd
+16       Glodream
+17       Plankton
+18     BaseBridge
+19     DroidDream
+20     DroidDream
+21       Plankton
+22     DroidDream
+23      GinMaster
+24       Plankton
+25           Adrd
+26           Adrd
+27       Plankton
+28       Plankton
+29       Dougalek
+Name: app_label, dtype: object
+</code></pre>
+
+<h3 id="veri-hazırlama">Veri hazırlama</h3>
+
+<p>Son kolon (etiket kolonu) ve ilk iki kolon <em>@NUMERIC</em>, <em>APP_NAME@STRING</em> silinecek.</p>
+
+<pre><code class="language-python">df.drop(df.columns[[1121]], axis=1, inplace=True)
+df.drop(['@NUMERIC', 'APP_NAME@STRING'], axis=1, inplace=True)
+</code></pre>
+
+<p><strong>X</strong> ve <strong>y</strong> değişkenlerini tanımla.</p>
+
+<pre><code class="language-python">y = df['app_label'].as_matrix()
+df.drop(['app_label'], axis=1, inplace=True)
+X = df.as_matrix()
+</code></pre>
+
+<h3 id="modeli-oluştur">Modeli oluştur</h3>
+
+<pre><code class="language-python">encoder = LabelEncoder()
+encoder.fit(y)
+encoded_Y = encoder.transform(y)
+dummy_Y = np_utils.to_categorical(encoded_Y)
+print(encoded_Y.shape)
+
+model = Sequential()
+model.add(Dense(500, input_dim=X.shape[1], activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.1))
+model.add(Dense(1000, activation='tanh', kernel_initializer='uniform'))
+model.add(Dropout(0.1))
+model.add(Dense(1500, activation='tanh', kernel_initializer='uniform'))
+model.add(Dropout(0.1))
+model.add(Dense(1000, activation='tanh', kernel_initializer='uniform'))
+model.add(Dropout(0.1))
+model.add(Dense(500, activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.1))
+model.add(Dense(dummy_Y.shape[1], activation='softmax', kernel_initializer='uniform'))
+
+model.compile(loss=&quot;categorical_crossentropy&quot;, optimizer=&quot;adam&quot;, metrics=['accuracy'])
+model.summary()
+</code></pre>
+
+<pre><code>(1919,)
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_13 (Dense)             (None, 500)               560000    
+_________________________________________________________________
+dropout_11 (Dropout)         (None, 500)               0         
+_________________________________________________________________
+dense_14 (Dense)             (None, 1000)              501000    
+_________________________________________________________________
+dropout_12 (Dropout)         (None, 1000)              0         
+_________________________________________________________________
+dense_15 (Dense)             (None, 1500)              1501500   
+_________________________________________________________________
+dropout_13 (Dropout)         (None, 1500)              0         
+_________________________________________________________________
+dense_16 (Dense)             (None, 1000)              1501000   
+_________________________________________________________________
+dropout_14 (Dropout)         (None, 1000)              0         
+_________________________________________________________________
+dense_17 (Dense)             (None, 500)               500500    
+_________________________________________________________________
+dropout_15 (Dropout)         (None, 500)               0         
+_________________________________________________________________
+dense_18 (Dense)             (None, 29)                14529     
+=================================================================
+Total params: 4,578,529
+Trainable params: 4,578,529
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<h3 id="modeli-eğit">Modeli eğit</h3>
+
+<pre><code class="language-python">history = model.fit(X, dummy_Y, validation_split=0.3, epochs=15, batch_size=50, verbose=1)
+</code></pre>
+
+<pre><code>Train on 1343 samples, validate on 576 samples
+Epoch 1/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.4033 - acc: 0.6106 - val_loss: 1.3959 - val_acc: 0.6215
+Epoch 2/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.2899 - acc: 0.6359 - val_loss: 1.2519 - val_acc: 0.6719
+Epoch 3/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.3349 - acc: 0.6165 - val_loss: 1.2931 - val_acc: 0.6528
+Epoch 4/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.3085 - acc: 0.6180 - val_loss: 1.2316 - val_acc: 0.6701
+Epoch 5/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.3028 - acc: 0.6307 - val_loss: 1.4105 - val_acc: 0.6163
+Epoch 6/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.2646 - acc: 0.6456 - val_loss: 1.1872 - val_acc: 0.7083
+Epoch 7/15
+1343/1343 [==============================] - 8s 6ms/step - loss: 1.2642 - acc: 0.6478 - val_loss: 1.2420 - val_acc: 0.6806
+Epoch 8/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.1995 - acc: 0.6590 - val_loss: 1.2283 - val_acc: 0.6892
+Epoch 9/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.1888 - acc: 0.6679 - val_loss: 1.3739 - val_acc: 0.6510
+Epoch 10/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.1682 - acc: 0.6783 - val_loss: 1.2418 - val_acc: 0.6615
+Epoch 11/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.2087 - acc: 0.6597 - val_loss: 1.2615 - val_acc: 0.6510
+Epoch 12/15
+1343/1343 [==============================] - 8s 6ms/step - loss: 1.2495 - acc: 0.6418 - val_loss: 1.2136 - val_acc: 0.6875
+Epoch 13/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.2008 - acc: 0.6508 - val_loss: 1.2558 - val_acc: 0.6424
+Epoch 14/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.3017 - acc: 0.6217 - val_loss: 1.2301 - val_acc: 0.6771
+Epoch 15/15
+1343/1343 [==============================] - 7s 5ms/step - loss: 1.2270 - acc: 0.6441 - val_loss: 1.2188 - val_acc: 0.6667
+</code></pre>
+
+<h3 id="model-performansı">Model performansı</h3>
+
+<pre><code class="language-python">y_hat = model.predict_classes(X)
+cm = confusion_matrix(encoded_Y, y_hat)
+print(cm)
+</code></pre>
+
+<pre><code>[[  0   8   0   3  27   0   0   0   0   0   2   3   0   0   1   2   1   0   0   0   1   0   0   2   3   0   0   0   0]
+ [  0 218   0   3  20   0   4   0   0   0   2   1   0   0   4   1   0   1   0   0   1   1   0   3   4   0   0   0   0]
+ [  0   0  17   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
+ [  0   3   0  32   8   0   3   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0]
+ [  0   3   0   1 179   0   3   0   0   0  10   4   0   0   4   4   0   0   0   0   7   0   3   0   2   0   0   0   0]
+ [  0   4   0   0  12   0   3   0   0   0   4   2   1   0   2   1   1   1   0   0   0   0   1   0   0   0   0   0   0]
+ [  0   1   0   1   2   0  52   0   0   0   1   1   0   0   1   0   0   2   0   0   6   0   0   1   1   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  50   0   0   0   0]
+ [  0   0   0   1   2   0   0   0   1   0   4   0   0   0   2   0   0   0   0   0   1   0   0   0   1   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  11   0   0   0   0]
+ [  0   0   0   2   8   0   0   0   0   0  36   1   0   0   0   0   0   0   0   0   1   1   0   0   0   0   0   0   0]
+ [  0   2   0   8  21   0   1   0   0   0   1  11   0   0   1   0   0   0   0   0   0   0   0   1   2   0   0   0   0]
+ [  0   1   0   2  59   0   0   0   0   0   0   0 117   0   1   0   0   0   0   0   0   0   1   1   3   0   0   0   0]
+ [  0   4   0   1  22   0   0   0   0   0   1   0   0   0   9   0   0   0   0   0   1   0   0   1   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0  18   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 101   0   0   0   0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   7   0   0   0   0   0   0   0   0   0   0   0  34   0   0   1   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0  10   0   0   0   0   0   1   1   0   0   0   0]
+ [  0   0   0   0  39   0   0   0   0   0   0   2   0   0   0   0   0   0  19   0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  18   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   1   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   6   0   0   2   1   0   0   0   0]
+ [  0   0   0   0   8   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   9   0   0   0   0   0   0]
+ [  0   2   0   7   2   0   6   0   0   0   0   0   0   0   0   0   1   3   0   0   0   0   0  44   0   0   0   0   0]
+ [  0   0   0  11  10   0   1   0   0   0   1   2   0   0   1   0   0   0   3   0   0   1   0  14 371   0   0   0   0]
+ [  0   0   0   0   6   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0   1   0   0   2   0   4   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  14   0   0   0   0]
+ [  0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   1   0   0   0   7   0]
+ [  0   0   0   0   7   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   2   0   0   0   0]]
+</code></pre>
+
+<h3 id="tarihçe">Tarihçe</h3>
+
+<pre><code class="language-python">plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<p><img src="10-lab-6_files/10-lab-6_18_0.png" alt="png" /></p>
+
+<p><img src="10-lab-6_files/10-lab-6_18_1.png" alt="png" /></p>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/11-lab-1/"><span
+      aria-hidden="true">&larr;</span> </a></li>
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/10-lab-5/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

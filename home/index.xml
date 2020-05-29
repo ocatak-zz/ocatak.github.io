@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on Dr. Ferhat Ozgur Catak</title>
+    <link>https://www.ozgurcatak.org/home/</link>
+    <description>Recent content in Homes on Dr. Ferhat Ozgur Catak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020 Ferhat Ozgur Catak</copyright>
+    <lastBuildDate>Sun, 24 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.ozgurcatak.org/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/about/</guid>
+      <description>Biography Ferhat Ozgur Catak is an AI and Cyber Security Researcher of Information Security and Communication Technology Department at NTNU - Norwegian University of Science and Technology. His research interests include machine learning, cyber security, malware analysis and deep learning.</description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://www.ozgurcatak.org/home/teaching/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/teaching/</guid>
+      <description>Completed Thesis
+ Preventing data poisoning attacks by using generative models (2020, M. Aladag) Autoencoders for Adversarial Security of Linear and Neural Network Models (2020, S. Sivaslioglu) Classification of metamorphic malware with deep learning  (2019, A.F. Yazi) Application of Privacy-Preserving Machine Learning Methods Using Homomorphic Encryption Algorithms (2018, İ. Aydın) Sensor Based Cyber Attack Detections in Critical Infrastructures using Deep Learning Algorithms (2018, M. Yılmaz) Classification and static detection of obfuscated web application backdoors (2018, F.</description>
+    </item>
+    
+    <item>
+      <title>Selected Publications</title>
+      <link>https://www.ozgurcatak.org/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/publications_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Publications</title>
+      <link>https://www.ozgurcatak.org/home/publications/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://www.ozgurcatak.org/home/talks/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Posts</title>
+      <link>https://www.ozgurcatak.org/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://www.ozgurcatak.org/home/projects/</link>
+      <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tags</title>
+      <link>https://www.ozgurcatak.org/home/tags/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://www.ozgurcatak.org/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dr. Ferhat Ozgur Catak</title>
+      <link>https://www.ozgurcatak.org/home/hero/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/home/hero/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

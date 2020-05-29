@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/07-lab-3/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    17 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f07-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f07-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f07-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f07-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f07-lab-3%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="7-hafta-lab-3-yapay-sinir-ağları">7. Hafta Lab-3: Yapay Sinir Ağları</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h2 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h2>
+
+<h3 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h3>
+
+<pre><code class="language-python">import pandas as pd
+import numpy as np
+from sklearn.cross_validation import train_test_split
+from sklearn.metrics import classification_report,confusion_matrix,accuracy_score,roc_curve
+import matplotlib.pyplot as plt
+from IPython.display import Markdown, display
+from sklearn.preprocessing import LabelEncoder
+from keras.utils import np_utils
+from IPython.display import Image
+</code></pre>
+
+<pre><code>c:\users\user\appdata\local\programs\python\python35\lib\site-packages\sklearn\cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  &quot;This module will be removed in 0.20.&quot;, DeprecationWarning)
+c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+</code></pre>
+
+<pre><code class="language-python">from keras.models import Sequential, Model
+from keras.layers import Dense, Dropout, Embedding, Input
+from keras.utils import plot_model
+</code></pre>
+
+<pre><code class="language-python"># veri kumesini oku
+kolon_adlari = ['duration','protocol_type','service','flag','src_bytes','dst_bytes','land','wrong_fragment','urgent',
+'hot','num_failed_logins','logged_in','num_compromised','root_shell','su_attempted','num_root','num_file_creations',
+'num_shells','num_access_files','num_outbound_cmds','is_host_login','is_guest_login','count','srv_count',
+'serror_rate','srv_serror_rate','rerror_rate','srv_rerror_rate','same_srv_rate','diff_srv_rate','srv_diff_host_rate',
+'dst_host_count','dst_host_srv_count','dst_host_same_srv_rate','dst_host_diff_srv_rate','dst_host_same_src_port_rate',
+'dst_host_srv_diff_host_rate','dst_host_serror_rate','dst_host_srv_serror_rate','dst_host_rerror_rate',
+'dst_host_srv_rerror_rate','label']
+
+verikumesi = pd.read_csv(&quot;kddcup99.tar.gz&quot;,compression=&quot;gzip&quot;, names=kolon_adlari, 
+low_memory=False, skiprows=1)
+</code></pre>
+
+<pre><code class="language-python"># ilgili kolonlari sec
+secilecek_kolonlar = ['duration','src_bytes','dst_bytes','wrong_fragment','urgent','hot','num_failed_logins',
+'num_compromised','root_shell','su_attempted','num_root','num_file_creations','num_shells',
+'num_access_files','num_outbound_cmds','count','srv_count','serror_rate','srv_serror_rate',
+'rerror_rate','srv_rerror_rate','same_srv_rate','diff_srv_rate','srv_diff_host_rate','dst_host_count',
+'dst_host_srv_count','dst_host_same_srv_rate','dst_host_diff_srv_rate','dst_host_same_src_port_rate',
+'dst_host_srv_diff_host_rate','dst_host_serror_rate','dst_host_srv_serror_rate','dst_host_rerror_rate',
+'dst_host_srv_rerror_rate']
+X = verikumesi[secilecek_kolonlar].as_matrix()
+Y = verikumesi['label']
+</code></pre>
+
+<h3 id="label-encoder">Label encoder</h3>
+
+<pre><code class="language-python"># encode class values as integers
+encoder = LabelEncoder()
+encoder.fit(Y)
+encoded_Y = encoder.transform(Y)
+# convert integers to dummy variables (i.e. one hot encoded)
+dummy_y = np_utils.to_categorical(encoded_Y)
+</code></pre>
+
+<h3 id="yapay-sinir-ağı-modeli-oluştur">Yapay sinir ağı modeli oluştur</h3>
+
+<pre><code class="language-python">model = Sequential()
+model.add(Dense(10, input_dim=X.shape[1], activation='sigmoid', kernel_initializer='uniform' ))
+model.add(Dense(20, activation='sigmoid', kernel_initializer='uniform' ))
+model.add(Dense(10, activation='sigmoid', kernel_initializer='uniform' ))
+model.add(Dense(dummy_y.shape[1], activation='sigmoid', kernel_initializer='uniform'))
+model.compile(loss='categorical_crossentropy', optimizer='Adam', metrics=['accuracy'])
+</code></pre>
+
+<pre><code class="language-python">plot_model(model, show_shapes=True, to_file=&quot;multiclass.png&quot;)
+Image(&quot;multiclass.png&quot;)
+</code></pre>
+
+<p><img src="07-lab-3_files/07-lab-3_9_0.png" alt="png" /></p>
+
+<pre><code class="language-python">history = model.fit(X, dummy_y, epochs=30, batch_size=1024, verbose=1, validation_split=0.33)
+</code></pre>
+
+<pre><code>Train on 330993 samples, validate on 163027 samples
+Epoch 1/30
+330993/330993 [==============================] - 6s 18us/step - loss: 2.0177 - acc: 0.4643 - val_loss: 1.5014 - val_acc: 0.4247
+Epoch 2/30
+330993/330993 [==============================] - 5s 15us/step - loss: 1.1244 - acc: 0.6392 - val_loss: 1.3699 - val_acc: 0.4247
+Epoch 3/30
+330993/330993 [==============================] - 5s 15us/step - loss: 1.0309 - acc: 0.6392 - val_loss: 1.3584 - val_acc: 0.4247
+Epoch 4/30
+330993/330993 [==============================] - 5s 15us/step - loss: 1.0025 - acc: 0.6392 - val_loss: 1.3428 - val_acc: 0.4247
+Epoch 5/30
+330993/330993 [==============================] - 5s 16us/step - loss: 0.9458 - acc: 0.6392 - val_loss: 1.2640 - val_acc: 0.4247
+Epoch 6/30
+330993/330993 [==============================] - 5s 15us/step - loss: 0.8153 - acc: 0.6392 - val_loss: 1.0577 - val_acc: 0.4247
+Epoch 7/30
+330993/330993 [==============================] - 5s 15us/step - loss: 0.6291 - acc: 0.7039 - val_loss: 0.8237 - val_acc: 0.5836
+Epoch 8/30
+330993/330993 [==============================] - 5s 15us/step - loss: 0.4925 - acc: 0.8537 - val_loss: 0.6931 - val_acc: 0.5836
+Epoch 9/30
+330993/330993 [==============================] - 6s 17us/step - loss: 0.4253 - acc: 0.8539 - val_loss: 0.6356 - val_acc: 0.5836
+Epoch 10/30
+330993/330993 [==============================] - 6s 17us/step - loss: 0.3942 - acc: 0.8540 - val_loss: 0.6107 - val_acc: 0.5838
+Epoch 11/30
+330993/330993 [==============================] - 6s 19us/step - loss: 0.3773 - acc: 0.8540 - val_loss: 0.6006 - val_acc: 0.5839
+Epoch 12/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.3668 - acc: 0.8540 - val_loss: 0.5915 - val_acc: 0.5840
+Epoch 13/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.3582 - acc: 0.8541 - val_loss: 0.5843 - val_acc: 0.5840
+Epoch 14/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.3521 - acc: 0.8540 - val_loss: 0.5743 - val_acc: 0.5835
+Epoch 15/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.2955 - acc: 0.8537 - val_loss: 0.4627 - val_acc: 0.5838
+Epoch 16/30
+330993/330993 [==============================] - 6s 19us/step - loss: 0.2375 - acc: 0.8539 - val_loss: 0.4356 - val_acc: 0.5836
+Epoch 17/30
+330993/330993 [==============================] - 6s 19us/step - loss: 0.2223 - acc: 0.8539 - val_loss: 0.4248 - val_acc: 0.5838
+Epoch 18/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.2129 - acc: 0.8540 - val_loss: 0.4191 - val_acc: 0.5838
+Epoch 19/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.2123 - acc: 0.8541 - val_loss: 0.4126 - val_acc: 0.5839
+Epoch 20/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.2036 - acc: 0.8498 - val_loss: 0.4068 - val_acc: 0.7723
+Epoch 21/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.1854 - acc: 0.9592 - val_loss: 0.2753 - val_acc: 0.9772
+Epoch 22/30
+330993/330993 [==============================] - 7s 20us/step - loss: 0.1038 - acc: 0.9731 - val_loss: 0.2043 - val_acc: 0.9820
+Epoch 23/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.0879 - acc: 0.9727 - val_loss: 0.2128 - val_acc: 0.9778
+Epoch 24/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.0843 - acc: 0.9695 - val_loss: 0.2062 - val_acc: 0.9847
+Epoch 25/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.0724 - acc: 0.9749 - val_loss: 0.2099 - val_acc: 0.9872
+Epoch 26/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.0662 - acc: 0.9785 - val_loss: 0.2149 - val_acc: 0.9875
+Epoch 27/30
+330993/330993 [==============================] - 6s 19us/step - loss: 0.0713 - acc: 0.9738 - val_loss: 0.2209 - val_acc: 0.9850
+Epoch 28/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.0650 - acc: 0.9770 - val_loss: 0.2208 - val_acc: 0.9879
+Epoch 29/30
+330993/330993 [==============================] - 7s 21us/step - loss: 0.0606 - acc: 0.9790 - val_loss: 0.2237 - val_acc: 0.9885
+Epoch 30/30
+330993/330993 [==============================] - 6s 18us/step - loss: 0.0584 - acc: 0.9797 - val_loss: 0.2254 - val_acc: 0.9888
+</code></pre>
+
+<h3 id="sınıflandırma-modelinin-performansına-bakalım">Sınıflandırma modelinin performansına bakalım.</h3>
+
+<pre><code class="language-python">y_pred = model.predict_classes(X)
+</code></pre>
+
+<h3 id="confusion-matrix">Confusion Matrix</h3>
+
+<pre><code class="language-python">pd.set_option('display.max_columns', 500)
+cm = confusion_matrix(encoded_Y, y_pred)
+cm = pd.DataFrame(cm)
+cm
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+      <th>14</th>
+      <th>15</th>
+      <th>16</th>
+      <th>17</th>
+      <th>18</th>
+      <th>19</th>
+      <th>20</th>
+      <th>21</th>
+      <th>22</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2166</td>
+      <td>0</td>
+      <td>37</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>53</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>898</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>98</td>
+      <td>0</td>
+      <td>251</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>21</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>27</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>107144</td>
+      <td>0</td>
+      <td>17</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>92</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>105</td>
+      <td>0</td>
+      <td>34</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>25</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>380</td>
+      <td>0</td>
+      <td>96831</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>41</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>264</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>948</td>
+      <td>0</td>
+      <td>92</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1557</td>
+      <td>0</td>
+      <td>21</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>87</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>45</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>280658</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>861</td>
+      <td>0</td>
+      <td>118</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1020</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">accuracy_score(encoded_Y, y_pred)
+</code></pre>
+
+<pre><code>0.982816485162544
+</code></pre>
+
+<h3 id="eğitim-tarihçesini-inceliyelim">Eğitim tarihçesini inceliyelim.</h3>
+
+<pre><code class="language-python">plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+</code></pre>
+
+<p><img src="07-lab-3_files/07-lab-3_17_0.png" alt="png" /></p>
+
+<h3 id="kayıp-fonksiyonunun-değişimi">Kayıp fonksiyonunun değişimi</h3>
+
+<pre><code class="language-python">plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<p><img src="07-lab-3_files/07-lab-3_19_0.png" alt="png" /></p>
+
+<h3 id="model-karmaşıklığını-artıralım">Model karmaşıklığını artıralım</h3>
+
+<pre><code class="language-python">model = Sequential()
+model.add(Dense(10, input_dim=X.shape[1], activation='tanh', kernel_initializer='uniform' ))
+model.add(Dense(30, input_dim=X.shape[1], activation='tanh', kernel_initializer='uniform' ))
+model.add(Dense(50, activation='tanh', kernel_initializer='uniform' ))
+model.add(Dense(30, input_dim=X.shape[1], activation='tanh', kernel_initializer='uniform' ))
+model.add(Dense(10, activation='tanh', kernel_initializer='uniform' ))
+model.add(Dense(dummy_y.shape[1], activation='softmax', kernel_initializer='uniform'))
+model.compile(loss='categorical_crossentropy', optimizer='Adam', metrics=['accuracy'])
+
+plot_model(model, show_shapes=True, to_file=&quot;multiclass.png&quot;)
+Image(&quot;multiclass.png&quot;)
+</code></pre>
+
+<p><img src="07-lab-3_files/07-lab-3_21_0.png" alt="png" /></p>
+
+<h3 id="modeli-eğitelim">Modeli eğitelim</h3>
+
+<pre><code class="language-python">history = model.fit(X, dummy_y, epochs=30, batch_size=1024, verbose=1, validation_split=0.33)
+</code></pre>
+
+<pre><code>Train on 330993 samples, validate on 163027 samples
+Epoch 1/30
+330993/330993 [==============================] - 11s 34us/step - loss: 1.4942 - acc: 0.6426 - val_loss: 1.3833 - val_acc: 0.4247
+Epoch 2/30
+330993/330993 [==============================] - 9s 28us/step - loss: 1.0023 - acc: 0.6392 - val_loss: 1.4843 - val_acc: 0.4260
+Epoch 3/30
+330993/330993 [==============================] - 9s 29us/step - loss: 0.5249 - acc: 0.8395 - val_loss: 0.2627 - val_acc: 0.9878
+Epoch 4/30
+330993/330993 [==============================] - 9s 29us/step - loss: 0.1734 - acc: 0.9802 - val_loss: 0.1433 - val_acc: 0.9861
+Epoch 5/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.1272 - acc: 0.9803 - val_loss: 0.0932 - val_acc: 0.9897
+Epoch 6/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.0990 - acc: 0.9815 - val_loss: 0.1749 - val_acc: 0.9496
+Epoch 7/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.0829 - acc: 0.9834 - val_loss: 0.1239 - val_acc: 0.9549
+Epoch 8/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.0694 - acc: 0.9852 - val_loss: 0.2078 - val_acc: 0.9280
+Epoch 9/30
+330993/330993 [==============================] - 10s 30us/step - loss: 0.0633 - acc: 0.9851 - val_loss: 0.3274 - val_acc: 0.8969
+Epoch 10/30
+330993/330993 [==============================] - 10s 29us/step - loss: 0.0600 - acc: 0.9863 - val_loss: 0.4523 - val_acc: 0.8623
+Epoch 11/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.0553 - acc: 0.9864 - val_loss: 0.9485 - val_acc: 0.5995
+Epoch 12/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.0527 - acc: 0.9865 - val_loss: 0.6245 - val_acc: 0.6270
+Epoch 13/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.0506 - acc: 0.9865 - val_loss: 1.1374 - val_acc: 0.6070
+Epoch 14/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.0487 - acc: 0.9867 - val_loss: 1.2442 - val_acc: 0.5893
+Epoch 15/30
+330993/330993 [==============================] - 9s 28us/step - loss: 0.0478 - acc: 0.9866 - val_loss: 1.1540 - val_acc: 0.6176
+Epoch 16/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.0455 - acc: 0.9867 - val_loss: 1.1050 - val_acc: 0.6325
+Epoch 17/30
+330993/330993 [==============================] - 9s 27us/step - loss: 0.0434 - acc: 0.9869 - val_loss: 0.2305 - val_acc: 0.9428
+Epoch 18/30
+330993/330993 [==============================] - 9s 28us/step - loss: 0.0426 - acc: 0.9868 - val_loss: 0.2564 - val_acc: 0.9381
+Epoch 19/30
+330993/330993 [==============================] - 9s 28us/step - loss: 0.0505 - acc: 0.9853 - val_loss: 0.3750 - val_acc: 0.9076
+Epoch 20/30
+330993/330993 [==============================] - 9s 28us/step - loss: 0.0652 - acc: 0.9864 - val_loss: 1.5662 - val_acc: 0.5854
+Epoch 21/30
+330993/330993 [==============================] - 10s 29us/step - loss: 0.0629 - acc: 0.9865 - val_loss: 1.4839 - val_acc: 0.6173
+Epoch 22/30
+330993/330993 [==============================] - 10s 31us/step - loss: 0.0556 - acc: 0.9863 - val_loss: 1.6539 - val_acc: 0.5713
+Epoch 23/30
+330993/330993 [==============================] - 10s 29us/step - loss: 0.0516 - acc: 0.9865 - val_loss: 1.5147 - val_acc: 0.6241
+Epoch 24/30
+330993/330993 [==============================] - 9s 28us/step - loss: 0.0483 - acc: 0.9866 - val_loss: 1.6130 - val_acc: 0.6121
+Epoch 25/30
+330993/330993 [==============================] - 9s 28us/step - loss: 0.0496 - acc: 0.9862 - val_loss: 1.6675 - val_acc: 0.5977
+Epoch 26/30
+330993/330993 [==============================] - 10s 30us/step - loss: 0.0464 - acc: 0.9867 - val_loss: 1.5087 - val_acc: 0.6058
+Epoch 27/30
+330993/330993 [==============================] - 10s 30us/step - loss: 0.0450 - acc: 0.9870 - val_loss: 1.4806 - val_acc: 0.6179
+Epoch 28/30
+330993/330993 [==============================] - 9s 28us/step - loss: 0.0439 - acc: 0.9871 - val_loss: 1.3881 - val_acc: 0.5985
+Epoch 29/30
+330993/330993 [==============================] - 9s 28us/step - loss: 0.0434 - acc: 0.9871 - val_loss: 1.2826 - val_acc: 0.5990
+Epoch 30/30
+330993/330993 [==============================] - 9s 29us/step - loss: 0.0420 - acc: 0.9872 - val_loss: 1.9318 - val_acc: 0.5714
+</code></pre>
+
+<h3 id="sınıflandırma-modelinin-performansına-bakalım-1">Sınıflandırma modelinin performansına bakalım.</h3>
+
+<pre><code class="language-python">y_pred = model.predict_classes(X)
+</code></pre>
+
+<h3 id="confusion-matrix-1">Confusion Matrix</h3>
+
+<pre><code class="language-python">pd.set_option('display.max_columns', 500)
+cm = confusion_matrix(encoded_Y, y_pred)
+cm = pd.DataFrame(cm)
+cm
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+      <th>14</th>
+      <th>15</th>
+      <th>16</th>
+      <th>17</th>
+      <th>18</th>
+      <th>19</th>
+      <th>20</th>
+      <th>21</th>
+      <th>22</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2203</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>53</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1190</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>0</td>
+      <td>34</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>91075</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3741</td>
+      <td>0</td>
+      <td>12375</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>99</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>25</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>100</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>97120</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>10</td>
+      <td>128</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>264</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>89</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>925</td>
+      <td>0</td>
+      <td>23</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>28</td>
+      <td>0</td>
+      <td>1541</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>52761</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>228029</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>37</td>
+      <td>0</td>
+      <td>49</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>841</td>
+      <td>0</td>
+      <td>52</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1016</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">accuracy_score(encoded_Y, y_pred)
+</code></pre>
+
+<pre><code>0.8499251042467916
+</code></pre>
+
+<h3 id="eğitim-tarihçesini-inceliyelim-1">Eğitim tarihçesini inceliyelim.</h3>
+
+<pre><code class="language-python">plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+</code></pre>
+
+<p><img src="07-lab-3_files/07-lab-3_30_0.png" alt="png" /></p>
+
+<h3 id="kayıp-fonksiyonunun-değişimi-1">Kayıp fonksiyonunun değişimi</h3>
+
+<pre><code class="language-python">plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<p><img src="07-lab-3_files/07-lab-3_32_0.png" alt="png" /></p>
+
+<h3 id="binary-classification">Binary classification</h3>
+
+<pre><code class="language-python">y = verikumesi['label'].apply(lambda d:0 if d == 'normal.' else 1).as_matrix()
+</code></pre>
+
+<pre><code class="language-python">model = Sequential()
+model.add(Dense(20, input_dim=X.shape[1], activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.2))
+model.add(Dense(60, input_dim=X.shape[1], activation='relu', kernel_initializer='uniform' ))
+model.add(Dropout(0.2))
+model.add(Dense(100, activation='sigmoid', kernel_initializer='uniform' ))
+model.add(Dropout(0.2))
+model.add(Dense(60, input_dim=X.shape[1], activation='relu', kernel_initializer='uniform' ))
+model.add(Dropout(0.2))
+model.add(Dense(20, activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.2))
+model.add(Dense(1, activation='sigmoid', kernel_initializer='uniform'))
+model.compile(loss='binary_crossentropy', optimizer='Adam', metrics=['accuracy'])
+
+plot_model(model, show_shapes=True, to_file=&quot;multiclass.png&quot;)
+Image(&quot;multiclass.png&quot;)
+</code></pre>
+
+<p><img src="07-lab-3_files/07-lab-3_35_0.png" alt="png" /></p>
+
+<pre><code class="language-python">history = model.fit(X, y, epochs=30, batch_size=1024, verbose=1, validation_split=0.2)
+</code></pre>
+
+<pre><code>Train on 395216 samples, validate on 98804 samples
+Epoch 1/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.1775 - acc: 0.9416 - val_loss: 0.0223 - val_acc: 0.9966
+Epoch 2/30
+395216/395216 [==============================] - 11s 28us/step - loss: 0.0348 - acc: 0.9892 - val_loss: 0.0142 - val_acc: 0.9969
+Epoch 3/30
+395216/395216 [==============================] - 11s 27us/step - loss: 0.0275 - acc: 0.9899 - val_loss: 0.0149 - val_acc: 0.9964
+Epoch 4/30
+395216/395216 [==============================] - 11s 28us/step - loss: 0.0259 - acc: 0.9899 - val_loss: 0.0134 - val_acc: 0.9965
+Epoch 5/30
+395216/395216 [==============================] - 11s 28us/step - loss: 0.0267 - acc: 0.9902 - val_loss: 0.0143 - val_acc: 0.9973
+Epoch 6/30
+395216/395216 [==============================] - 13s 32us/step - loss: 0.0258 - acc: 0.9902 - val_loss: 0.0123 - val_acc: 0.9964- loss: 0.0259 - acc: 0.990 - ETA: 0s - loss: 0.0259
+Epoch 7/30
+395216/395216 [==============================] - 13s 34us/step - loss: 0.0226 - acc: 0.9919 - val_loss: 0.0107 - val_acc: 0.9980
+Epoch 8/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0225 - acc: 0.9925 - val_loss: 0.0106 - val_acc: 0.9979
+Epoch 9/30
+395216/395216 [==============================] - 13s 32us/step - loss: 0.0218 - acc: 0.9919 - val_loss: 0.0129 - val_acc: 0.9972
+Epoch 10/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0203 - acc: 0.9935 - val_loss: 0.0110 - val_acc: 0.9982
+Epoch 11/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0257 - acc: 0.9902 - val_loss: 0.0142 - val_acc: 0.9961
+Epoch 12/30
+395216/395216 [==============================] - 13s 34us/step - loss: 0.0240 - acc: 0.9921 - val_loss: 0.0183 - val_acc: 0.9968
+Epoch 13/30
+395216/395216 [==============================] - 13s 32us/step - loss: 0.0270 - acc: 0.9904 - val_loss: 0.0166 - val_acc: 0.9922
+Epoch 14/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0241 - acc: 0.9913 - val_loss: 0.0122 - val_acc: 0.9968
+Epoch 15/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0206 - acc: 0.9936 - val_loss: 0.0102 - val_acc: 0.9975
+Epoch 16/30
+395216/395216 [==============================] - 13s 32us/step - loss: 0.0211 - acc: 0.9934 - val_loss: 0.0120 - val_acc: 0.9963
+Epoch 17/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0201 - acc: 0.9937 - val_loss: 0.0109 - val_acc: 0.9970
+Epoch 18/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0206 - acc: 0.9938 - val_loss: 0.0099 - val_acc: 0.9978 0s - loss: 0.0205 -
+Epoch 19/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0209 - acc: 0.9932 - val_loss: 0.0103 - val_acc: 0.9978
+Epoch 20/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0215 - acc: 0.9921 - val_loss: 0.0097 - val_acc: 0.9980
+Epoch 21/30
+395216/395216 [==============================] - 13s 34us/step - loss: 0.0208 - acc: 0.9926 - val_loss: 0.0108 - val_acc: 0.9961 acc: 0.
+Epoch 22/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0190 - acc: 0.9939 - val_loss: 0.0094 - val_acc: 0.9970
+Epoch 23/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0185 - acc: 0.9942 - val_loss: 0.0102 - val_acc: 0.9970
+Epoch 24/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0186 - acc: 0.9944 - val_loss: 0.0105 - val_acc: 0.99736s - loss: 0.0184 - acc: 0.994 - ETA: 6s - loss: 0.0185 - acc: - ETA: 5s - loss: 0.0184 - a  - ETA: 2s - loss: 0.018 - ETA: 1s - 
+Epoch 25/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0180 - acc: 0.9949 - val_loss: 0.0104 - val_acc: 0.9979
+Epoch 26/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0181 - acc: 0.9949 - val_loss: 0.0119 - val_acc: 0.9975s: 0.0185 - - ETA: 3s - l - ETA: 1s - loss: 0.0 - ETA: 0s - loss: 0.0181 - ac
+Epoch 27/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0173 - acc: 0.9953 - val_loss: 0.0111 - val_acc: 0.9978
+Epoch 28/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0166 - acc: 0.9957 - val_loss: 0.0102 - val_acc: 0.9976
+Epoch 29/30
+395216/395216 [==============================] - 13s 33us/step - loss: 0.0170 - acc: 0.9951 - val_loss: 0.0104 - val_acc: 0.9975- ETA:  - ETA: 1s - loss: 0.0168 - ETA: 0s - loss: 0.0169 - acc: 
+Epoch 30/30
+395216/395216 [==============================] - 14s 35us/step - loss: 0.0173 - acc: 0.9951 - val_loss: 0.0113 - val_acc: 0.9978
+</code></pre>
+
+<h3 id="sınıflandırma-modelinin-performansına-bakalım-2">Sınıflandırma modelinin performansına bakalım.</h3>
+
+<pre><code class="language-python">y_pred = model.predict_classes(X)
+</code></pre>
+
+<pre><code class="language-python">pd.set_option('display.max_columns', 500)
+cm = confusion_matrix(y, y_pred)
+cm = pd.DataFrame(cm)
+cm
+</code></pre>
+
+<pre><code class="language-python">accuracy_score(y, y_pred)
+</code></pre>
+
+<h3 id="eğitim-tarihçesini-inceliyelim-2">Eğitim tarihçesini inceliyelim.</h3>
+
+<pre><code class="language-python">plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+</code></pre>
+
+<h3 id="kayıp-fonksiyonunun-değişimi-2">Kayıp fonksiyonunun değişimi</h3>
+
+<pre><code class="language-python">plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/07-lab-4/"><span
+      aria-hidden="true">&larr;</span> </a></li>
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/07-lab-2/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

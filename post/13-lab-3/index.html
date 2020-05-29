@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/13-lab-3/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f13-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f13-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f13-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f13-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f13-lab-3%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="13-hafta-lab-3-adversarial-machine-learning-deepfool-ve-virtual-adversarial-method-vam">13. Hafta Lab-3: Adversarial Machine Learning: DeepFool ve Virtual Adversarial Method (VAM)</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h2 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h2>
+
+<h3 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h3>
+
+<p>Bu lab çalışması kapsamında mnist veri kümesi kullanılarak DeepFool ve Virtual Adversarial Method (VAM) yöntemleri ile adversarial veri kümesi oluşturulacaktır.</p>
+
+<pre><code class="language-python">import numpy as np
+from keras import backend
+import tensorflow as tf
+from keras.callbacks import ModelCheckpoint
+from matplotlib import gridspec
+
+from cleverhans.attacks import FastGradientMethod
+from cleverhans.attacks import BasicIterativeMethod
+from cleverhans.attacks import SaliencyMapMethod
+from cleverhans.attacks import DeepFool
+
+from cleverhans.utils_keras import KerasModelWrapper
+
+from matplotlib import pyplot as plt
+from sklearn.metrics import confusion_matrix, classification_report
+
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from keras.layers import Flatten
+from keras.layers.convolutional import Conv2D
+from keras.layers.convolutional import MaxPooling2D
+from keras.utils import np_utils
+</code></pre>
+
+<pre><code>c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+</code></pre>
+
+<h3 id="tensorflow-bağlantısı">Tensorflow bağlantısı</h3>
+
+<pre><code class="language-python"># Retrieve the tensorflow session
+sess =  backend.get_session()
+# Define input TF placeholder
+x = tf.placeholder(tf.float32, shape=(None, 28, 28, 1))
+y = tf.placeholder(tf.float32, shape=(None, 10))
+</code></pre>
+
+<h3 id="veri-kümesi">Veri kümesi</h3>
+
+<p>Mnist veri kümesini yükle ve normalize et</p>
+
+<pre><code class="language-python">(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+# Evaluate the model's accuracy on the validation data used in training
+X_train = X_train.reshape(X_train.shape[0], 28, 28, 1)
+X_test = X_test.reshape(X_test.shape[0], 28, 28, 1)
+
+X_train = X_train.astype('float32')
+X_test = X_test.astype('float32')
+
+X_train/=255
+X_test/=255
+</code></pre>
+
+<h3 id="output-labels">Output labels</h3>
+
+<p>Veri kümesi için output labels oluştur.</p>
+
+<pre><code class="language-python"># one hot encode outputs
+y_train_cat = np_utils.to_categorical(y_train)
+y_test_cat = np_utils.to_categorical(y_test)
+num_classes = y_test_cat.shape[1]
+</code></pre>
+
+<h3 id="sınıflandırma-modeli">Sınıflandırma modeli</h3>
+
+<p>Keras ile standart bir sınıflandırma modeli oluştur.</p>
+
+<pre><code class="language-python">model = Sequential()
+model.add(Conv2D(32, (5, 5), input_shape=(28,28,1), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Flatten())
+model.add(Dense(64, activation='relu'))
+model.add(Dense(num_classes, activation='softmax'))
+# Compile model
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.summary()
+</code></pre>
+
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 24, 24, 32)        832       
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 12, 12, 32)        0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 4608)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 64)                294976    
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                650       
+=================================================================
+Total params: 296,458
+Trainable params: 296,458
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+
+<h3 id="model-eğitimi">Model eğitimi</h3>
+
+<p>Daha önceden eğitilen model kullanılacaktır.</p>
+
+<pre><code class="language-python">filename = &quot;01-fsgm.hdf5&quot;
+model.load_weights(filename)
+
+# define the checkpoint
+checkpoint = ModelCheckpoint(filename, monitor='loss', verbose=1, save_best_only=True, mode='min')
+callbacks_list = [checkpoint]
+
+'''
+history = model.fit(X_train, y_train_cat, epochs=10, batch_size=1024, verbose=1,
+                    validation_split=0.7, callbacks=callbacks_list)
+'''
+</code></pre>
+
+<pre><code>'\nhistory = model.fit(X_train, y_train_cat, epochs=10, batch_size=1024, verbose=1,\n                    validation_split=0.7, callbacks=callbacks_list)\n'
+</code></pre>
+
+<h3 id="deepfool-saldırısı">DeepFool Saldırısı</h3>
+
+<pre><code class="language-python">deepfool = DeepFool(model, sess=sess)
+
+df_params = {'clip_min': 0., 'clip_max': 1., 
+             'nb_candidate': 2,'over_shoot': 0.2,
+             'nb_classes':10, 'max_iter':50 }
+
+sample_size = 1000
+
+X_test_small = X_test[0:sample_size,:]
+y_test_small = y_test[0:sample_size]
+
+adv_x = deepfool.generate_np(X_test_small, **df_params)
+</code></pre>
+
+<pre><code>c:\users\user\downloads\src\cleverhans\cleverhans\attacks.py:171: UserWarning: Supplied extra keyword arguments that are not used in the graph computation. They have been ignored.
+  warnings.warn(&quot;Supplied extra keyword arguments that are not &quot;
+</code></pre>
+
+<pre><code class="language-python">adv_pred = model.predict_classes(adv_x)
+pred = model.predict_classes(X_test)
+cm = confusion_matrix(adv_pred, y_test[0:sample_size])
+cr = classification_report(adv_pred, y_test[0:sample_size])
+print(cm)
+print('-'*50)
+print(cr)
+</code></pre>
+
+<pre><code>[[ 0  1  2  1  0  1  3  0  2  0]
+ [ 0  2 13  1  0  0  2  3  2  2]
+ [10 18 11 20 14  1 12 16 10  1]
+ [ 7 54 49  6  7 16 16 17 18  8]
+ [ 1  1  7  0  6  5 22  4  4 50]
+ [35  4  4 46  0  4 20  3 16  1]
+ [17  9  8  2  6  7  4  0  4  0]
+ [ 0  9  3  2  1  7  1  3  1 27]
+ [ 5 28 19 22  7 41  7 14  5  4]
+ [10  0  0  7 69  5  0 39 27  1]]
+--------------------------------------------------
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00        10
+          1       0.02      0.08      0.03        25
+          2       0.09      0.10      0.10       113
+          3       0.06      0.03      0.04       198
+          4       0.05      0.06      0.06       100
+          5       0.05      0.03      0.04       133
+          6       0.05      0.07      0.06        57
+          7       0.03      0.06      0.04        54
+          8       0.06      0.03      0.04       152
+          9       0.01      0.01      0.01       158
+
+avg / total       0.05      0.04      0.04      1000
+</code></pre>
+
+<pre><code class="language-python">fig = plt.figure(figsize=(28, 28))
+
+gs1 = gridspec.GridSpec(2, 10)
+gs1.update(wspace=0.25, hspace=0.05) # set the spacing between axes. 
+
+for i in range(10):
+    ax = plt.subplot(2, 10, i+1)
+    plt.imshow(X_test[i].reshape(28,28), interpolation='nearest', cmap=plt.get_cmap('gray'))
+    ax.set_xticklabels([])
+    ax.set_yticklabels([])
+    ax.set_aspect('equal')
+    
+for i in range(10):
+    ax = plt.subplot(2, 10, i+11)
+    plt.imshow(adv_x[i].reshape(28,28), interpolation='nearest', cmap=plt.get_cmap('gray'))
+    ax.set_xticklabels([])
+    ax.set_yticklabels([])
+    ax.set_aspect('equal')
+
+fig.subplots_adjust(wspace=0, hspace=0)
+plt.subplots_adjust(wspace=0, hspace=0)
+
+print(&quot;Test Predicted Label:&quot;, pred[0:10] )
+print(&quot;Adv  Predicted Label:&quot;, adv_pred[0:10] )
+</code></pre>
+
+<pre><code>Test Predicted Label: [7 2 1 0 4 1 4 9 6 9]
+Adv  Predicted Label: [2 6 2 6 9 7 9 4 4 7]
+</code></pre>
+
+<p><img src="13-lab-3_files/13-lab-3_15_1.png" alt="png" /></p>
+
+<h3 id="virtual-adversarial-method-saldırısı">Virtual Adversarial Method Saldırısı</h3>
+
+<pre><code class="language-python">from art.attacks.virtual_adversarial import VirtualAdversarialMethod
+from art.classifiers import KerasClassifier
+import joblib
+
+sample_size = 10000
+X_test_small = X_test[0:sample_size,:]
+y_test_small = y_test[0:sample_size]
+</code></pre>
+
+<pre><code class="language-python">model = Sequential()
+model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=X_train.shape[1:]))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.25))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(10, activation='softmax'))
+
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+</code></pre>
+
+<pre><code class="language-python">classifier = KerasClassifier((0., 0.5), model=model)
+classifier.fit(X_train, y_train_cat, nb_epochs=1, batch_size=128)
+</code></pre>
+
+<pre><code>Epoch 1/1
+469/468 [==============================] - 589s 1s/step - loss: 0.1537 - acc: 0.9548
+</code></pre>
+
+<pre><code class="language-python">df = VirtualAdversarialMethod(classifier)
+adv_x = df.generate( X_test_small, 
+                    eps=10., 
+                    finite_diff=10.)
+
+</code></pre>
+
+<pre><code class="language-python">adv_pred = model.predict_classes(adv_x)
+pred = model.predict_classes(X_test)
+cm = confusion_matrix(adv_pred, y_test[0:sample_size])
+cr = classification_report(adv_pred, y_test[0:sample_size])
+print(cm)
+print('-'*50)
+print(cr)
+</code></pre>
+
+<pre><code>[[ 783    0    1    0    0    2   20    2    5    5]
+ [   0  713    0    0    2    2    0    4    9    9]
+ [ 164  370 1004   34   70   26  182  132  202   83]
+ [  23   21   22  968   17  116   69   55   53  248]
+ [   1    1    1    0  863    0   13    6    1   92]
+ [   3    3    0    5    5  731   47    2   10   49]
+ [   0    0    0    0    0    0  611    0    0    0]
+ [   2   13    2    1    7    1    0  819    8  125]
+ [   4   14    2    2   16   14   16    5  685   42]
+ [   0    0    0    0    2    0    0    3    1  356]]
+--------------------------------------------------
+             precision    recall  f1-score   support
+
+          0       0.80      0.96      0.87       818
+          1       0.63      0.96      0.76       739
+          2       0.97      0.44      0.61      2267
+          3       0.96      0.61      0.74      1592
+          4       0.88      0.88      0.88       978
+          5       0.82      0.85      0.84       855
+          6       0.64      1.00      0.78       611
+          7       0.80      0.84      0.82       978
+          8       0.70      0.86      0.77       800
+          9       0.35      0.98      0.52       362
+
+avg / total       0.83      0.75      0.75     10000
+</code></pre>
+
+<pre><code class="language-python">fig = plt.figure(figsize=(28, 28))
+
+gs1 = gridspec.GridSpec(2, 10)
+gs1.update(wspace=0.25, hspace=0.05) # set the spacing between axes. 
+
+for i in range(10):
+    ax = plt.subplot(2, 10, i+1)
+    plt.imshow(X_test[i].reshape(28,28), interpolation='nearest', cmap=plt.get_cmap('gray'))
+    ax.set_xticklabels([])
+    ax.set_yticklabels([])
+    ax.set_aspect('equal')
+    
+for i in range(10):
+    ax = plt.subplot(2, 10, i+11)
+    plt.imshow(adv_x[i].reshape(28,28), interpolation='nearest', cmap=plt.get_cmap('gray'))
+    ax.set_xticklabels([])
+    ax.set_yticklabels([])
+    ax.set_aspect('equal')
+
+fig.subplots_adjust(wspace=0, hspace=0)
+plt.subplots_adjust(wspace=0, hspace=0)
+
+print(&quot;Test Predicted Label:&quot;, pred[0:10] )
+print(&quot;Adv  Predicted Label:&quot;, adv_pred[0:10] )
+</code></pre>
+
+<pre><code>Test Predicted Label: [7 2 1 0 4 1 4 9 5 9]
+Adv  Predicted Label: [7 2 2 0 4 1 8 2 5 7]
+</code></pre>
+
+<p><img src="13-lab-3_files/13-lab-3_22_1.png" alt="png" /></p>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/13-lab-2/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

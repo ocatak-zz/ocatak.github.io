@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 on Dr. Ferhat Ozgur Catak</title>
+    <link>https://www.ozgurcatak.org/publication_types/1/</link>
+    <description>Recent content in 1 on Dr. Ferhat Ozgur Catak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020 Ferhat Ozgur Catak</copyright>
+    <lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.ozgurcatak.org/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Preventing Data Poisoning Attacks By Using Generative Models</title>
+      <link>https://www.ozgurcatak.org/publication/2019-data-poison/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/2019-data-poison/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Classification of Methamorphic Malware with Deep Learning (LSTM)</title>
+      <link>https://www.ozgurcatak.org/publication/siu2019-lstm/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/siu2019-lstm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Makine Öğrenimi Modeli Saldırıları için Otokodlayıcı ile Saldırı Dayanıklılığının Arttırılması</title>
+      <link>https://www.ozgurcatak.org/publication/siu2019-ae-ss/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/siu2019-ae-ss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Detection of Distributed Denial of Service Attacks Using Deep Learning Technologies</title>
+      <link>https://www.ozgurcatak.org/publication/deep-ddos/</link>
+      <pubDate>Thu, 14 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/deep-ddos/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

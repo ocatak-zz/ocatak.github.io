@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/03-lab-2/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-2%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-2%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-2%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-2%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-2%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="3-hafta-lab-2-l1-ve-l2-regularization-sonuçlarının-incelenmesi">3. Hafta Lab-2: $L1$ ve $L2$ Regularization Sonuçlarının İncelenmesi</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h2 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h2>
+
+<h3 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h3>
+
+<p>Bu lab çalışmasında lojistik regresyon algoritmasında $L2$ regularization yönteminde $\lambda$ değeriyle ağırlık vektörünün $\mathbf{w}$ değişimi KDDCUP&rsquo;99 veri kümesinde uygulayacağız.</p>
+
+<pre><code class="language-python">import numpy as np
+import os
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error
+</code></pre>
+
+<pre><code class="language-python"># veri kumesini oku
+kolon_adlari = ['duration','protocol_type','service','flag','src_bytes','dst_bytes','land','wrong_fragment','urgent',
+'hot','num_failed_logins','logged_in','num_compromised','root_shell','su_attempted','num_root','num_file_creations',
+'num_shells','num_access_files','num_outbound_cmds','is_host_login','is_guest_login','count','srv_count',
+'serror_rate','srv_serror_rate','rerror_rate','srv_rerror_rate','same_srv_rate','diff_srv_rate','srv_diff_host_rate',
+'dst_host_count','dst_host_srv_count','dst_host_same_srv_rate','dst_host_diff_srv_rate','dst_host_same_src_port_rate',
+'dst_host_srv_diff_host_rate','dst_host_serror_rate','dst_host_srv_serror_rate','dst_host_rerror_rate',
+'dst_host_srv_rerror_rate','label']
+
+verikumesi = pd.read_csv(&quot;kddcup99.tar.gz&quot;,compression=&quot;gzip&quot;, names=kolon_adlari, 
+low_memory=False, skiprows=1)
+
+# ilgili kolonlari sec
+secilecek_kolonlar = ['serror_rate','srv_serror_rate',
+'rerror_rate','srv_rerror_rate','same_srv_rate','diff_srv_rate','srv_diff_host_rate','dst_host_count',
+'dst_host_srv_count','dst_host_same_srv_rate','dst_host_diff_srv_rate','dst_host_same_src_port_rate',
+'dst_host_srv_diff_host_rate','dst_host_serror_rate','dst_host_srv_serror_rate','dst_host_rerror_rate',
+'dst_host_srv_rerror_rate']
+
+
+X = verikumesi[secilecek_kolonlar].as_matrix()
+y = verikumesi['label'].apply(lambda d:0 if d == 'normal.' else 1).as_matrix()
+</code></pre>
+
+<p>Veri kumesini egitim ve test veri kumesi olarak ayır</p>
+
+<pre><code class="language-python">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+</code></pre>
+
+<p>$\lambda$ değerlerini tanımla</p>
+
+<pre><code class="language-python">lambdas = [10**-15, 10**-10, 10**-8, 0.0001, 0.001, 0.01, 1, 5, 10, 20, 50, 100, 1000]
+</code></pre>
+
+<p>Sonuçları kaydetmek için pandas dataframe tanımla.</p>
+
+<pre><code class="language-python">col = ['lambda','MSE_Train','MSE_Test','w_0'] + ['w_%d'%i for i in range(1,X.shape[1]+1)] 
+ind = [i for i in range(1,len(lambdas)+1)]
+coef_matrix_simple = pd.DataFrame(index=ind, columns=col)
+coef_matrix_simple
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lambda</th>
+      <th>MSE_Train</th>
+      <th>MSE_Test</th>
+      <th>w_0</th>
+      <th>w_1</th>
+      <th>w_2</th>
+      <th>w_3</th>
+      <th>w_4</th>
+      <th>w_5</th>
+      <th>w_6</th>
+      <th>...</th>
+      <th>w_8</th>
+      <th>w_9</th>
+      <th>w_10</th>
+      <th>w_11</th>
+      <th>w_12</th>
+      <th>w_13</th>
+      <th>w_14</th>
+      <th>w_15</th>
+      <th>w_16</th>
+      <th>w_17</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 21 columns</p>
+</div>
+
+<p>Her bir $\lambda$ değeri için $L2$ regularization kullanarak <em>LogisticRegression</em> algoritması kullanılarak sınıflandırma modelini olustur.</p>
+
+<pre><code class="language-python">i = 0
+for l in lambdas:
+    clf = LogisticRegression(penalty='l2', C=1/l)
+    clf.fit(X_train,y_train)
+    
+    y_hat_train = clf.predict(X_train)
+    mse_train = mean_squared_error(y_train, y_hat_train)
+    
+    y_hat_test = clf.predict(X_test)
+    mse_test = mean_squared_error(y_test, y_hat_test)
+    
+    coef_matrix_simple.iloc[i,0] = l
+    coef_matrix_simple.iloc[i,1] = mse_train
+    coef_matrix_simple.iloc[i,2] = mse_test
+    coef_matrix_simple.iloc[i,3] = clf.intercept_[0]
+    coef_matrix_simple.iloc[i,4:] = clf.coef_
+    i += 1
+    print('Tamamlanan : % {0}'.format(i/len(lambdas)*100), end = '\r',flush=False)
+    #os.system('cls' if os.name=='nt' else 'clear')
+coef_matrix_simple
+</code></pre>
+
+<pre><code>Tamamlanan : % 100.07692307692317
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lambda</th>
+      <th>MSE_Train</th>
+      <th>MSE_Test</th>
+      <th>w_0</th>
+      <th>w_1</th>
+      <th>w_2</th>
+      <th>w_3</th>
+      <th>w_4</th>
+      <th>w_5</th>
+      <th>w_6</th>
+      <th>...</th>
+      <th>w_8</th>
+      <th>w_9</th>
+      <th>w_10</th>
+      <th>w_11</th>
+      <th>w_12</th>
+      <th>w_13</th>
+      <th>w_14</th>
+      <th>w_15</th>
+      <th>w_16</th>
+      <th>w_17</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1e-15</td>
+      <td>0.0180668</td>
+      <td>0.0178559</td>
+      <td>-5.97812</td>
+      <td>4.3598</td>
+      <td>2.38185</td>
+      <td>-2.48476</td>
+      <td>2.56381</td>
+      <td>-7.36867</td>
+      <td>-2.57685</td>
+      <td>...</td>
+      <td>0.0390847</td>
+      <td>-0.0168822</td>
+      <td>5.26454</td>
+      <td>-7.57855</td>
+      <td>7.54041</td>
+      <td>7.22619</td>
+      <td>5.04505</td>
+      <td>2.94285</td>
+      <td>3.09141</td>
+      <td>1.79822</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1e-10</td>
+      <td>0.0180004</td>
+      <td>0.0177455</td>
+      <td>-4.5669</td>
+      <td>3.17107</td>
+      <td>2.08508</td>
+      <td>-0.700424</td>
+      <td>1.55699</td>
+      <td>-7.12767</td>
+      <td>-1.19907</td>
+      <td>...</td>
+      <td>0.031908</td>
+      <td>-0.0124549</td>
+      <td>4.2927</td>
+      <td>-6.99137</td>
+      <td>7.39696</td>
+      <td>3.87942</td>
+      <td>3.38101</td>
+      <td>2.28354</td>
+      <td>1.76188</td>
+      <td>1.36775</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1e-08</td>
+      <td>0.0179974</td>
+      <td>0.0177455</td>
+      <td>-4.56684</td>
+      <td>3.1712</td>
+      <td>2.08501</td>
+      <td>-0.700661</td>
+      <td>1.55697</td>
+      <td>-7.12761</td>
+      <td>-1.19828</td>
+      <td>...</td>
+      <td>0.0319053</td>
+      <td>-0.0124529</td>
+      <td>4.29282</td>
+      <td>-6.99077</td>
+      <td>7.39682</td>
+      <td>3.87939</td>
+      <td>3.38115</td>
+      <td>2.28348</td>
+      <td>1.76173</td>
+      <td>1.36773</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0001</td>
+      <td>0.0179974</td>
+      <td>0.0177394</td>
+      <td>-4.56691</td>
+      <td>3.17107</td>
+      <td>2.08507</td>
+      <td>-0.700434</td>
+      <td>1.55699</td>
+      <td>-7.12766</td>
+      <td>-1.199</td>
+      <td>...</td>
+      <td>0.0319108</td>
+      <td>-0.0124581</td>
+      <td>4.29273</td>
+      <td>-6.99132</td>
+      <td>7.39694</td>
+      <td>3.87942</td>
+      <td>3.38101</td>
+      <td>2.28353</td>
+      <td>1.76186</td>
+      <td>1.36774</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.001</td>
+      <td>0.0180004</td>
+      <td>0.0177455</td>
+      <td>-4.56688</td>
+      <td>3.17106</td>
+      <td>2.08506</td>
+      <td>-0.70045</td>
+      <td>1.55698</td>
+      <td>-7.12764</td>
+      <td>-1.19905</td>
+      <td>...</td>
+      <td>0.0319023</td>
+      <td>-0.0124486</td>
+      <td>4.29272</td>
+      <td>-6.99134</td>
+      <td>7.39692</td>
+      <td>3.87945</td>
+      <td>3.38101</td>
+      <td>2.28352</td>
+      <td>1.76188</td>
+      <td>1.36774</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.01</td>
+      <td>0.0180004</td>
+      <td>0.0177455</td>
+      <td>-4.5668</td>
+      <td>3.17093</td>
+      <td>2.0849</td>
+      <td>-0.70057</td>
+      <td>1.55698</td>
+      <td>-7.12738</td>
+      <td>-1.19923</td>
+      <td>...</td>
+      <td>0.0319067</td>
+      <td>-0.0124549</td>
+      <td>4.29282</td>
+      <td>-6.9913</td>
+      <td>7.39664</td>
+      <td>3.8797</td>
+      <td>3.38089</td>
+      <td>2.28337</td>
+      <td>1.76202</td>
+      <td>1.36773</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>0.0180276</td>
+      <td>0.0177885</td>
+      <td>-4.55698</td>
+      <td>3.15686</td>
+      <td>2.06804</td>
+      <td>-0.713637</td>
+      <td>1.55673</td>
+      <td>-7.10001</td>
+      <td>-1.22197</td>
+      <td>...</td>
+      <td>0.031882</td>
+      <td>-0.0125644</td>
+      <td>4.30118</td>
+      <td>-6.98935</td>
+      <td>7.36731</td>
+      <td>3.90754</td>
+      <td>3.36807</td>
+      <td>2.26775</td>
+      <td>1.77799</td>
+      <td>1.36663</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>5</td>
+      <td>0.0184445</td>
+      <td>0.0182669</td>
+      <td>-4.93311</td>
+      <td>3.25774</td>
+      <td>2.00507</td>
+      <td>-1.03988</td>
+      <td>1.79012</td>
+      <td>-6.84365</td>
+      <td>-1.85726</td>
+      <td>...</td>
+      <td>0.0332541</td>
+      <td>-0.0135297</td>
+      <td>4.43045</td>
+      <td>-7.10116</td>
+      <td>7.26832</td>
+      <td>4.51323</td>
+      <td>3.57106</td>
+      <td>2.27971</td>
+      <td>2.15748</td>
+      <td>1.48457</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>0.0181575</td>
+      <td>0.0179479</td>
+      <td>-4.60083</td>
+      <td>3.03369</td>
+      <td>1.8688</td>
+      <td>-0.925444</td>
+      <td>1.60439</td>
+      <td>-6.73428</td>
+      <td>-1.42906</td>
+      <td>...</td>
+      <td>0.0311687</td>
+      <td>-0.0122814</td>
+      <td>4.21167</td>
+      <td>-6.67347</td>
+      <td>7.11846</td>
+      <td>4.19282</td>
+      <td>3.28078</td>
+      <td>2.09721</td>
+      <td>1.97587</td>
+      <td>1.37038</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>20</td>
+      <td>0.0184808</td>
+      <td>0.0182056</td>
+      <td>-4.35214</td>
+      <td>2.60879</td>
+      <td>1.69069</td>
+      <td>-0.60355</td>
+      <td>1.42059</td>
+      <td>-6.42725</td>
+      <td>-1.31223</td>
+      <td>...</td>
+      <td>0.0292089</td>
+      <td>-0.0102481</td>
+      <td>3.69843</td>
+      <td>-6.32535</td>
+      <td>6.94735</td>
+      <td>3.55272</td>
+      <td>2.7968</td>
+      <td>1.87057</td>
+      <td>1.82452</td>
+      <td>1.24571</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>50</td>
+      <td>0.0191364</td>
+      <td>0.0188496</td>
+      <td>-3.9128</td>
+      <td>1.85907</td>
+      <td>1.33472</td>
+      <td>-0.080376</td>
+      <td>1.13656</td>
+      <td>-5.46713</td>
+      <td>-0.913757</td>
+      <td>...</td>
+      <td>0.0242133</td>
+      <td>-0.00623238</td>
+      <td>2.75235</td>
+      <td>-5.36638</td>
+      <td>6.50539</td>
+      <td>2.14774</td>
+      <td>1.98451</td>
+      <td>1.45154</td>
+      <td>1.40292</td>
+      <td>1.01397</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>100</td>
+      <td>0.0198524</td>
+      <td>0.0196348</td>
+      <td>-3.07669</td>
+      <td>1.47614</td>
+      <td>1.14525</td>
+      <td>0.127008</td>
+      <td>0.854405</td>
+      <td>-4.87873</td>
+      <td>-0.478127</td>
+      <td>...</td>
+      <td>0.0199462</td>
+      <td>-0.0051452</td>
+      <td>2.28403</td>
+      <td>-4.63582</td>
+      <td>6.07663</td>
+      <td>1.4195</td>
+      <td>1.54487</td>
+      <td>1.21704</td>
+      <td>0.954035</td>
+      <td>0.818189</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1000</td>
+      <td>0.0277347</td>
+      <td>0.0274494</td>
+      <td>-1.56804</td>
+      <td>0.794878</td>
+      <td>0.775765</td>
+      <td>0.315078</td>
+      <td>0.385094</td>
+      <td>-2.68428</td>
+      <td>-0.341252</td>
+      <td>...</td>
+      <td>0.0121639</td>
+      <td>0.00037731</td>
+      <td>0.152417</td>
+      <td>-1.81413</td>
+      <td>4.04012</td>
+      <td>0.126133</td>
+      <td>0.79877</td>
+      <td>0.786319</td>
+      <td>0.387947</td>
+      <td>0.388966</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 21 columns</p>
+</div>
+
+<p>Her bir $\lambda$ değeri için $L1$ regularization kullanarak <em>LogisticRegression</em> algoritması kullanılarak sınıflandırma modelini olustur.</p>
+
+<pre><code class="language-python">i = 0
+for l in lambdas:
+    clf = LogisticRegression(penalty='l1', C=1/l)
+    clf.fit(X_train,y_train)
+    
+    y_hat_train = clf.predict(X_train)
+    mse_train = mean_squared_error(y_train, y_hat_train)
+    
+    y_hat_test = clf.predict(X_test)
+    mse_test = mean_squared_error(y_test, y_hat_test)
+    
+    coef_matrix_simple.iloc[i,0] = l
+    coef_matrix_simple.iloc[i,1] = mse_train
+    coef_matrix_simple.iloc[i,2] = mse_test
+    coef_matrix_simple.iloc[i,3] = clf.intercept_[0]
+    coef_matrix_simple.iloc[i,4:] = clf.coef_
+    i += 1
+    print('Tamamlanan : % {0}'.format(i/len(lambdas)*100), end = '\r',flush=False)
+    #os.system('cls' if os.name=='nt' else 'clear')
+coef_matrix_simple
+</code></pre>
+
+<pre><code>Tamamlanan : % 100.07692307692317
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lambda</th>
+      <th>MSE_Train</th>
+      <th>MSE_Test</th>
+      <th>w_0</th>
+      <th>w_1</th>
+      <th>w_2</th>
+      <th>w_3</th>
+      <th>w_4</th>
+      <th>w_5</th>
+      <th>w_6</th>
+      <th>...</th>
+      <th>w_8</th>
+      <th>w_9</th>
+      <th>w_10</th>
+      <th>w_11</th>
+      <th>w_12</th>
+      <th>w_13</th>
+      <th>w_14</th>
+      <th>w_15</th>
+      <th>w_16</th>
+      <th>w_17</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1e-15</td>
+      <td>0.0159278</td>
+      <td>0.0160832</td>
+      <td>-9.16929</td>
+      <td>9.23126</td>
+      <td>-5.62013</td>
+      <td>-16.8524</td>
+      <td>13.186</td>
+      <td>-5.73195</td>
+      <td>-1.69688</td>
+      <td>...</td>
+      <td>0.0455713</td>
+      <td>-0.0220337</td>
+      <td>6.43747</td>
+      <td>-8.0584</td>
+      <td>7.63316</td>
+      <td>14.5764</td>
+      <td>6.82073</td>
+      <td>22.8572</td>
+      <td>5.63713</td>
+      <td>2.92898</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1e-10</td>
+      <td>0.0159157</td>
+      <td>0.016071</td>
+      <td>-9.24431</td>
+      <td>9.25252</td>
+      <td>-5.63277</td>
+      <td>-16.8504</td>
+      <td>13.1866</td>
+      <td>-5.68958</td>
+      <td>-1.6605</td>
+      <td>...</td>
+      <td>0.0456935</td>
+      <td>-0.0221496</td>
+      <td>6.46761</td>
+      <td>-8.06157</td>
+      <td>7.63519</td>
+      <td>14.6171</td>
+      <td>6.82192</td>
+      <td>22.8673</td>
+      <td>5.64956</td>
+      <td>2.92587</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1e-08</td>
+      <td>0.0150426</td>
+      <td>0.0152735</td>
+      <td>-8.93268</td>
+      <td>9.20493</td>
+      <td>-5.62073</td>
+      <td>-16.8075</td>
+      <td>13.1605</td>
+      <td>-5.86089</td>
+      <td>-1.80101</td>
+      <td>...</td>
+      <td>0.0451954</td>
+      <td>-0.0217213</td>
+      <td>6.34839</td>
+      <td>-8.05766</td>
+      <td>7.62395</td>
+      <td>14.4422</td>
+      <td>6.80245</td>
+      <td>22.8279</td>
+      <td>5.58883</td>
+      <td>2.922</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0001</td>
+      <td>0.0150426</td>
+      <td>0.0152735</td>
+      <td>-8.91988</td>
+      <td>9.18859</td>
+      <td>-5.60891</td>
+      <td>-16.8225</td>
+      <td>13.1711</td>
+      <td>-5.87198</td>
+      <td>-1.81081</td>
+      <td>...</td>
+      <td>0.0451733</td>
+      <td>-0.0217062</td>
+      <td>6.34605</td>
+      <td>-8.05469</td>
+      <td>7.62704</td>
+      <td>14.4303</td>
+      <td>6.80725</td>
+      <td>22.8303</td>
+      <td>5.58887</td>
+      <td>2.92681</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.001</td>
+      <td>0.0159339</td>
+      <td>0.0160832</td>
+      <td>-9.16806</td>
+      <td>9.25096</td>
+      <td>-5.64021</td>
+      <td>-16.8454</td>
+      <td>13.1852</td>
+      <td>-5.72635</td>
+      <td>-1.69149</td>
+      <td>...</td>
+      <td>0.0455538</td>
+      <td>-0.0220151</td>
+      <td>6.43025</td>
+      <td>-8.06184</td>
+      <td>7.63307</td>
+      <td>14.5688</td>
+      <td>6.81811</td>
+      <td>22.8769</td>
+      <td>5.63071</td>
+      <td>2.929</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.01</td>
+      <td>0.0150517</td>
+      <td>0.0152551</td>
+      <td>-8.99675</td>
+      <td>9.18837</td>
+      <td>-5.5895</td>
+      <td>-16.8442</td>
+      <td>13.1896</td>
+      <td>-5.82086</td>
+      <td>-1.7673</td>
+      <td>...</td>
+      <td>0.0452805</td>
+      <td>-0.0217678</td>
+      <td>6.36087</td>
+      <td>-8.06185</td>
+      <td>7.62869</td>
+      <td>14.4755</td>
+      <td>6.80768</td>
+      <td>22.8316</td>
+      <td>5.6008</td>
+      <td>2.92857</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>0.0160457</td>
+      <td>0.0161998</td>
+      <td>-8.92033</td>
+      <td>6.69925</td>
+      <td>-2.46276</td>
+      <td>-16.4913</td>
+      <td>12.9464</td>
+      <td>-5.88276</td>
+      <td>-1.7159</td>
+      <td>...</td>
+      <td>0.0451099</td>
+      <td>-0.0217078</td>
+      <td>6.38256</td>
+      <td>-7.98918</td>
+      <td>7.60503</td>
+      <td>14.3323</td>
+      <td>6.96888</td>
+      <td>19.4339</td>
+      <td>5.53196</td>
+      <td>2.90212</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>5</td>
+      <td>0.0162451</td>
+      <td>0.0163777</td>
+      <td>-8.6645</td>
+      <td>4.63537</td>
+      <td>0</td>
+      <td>-14.1502</td>
+      <td>11.2566</td>
+      <td>-5.93151</td>
+      <td>-1.57587</td>
+      <td>...</td>
+      <td>0.0441638</td>
+      <td>-0.0210219</td>
+      <td>6.27113</td>
+      <td>-7.81644</td>
+      <td>7.53604</td>
+      <td>13.612</td>
+      <td>6.88195</td>
+      <td>14.6604</td>
+      <td>5.30537</td>
+      <td>2.45458</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>0.0165139</td>
+      <td>0.0165433</td>
+      <td>-8.40124</td>
+      <td>4.28698</td>
+      <td>0</td>
+      <td>-11.2712</td>
+      <td>9.29767</td>
+      <td>-5.94246</td>
+      <td>-1.43013</td>
+      <td>...</td>
+      <td>0.0430888</td>
+      <td>-0.0202479</td>
+      <td>6.12518</td>
+      <td>-7.65003</td>
+      <td>7.46652</td>
+      <td>12.7305</td>
+      <td>6.58521</td>
+      <td>11.8091</td>
+      <td>5.0232</td>
+      <td>1.76679</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>20</td>
+      <td>0.0174264</td>
+      <td>0.0172732</td>
+      <td>-7.79002</td>
+      <td>4.00023</td>
+      <td>0</td>
+      <td>-6.37931</td>
+      <td>6.21933</td>
+      <td>-6.03558</td>
+      <td>-1.23793</td>
+      <td>...</td>
+      <td>0.0409913</td>
+      <td>-0.0187352</td>
+      <td>5.80205</td>
+      <td>-7.37948</td>
+      <td>7.34737</td>
+      <td>11.0107</td>
+      <td>6.07489</td>
+      <td>7.14805</td>
+      <td>4.43905</td>
+      <td>0.40585</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>50</td>
+      <td>0.0182088</td>
+      <td>0.0179909</td>
+      <td>-6.17321</td>
+      <td>3.44195</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.22388</td>
+      <td>-6.01763</td>
+      <td>-0.767175</td>
+      <td>...</td>
+      <td>0.0346822</td>
+      <td>-0.013928</td>
+      <td>4.6388</td>
+      <td>-6.87481</td>
+      <td>7.12158</td>
+      <td>7.12364</td>
+      <td>5.02046</td>
+      <td>1.454</td>
+      <td>3.04463</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>100</td>
+      <td>0.0189702</td>
+      <td>0.0188128</td>
+      <td>-4.43097</td>
+      <td>2.10607</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.671523</td>
+      <td>-5.91351</td>
+      <td>-0.279651</td>
+      <td>...</td>
+      <td>0.0280667</td>
+      <td>-0.00900139</td>
+      <td>3.27059</td>
+      <td>-6.56665</td>
+      <td>6.93329</td>
+      <td>3.66843</td>
+      <td>3.91924</td>
+      <td>0.499366</td>
+      <td>2.99922</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1000</td>
+      <td>0.0292967</td>
+      <td>0.0290811</td>
+      <td>0</td>
+      <td>0.200032</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-6.04961</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0154422</td>
+      <td>0.00180823</td>
+      <td>0</td>
+      <td>-3.73604</td>
+      <td>5.5956</td>
+      <td>0</td>
+      <td>0.873014</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 21 columns</p>
+</div>
+
+<p>Pandas dataframe ile <strong>SQL</strong> benzeri sorgular yapabilirsiniz.</p>
+
+<pre><code class="language-python">coef_matrix_simple.query(&quot;w_2 == 0 and w_3 == 0&quot;)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lambda</th>
+      <th>MSE_Train</th>
+      <th>MSE_Test</th>
+      <th>w_0</th>
+      <th>w_1</th>
+      <th>w_2</th>
+      <th>w_3</th>
+      <th>w_4</th>
+      <th>w_5</th>
+      <th>w_6</th>
+      <th>...</th>
+      <th>w_8</th>
+      <th>w_9</th>
+      <th>w_10</th>
+      <th>w_11</th>
+      <th>w_12</th>
+      <th>w_13</th>
+      <th>w_14</th>
+      <th>w_15</th>
+      <th>w_16</th>
+      <th>w_17</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>50</td>
+      <td>0.0182088</td>
+      <td>0.0179909</td>
+      <td>-6.17321</td>
+      <td>3.44195</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.22388</td>
+      <td>-6.01763</td>
+      <td>-0.767175</td>
+      <td>...</td>
+      <td>0.0346822</td>
+      <td>-0.013928</td>
+      <td>4.6388</td>
+      <td>-6.87481</td>
+      <td>7.12158</td>
+      <td>7.12364</td>
+      <td>5.02046</td>
+      <td>1.454</td>
+      <td>3.04463</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>100</td>
+      <td>0.0189702</td>
+      <td>0.0188128</td>
+      <td>-4.43097</td>
+      <td>2.10607</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.671523</td>
+      <td>-5.91351</td>
+      <td>-0.279651</td>
+      <td>...</td>
+      <td>0.0280667</td>
+      <td>-0.00900139</td>
+      <td>3.27059</td>
+      <td>-6.56665</td>
+      <td>6.93329</td>
+      <td>3.66843</td>
+      <td>3.91924</td>
+      <td>0.499366</td>
+      <td>2.99922</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1000</td>
+      <td>0.0292967</td>
+      <td>0.0290811</td>
+      <td>0</td>
+      <td>0.200032</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-6.04961</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0154422</td>
+      <td>0.00180823</td>
+      <td>0</td>
+      <td>-3.73604</td>
+      <td>5.5956</td>
+      <td>0</td>
+      <td>0.873014</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 21 columns</p>
+</div>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/03-lab-3/"><span
+      aria-hidden="true">&larr;</span> </a></li>
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/03-lab-1/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/courses/sib552/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title>SIB 552 - Siber Güvenlik İçin Veri Madenciliği | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content="SIB 552 - Siber Güvenlik İçin Veri Madenciliği - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - Makine öğrenmesi ve derin öğrenme algoritmalarının siber güvenlik alanında kullanımı" property="og:description">
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">SIB 552 - Siber Güvenlik İçin Veri Madenciliği</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2019-03-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2019-03-02
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=SIB%20552%20-%20Siber%20G%c3%bcvenlik%20%c4%b0%c3%a7in%20Veri%20Madencili%c4%9fi&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fcourses%2fsib552%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fcourses%2fsib552%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fcourses%2fsib552%2f&amp;title=SIB%20552%20-%20Siber%20G%c3%bcvenlik%20%c4%b0%c3%a7in%20Veri%20Madencili%c4%9fi"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fcourses%2fsib552%2f&amp;title=SIB%20552%20-%20Siber%20G%c3%bcvenlik%20%c4%b0%c3%a7in%20Veri%20Madencili%c4%9fi"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=SIB%20552%20-%20Siber%20G%c3%bcvenlik%20%c4%b0%c3%a7in%20Veri%20Madencili%c4%9fi&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fcourses%2fsib552%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><strong>Gebze Teknik Üniversitesi</strong><br>
+<strong>Siber Güvenlik Yüksek Lisans</strong></p>
+
+<p><strong>Öğretim Görevlisi</strong>: Dr. Ferhat Özgür Çatak</p>
+
+<hr />
+
+<p><strong>Dersin Amacı</strong>: Yeni siber saldırıların hızla artması, makine öğrenmesine dayalı teknikleri güvenlik tehditlerini tespit etmede kritik bir bileşen haline getirmiştir. Ders, makine öğrenmesi konusunun bilgisayar ve ağ güvenliği alanındaki çeşitli uygulamalarını kapsar. Ders içeriği: Bilgi güvenliğinin durumuna genel bakış; kötü amaçlı yazılım algılama; ağ ve bilgisayar saldırı tespiti; web, e-posta ve sosyal ağ güvenliği; kimlik doğrulama ve yetkilendirme anomali tespiti; uyarı korelasyonu; gizlilik sorunları gibi konular olacaktır.</p>
+
+<hr />
+
+<!---
+## Duyurular
+- 4. <a href="https://www.ozgurcatak.org/sib552/11/odev-4.pdf"> ödev </a> yayınlanmıştır. Son teslim tarihi 20.05.2018 23:59.
+- 3. <a href="https://www.ozgurcatak.org/sib552/07/odev-3.pdf"> ödev </a> yayınlanmıştır. Son teslim tarihi 25.04.2018 23:59.
+- 2. <a href="https://www.ozgurcatak.org/sib552/05/odev-2.pdf"> ödev </a> yayınlanmıştır. Son teslim tarihi 08.04.2018 23:59.
+- 1.ödev'in ilk sorusu ile ilgili bazı açıklamlar yaptım. **Regularization** için $\lambda \sum_{i=0}^{n}w_i^2$ ifadesini kullanmak gerekmektedir.
+- 14.03.2018 tarihinde ders yapılmayacaktır.
+- 1. <a href="https://www.ozgurcatak.org/sib552/02/odev-1.pdf"> ödev </a> yayınlanmıştır. Son teslim tarihi 18.03.2018 23:59.
+-->
+
+<hr />
+
+<h2 id="notlandırma">Notlandırma:</h2>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Derse katılım</td>
+<td>%10</td>
+</tr>
+
+<tr>
+<td>Ödevler</td>
+<td>%30</td>
+</tr>
+
+<tr>
+<td>Proje</td>
+<td>%25</td>
+</tr>
+
+<tr>
+<td>Final</td>
+<td>%35</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="sunumlar">Sunumlar</h4>
+
+<table>
+<thead>
+<tr>
+<th>Hafta</th>
+<th>Konular</th>
+<th>Dökümanlar</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Giriş</td>
+<td><a href="https://www.ozgurcatak.org/sib552/01/01-giris.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/01/src/lin_reg.ipynb" target="_blank">Lab</a> - <a href="https://www.ozgurcatak.org/sib552/01/src/ds1.txt">Veri Kümesi</a></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Logistic Reg.</td>
+<td><a href="https://www.ozgurcatak.org/sib552/02/02-cok-degiskenli-reg.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/02/src/lab1.ipynb" target="_blank">Lab-1</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/02/src/lab2.ipynb" target="_blank">Lab-2</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/02/src/lab3.ipynb" target="_blank">Lab-3</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/02/src/lab4.ipynb" target="_blank">Lab-4</a> - <a href="https://www.ozgurcatak.org/sib552/02/src/ds2.txt">ds2.txt</a> - <a href="https://www.ozgurcatak.org/sib552/02/src/ds_logreg.txt">ds_logreg.txt</a> - <a href="https://www.ozgurcatak.org/sib552/02/src/kddcup99.tar.gz">KDDCUP99</a></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Benzerlik/Uzaklık - kNN - Karar Ağaçları.</td>
+<td><a href="https://www.ozgurcatak.org/sib552/03/03-nearest-neighbours.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/03/src/lab-1.ipynb" target="_blank">Lab-1</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/03/src/lab-2.ipynb" target="_blank">Lab-2</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/03/src/lab-3.ipynb" target="_blank">Lab-3</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/03/src/lab-4.ipynb" target="_blank">Lab-4</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/03/src/lab-5.ipynb" target="_blank">Lab-5</a> - <a href="https://www.ozgurcatak.org/sib552/03/src/tennis.txt">tennis.txt</a></td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Karar Ağaçları/Kümeleme.</td>
+<td><a href="https://www.ozgurcatak.org/sib552/04/04-tree-clustering.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/04/src/lab-1.ipynb" target="_blank">Lab-1</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/04/src/lab-2.ipynb" target="_blank">Lab-2</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/04/src/lab-3.ipynb" target="_blank">Lab-3</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/04/src/lab-4.ipynb" target="_blank">Lab-4</a> - <a href="https://www.ozgurcatak.org/sib552/04/odev-1.pdf"> !!!ÖDEV!!! </a></td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Destek Vektör Makinesi/Support Vector Machine</td>
+<td><a href="https://www.ozgurcatak.org/sib552/05/05-svm.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/05/src/lab-1.ipynb" target="_blank">Lab-1</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/05/src/lab-2.ipynb" target="_blank">Lab-2</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/05/src/lab-3.ipynb" target="_blank">Lab-3</a></td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Sinir Ağları - Derin Öğrenme /Neural Networks - Deep Learning</td>
+<td><a href="https://www.ozgurcatak.org/sib552/06/06-nn.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/06/src/lab-1.ipynb" target="_blank">Lab-1</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/06/src/lab-2.ipynb" target="_blank">Lab-2</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/06/src/lab-3.ipynb" target="_blank">Lab-3</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/06/src/lab-4.ipynb" target="_blank">Lab-4</a></td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Derin Öğrenme /CNN - RNN - LSTM</td>
+<td><a href="https://www.ozgurcatak.org/sib552/07/07-nn.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/07/src/lab-1.ipynb" target="_blank">Lab-1</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/07/src/lab-2.ipynb" target="_blank">Lab-2</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/07/src/lab-3.ipynb" target="_blank">Lab-3</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/07/src/lab-4.ipynb" target="_blank">Lab-4</a></td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Topluluk Yöntemleri - Boyut Azaltma - Anomali Tespiti</td>
+<td><a href="https://www.ozgurcatak.org/sib552/08/08-boosting.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/08/src/lab-1.ipynb" target="_blank">Lab-1</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/08/src/lab-2.ipynb" target="_blank">Lab-2</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/08/src/lab-3.ipynb" target="_blank">Lab-3</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/08/src/lab-4.ipynb" target="_blank">Lab-4</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/08/src/lab-5.ipynb" target="_blank">Lab-5</a> - [Lab-6] <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/08/src/lab-6.ipynb)" target="_blank">https://github.com/ocatak/ocatak.github.io/blob/master/sib552/08/src/lab-6.ipynb)</a></td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Vektör Uzay Modelleri</td>
+<td><a href="https://www.ozgurcatak.org/sib552/09/09-app1.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/09/src/lab-1.ipynb" target="_blank">Lab-1</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/09/src/lab-2.ipynb" target="_blank">Lab-2</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/09/src/lab-3.ipynb" target="_blank">Lab-3</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/09/src/lab-4.ipynb" target="_blank">Lab-4</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/09/src/lab-5.ipynb" target="_blank">Lab-5</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/09/src/lab-6.ipynb" target="_blank">Lab-6</a> - <a href="https://www.ozgurcatak.org/sib552/09/src/02-CSDMC_API_Train.zip">02-CSDMC_API_Train</a> - <a href="https://www.ozgurcatak.org/sib552/09/src/drebin_reduced.arff">drebin_reduced.arff</a></td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>CNN Zararlı Yazılım Analizi/ LSTM Parola Oluşturma / Biyometrik Kimlik Doğrulama</td>
+<td><a href="https://www.ozgurcatak.org/sib552/10/10-app2.pdf">Sunum</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/10/src/lab-1.ipynb" target="_blank">Lab-1</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/10/src/lab-2.ipynb" target="_blank">Lab-2</a> - <a href="https://github.com/ocatak/ocatak.github.io/blob/master/sib552/10/src/lab-3.ipynb" target="_blank">Lab-3</a> - <a href="https://www.ozgurcatak.org/sib552/10/src/03-model-doc.hdf5">03-model-doc.hdf5</a> - <a href="https://www.ozgurcatak.org/sib552/10/src/03-model-phone.hdf5">03-model-phone.hdf5</a> - <a href="https://www.ozgurcatak.org/sib552/10/src/03-model-user.hdf5">03-model-user.hdf5</a> - <a href="https://www.ozgurcatak.org/sib552/10/src/dataset.arff">dataset.arff</a> - <a href="https://www.ozgurcatak.org/sib552/10/src/rockyou_simple.txt">rockyou_simple.txt</a></td>
+</tr>
+</tbody>
+</table>
+
+<!---
+#12 | Çekişmeli Üretici Ağlar (Generative Adversarial Networks) | <a href="https://www.ozgurcatak.org/sib552/12/12-gan.pdf">Sunum</a> - [Lab-1] (https://github.com/ocatak/ocatak.github.io/blob/master/sib552/12/src/lab-1.ipynb)
+#13 | Adversarial Machine Learning | <a href="https://www.ozgurcatak.org/sib552/13/13-advers-pp-ml.pdf">Sunum</a> - [Lab-1] (https://github.com/ocatak/ocatak.github.io/blob/master/sib552/13/src/lab-1.ipynb) - [Lab-2] (https://github.com/ocatak/ocatak.github.io/blob/master/sib552/13/src/lab-2.ipynb) - [Lab-3] (https://github.com/ocatak/ocatak.github.io/blob/master/sib552/13/src/lab-3.ipynb)
+#14 | Privacy Preserving Machine Learning | <a href="https://www.ozgurcatak.org/sib552/14/14-pp-ml.pdf">Sunum</a> - [Lab-1] (https://github.com/ocatak/ocatak.github.io/blob/master/sib552/14/src/lab-1.ipynb) - [Lab-2] (https://github.com/ocatak/ocatak.github.io/blob/master/sib552/14/src/lab-2.ipynb) - [Lab-3] (https://github.com/ocatak/ocatak.github.io/blob/master/sib552/14/src/lab-3.ipynb) - [Lab-4] (https://github.com/ocatak/ocatak.github.io/blob/master/sib552/14/src/lab-4.ipynb)
+-->
+
+<h3 id="araştırma-konuları">Araştırma Konuları</h3>
+
+<ul>
+<li><a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf" target="_blank">Deep Residual Learning for Image Recognition</a></li>
+<li><a href="http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf" target="_blank">Dropout: A Simple Way to Prevent Neural Networks from Overfitting</a></li>
+<li><a href="http://proceedings.mlr.press/v37/ioffe15.pdf" target="_blank">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a></li>
+<li><a href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Karpathy_Large-scale_Video_Classification_2014_CVPR_paper.pdf" target="_blank">Large-scale Video Classification with Convolutional Neural Networks</a></li>
+<li><a href="http://datascienceassn.org/sites/default/files/Generative%20Adversarial%20Nets.pdf" target="_blank">Generative Adversarial Nets</a></li>
+<li><a href="https://arxiv.org/pdf/1404.7584.pdf" target="_blank">High-Speed Tracking with Kernelized Correlation Filters</a></li>
+<li><a href="http://ai.stanford.edu/~ang/papers/colt-95.pdf" target="_blank">An Experimental and Theoretical Comparison of Model Selection Methods</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0925231217304186" target="_blank">Unsupervised feature extraction with autoencoder trees</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0167404817302444" target="_blank">Automated poisoning attacks and defenses in malware detection systems: An adversarial machine learning approach</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0957417417306590" target="_blank">Quantifying the resilience of machine learning classifiers used for cyber security</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0925231215001198" target="_blank">Support vector machines under adversarial label contamination</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0893608018300029" target="_blank">Coupled generative adversarial stacked Auto-encoder: CoGASA</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0031320317302406" target="_blank">Training Support Vector Machines with privacy-protected data</a></li>
+</ul>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+<div class="article-container article-widget">
+  <div class="hr-light"></div>
+  <h3>Related</h3>
+  <ul>
+    
+    <li><a href="https://www.ozgurcatak.org/courses/bgm565/">BGM 565 - Siber Güvenlik için Makine Öğrenme Yöntemleri</a></li>
+    
+    <li><a href="https://www.ozgurcatak.org/courses/bgm531/">BGM 531 - Sızma Testleri ve Güvenlik Denetlemeleri</a></li>
+    
+  </ul>
+</div>
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/courses/bgm531/"><span
+      aria-hidden="true">&larr;</span> BGM 531 - Sızma Testleri ve Güvenlik Denetlemeleri</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

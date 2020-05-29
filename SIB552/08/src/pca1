@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Apr 22 18:38:12 2018
+
+@author: ozgurcatak
+"""
+
+import numpy as np, matplotlib.pyplot as plt
+
+plt.style.use('ggplot')
+
+np.random.seed(1) #make sure we're all working with the same numbers
+
+X = np.random.normal(0.0,2.0,[100,1])
+X = [X,X*2+np.random.normal(0.0,8.0,[100,1])]
+X = np.squeeze(X)
+
+plt.plot(X[0],X[1],'o')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('Raw Data')
+plt.axis([-6,6,-30,30]);

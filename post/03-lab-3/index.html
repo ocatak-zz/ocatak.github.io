@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/03-lab-3/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f03-lab-3%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="3-hafta-lab-3-uzaklıkların-bulunması">3. Hafta Lab-3: Uzaklıkların Bulunması</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h2 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h2>
+
+<h3 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h3>
+
+<p>Bu lab çalışmasında <strong>Chebysev</strong>, <strong>Jaccard</strong>, <strong>Euclidean</strong>, <strong>Cosine</strong>, <strong>Cityblock</strong> uzaklık/benzerliklerinin <em>KDDCUP&rsquo;99</em> veri kümesine uygulamalarını inceleyeceğiz.</p>
+
+<pre><code class="language-python">import numpy as np
+import pandas as pd
+from scipy.spatial.distance import squareform
+from scipy.spatial.distance import pdist
+</code></pre>
+
+<p>KDDCUP&rsquo;99 Verikümesini oku</p>
+
+<pre><code class="language-python"># veri kumesini oku
+kolon_adlari = ['duration','protocol_type','service','flag','src_bytes','dst_bytes','land','wrong_fragment','urgent',
+'hot','num_failed_logins','logged_in','num_compromised','root_shell','su_attempted','num_root','num_file_creations',
+'num_shells','num_access_files','num_outbound_cmds','is_host_login','is_guest_login','count','srv_count',
+'serror_rate','srv_serror_rate','rerror_rate','srv_rerror_rate','same_srv_rate','diff_srv_rate','srv_diff_host_rate',
+'dst_host_count','dst_host_srv_count','dst_host_same_srv_rate','dst_host_diff_srv_rate','dst_host_same_src_port_rate',
+'dst_host_srv_diff_host_rate','dst_host_serror_rate','dst_host_srv_serror_rate','dst_host_rerror_rate',
+'dst_host_srv_rerror_rate','label']
+
+verikumesi = pd.read_csv(&quot;kddcup99.tar.gz&quot;,compression=&quot;gzip&quot;, names=kolon_adlari, 
+low_memory=False, skiprows=1)
+
+# ilgili kolonlari sec
+secilecek_kolonlar = ['duration','src_bytes','dst_bytes','wrong_fragment','urgent','hot','num_failed_logins',
+'num_compromised','root_shell','su_attempted','num_root','num_file_creations','num_shells',
+'num_access_files','num_outbound_cmds','count','srv_count','serror_rate','srv_serror_rate',
+'rerror_rate','srv_rerror_rate','same_srv_rate','diff_srv_rate','srv_diff_host_rate','dst_host_count',
+'dst_host_srv_count','dst_host_same_srv_rate','dst_host_diff_srv_rate','dst_host_same_src_port_rate',
+'dst_host_srv_diff_host_rate','dst_host_serror_rate','dst_host_srv_serror_rate','dst_host_rerror_rate',
+'dst_host_srv_rerror_rate']
+
+verikumesi = verikumesi[secilecek_kolonlar]
+</code></pre>
+
+<p>Veri kümesinden rastgele 10 adet örneklem al.</p>
+
+<pre><code class="language-python">verikumesi = verikumesi.sample(10)
+verikumesi
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>duration</th>
+      <th>src_bytes</th>
+      <th>dst_bytes</th>
+      <th>wrong_fragment</th>
+      <th>urgent</th>
+      <th>hot</th>
+      <th>num_failed_logins</th>
+      <th>num_compromised</th>
+      <th>root_shell</th>
+      <th>su_attempted</th>
+      <th>...</th>
+      <th>dst_host_count</th>
+      <th>dst_host_srv_count</th>
+      <th>dst_host_same_srv_rate</th>
+      <th>dst_host_diff_srv_rate</th>
+      <th>dst_host_same_src_port_rate</th>
+      <th>dst_host_srv_diff_host_rate</th>
+      <th>dst_host_serror_rate</th>
+      <th>dst_host_srv_serror_rate</th>
+      <th>dst_host_rerror_rate</th>
+      <th>dst_host_srv_rerror_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>414594</th>
+      <td>0</td>
+      <td>520</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>255</td>
+      <td>255</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>37961</th>
+      <td>0</td>
+      <td>200</td>
+      <td>354</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>41</td>
+      <td>255</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>251912</th>
+      <td>0</td>
+      <td>1032</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>255</td>
+      <td>255</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>226400</th>
+      <td>0</td>
+      <td>1032</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>255</td>
+      <td>255</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>104811</th>
+      <td>0</td>
+      <td>303</td>
+      <td>434</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>93</td>
+      <td>255</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71591</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>255</td>
+      <td>5</td>
+      <td>0.02</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>92470</th>
+      <td>0</td>
+      <td>1032</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>255</td>
+      <td>255</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>111204</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>255</td>
+      <td>9</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>69492</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>255</td>
+      <td>10</td>
+      <td>0.04</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>393148</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>255</td>
+      <td>9</td>
+      <td>0.04</td>
+      <td>0.05</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 34 columns</p>
+</div>
+
+<p>Veri kümesinin her bir noktasının birbirlerine olan uzaklığı hesapla</p>
+
+<pre><code class="language-python">res = pdist(verikumesi, 'euclidean')
+pd.options.display.float_format = '{:.2f}'.format
+distance = pd.DataFrame(squareform(res), index=range(0,10), columns=range(0,10))
+distance
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00</td>
+      <td>813.93</td>
+      <td>513.64</td>
+      <td>513.64</td>
+      <td>824.25</td>
+      <td>802.83</td>
+      <td>513.64</td>
+      <td>790.83</td>
+      <td>799.05</td>
+      <td>824.60</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>813.93</td>
+      <td>0.00</td>
+      <td>1142.43</td>
+      <td>1142.43</td>
+      <td>142.21</td>
+      <td>545.63</td>
+      <td>1142.43</td>
+      <td>550.71</td>
+      <td>542.50</td>
+      <td>529.36</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>513.64</td>
+      <td>1142.43</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1103.83</td>
+      <td>1218.74</td>
+      <td>0.00</td>
+      <td>1210.20</td>
+      <td>1216.18</td>
+      <td>1234.60</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>513.64</td>
+      <td>1142.43</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1103.83</td>
+      <td>1218.74</td>
+      <td>0.00</td>
+      <td>1210.20</td>
+      <td>1216.18</td>
+      <td>1234.60</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>824.25</td>
+      <td>142.21</td>
+      <td>1103.83</td>
+      <td>1103.83</td>
+      <td>0.00</td>
+      <td>630.24</td>
+      <td>1103.83</td>
+      <td>635.35</td>
+      <td>627.61</td>
+      <td>614.65</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>802.83</td>
+      <td>545.63</td>
+      <td>1218.74</td>
+      <td>1218.74</td>
+      <td>630.24</td>
+      <td>0.00</td>
+      <td>1218.74</td>
+      <td>24.66</td>
+      <td>7.35</td>
+      <td>64.25</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>513.64</td>
+      <td>1142.43</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1103.83</td>
+      <td>1218.74</td>
+      <td>0.00</td>
+      <td>1210.20</td>
+      <td>1216.18</td>
+      <td>1234.60</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>790.83</td>
+      <td>550.71</td>
+      <td>1210.20</td>
+      <td>1210.20</td>
+      <td>635.35</td>
+      <td>24.66</td>
+      <td>1210.20</td>
+      <td>0.00</td>
+      <td>26.04</td>
+      <td>88.00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>799.05</td>
+      <td>542.50</td>
+      <td>1216.18</td>
+      <td>1216.18</td>
+      <td>627.61</td>
+      <td>7.35</td>
+      <td>1216.18</td>
+      <td>26.04</td>
+      <td>0.00</td>
+      <td>62.02</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>824.60</td>
+      <td>529.36</td>
+      <td>1234.60</td>
+      <td>1234.60</td>
+      <td>614.65</td>
+      <td>64.25</td>
+      <td>1234.60</td>
+      <td>88.00</td>
+      <td>62.02</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">res = pdist(verikumesi, 'cosine')
+pd.options.display.float_format = '{:.2f}'.format
+distance = pd.DataFrame(squareform(res), index=range(0,10), columns=range(0,10))
+distance
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00</td>
+      <td>0.51</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>0.51</td>
+      <td>0.46</td>
+      <td>0.05</td>
+      <td>0.43</td>
+      <td>0.45</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.51</td>
+      <td>0.00</td>
+      <td>0.49</td>
+      <td>0.49</td>
+      <td>0.01</td>
+      <td>0.87</td>
+      <td>0.49</td>
+      <td>0.86</td>
+      <td>0.86</td>
+      <td>0.87</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.05</td>
+      <td>0.49</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.45</td>
+      <td>0.60</td>
+      <td>0.00</td>
+      <td>0.58</td>
+      <td>0.59</td>
+      <td>0.63</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.05</td>
+      <td>0.49</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.45</td>
+      <td>0.60</td>
+      <td>0.00</td>
+      <td>0.58</td>
+      <td>0.59</td>
+      <td>0.63</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.51</td>
+      <td>0.01</td>
+      <td>0.45</td>
+      <td>0.45</td>
+      <td>0.00</td>
+      <td>0.84</td>
+      <td>0.45</td>
+      <td>0.84</td>
+      <td>0.84</td>
+      <td>0.83</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.46</td>
+      <td>0.87</td>
+      <td>0.60</td>
+      <td>0.60</td>
+      <td>0.84</td>
+      <td>0.00</td>
+      <td>0.60</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.05</td>
+      <td>0.49</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.45</td>
+      <td>0.60</td>
+      <td>0.00</td>
+      <td>0.58</td>
+      <td>0.59</td>
+      <td>0.63</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.43</td>
+      <td>0.86</td>
+      <td>0.58</td>
+      <td>0.58</td>
+      <td>0.84</td>
+      <td>0.00</td>
+      <td>0.58</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.45</td>
+      <td>0.86</td>
+      <td>0.59</td>
+      <td>0.59</td>
+      <td>0.84</td>
+      <td>0.00</td>
+      <td>0.59</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.50</td>
+      <td>0.87</td>
+      <td>0.63</td>
+      <td>0.63</td>
+      <td>0.83</td>
+      <td>0.02</td>
+      <td>0.63</td>
+      <td>0.03</td>
+      <td>0.02</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">res = pdist(verikumesi, 'cityblock') #manhattan
+pd.options.display.float_format = '{:.2f}'.format
+distance = pd.DataFrame(squareform(res), index=range(0,10), columns=range(0,10))
+distance
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00</td>
+      <td>1771.00</td>
+      <td>570.00</td>
+      <td>570.00</td>
+      <td>1728.01</td>
+      <td>1544.09</td>
+      <td>570.00</td>
+      <td>1512.06</td>
+      <td>1536.04</td>
+      <td>1599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1771.00</td>
+      <td>0.00</td>
+      <td>2341.00</td>
+      <td>2341.00</td>
+      <td>267.01</td>
+      <td>1211.13</td>
+      <td>2341.00</td>
+      <td>1227.10</td>
+      <td>1199.08</td>
+      <td>1139.03</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>570.00</td>
+      <td>2341.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2298.01</td>
+      <td>2114.09</td>
+      <td>0.00</td>
+      <td>2082.06</td>
+      <td>2106.04</td>
+      <td>2169.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>570.00</td>
+      <td>2341.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2298.01</td>
+      <td>2114.09</td>
+      <td>0.00</td>
+      <td>2082.06</td>
+      <td>2106.04</td>
+      <td>2169.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1728.01</td>
+      <td>267.01</td>
+      <td>2298.01</td>
+      <td>2298.01</td>
+      <td>0.00</td>
+      <td>1342.12</td>
+      <td>2298.01</td>
+      <td>1358.09</td>
+      <td>1330.07</td>
+      <td>1270.02</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1544.09</td>
+      <td>1211.13</td>
+      <td>2114.09</td>
+      <td>2114.09</td>
+      <td>1342.12</td>
+      <td>0.00</td>
+      <td>2114.09</td>
+      <td>32.05</td>
+      <td>12.05</td>
+      <td>72.10</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>570.00</td>
+      <td>2341.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2298.01</td>
+      <td>2114.09</td>
+      <td>0.00</td>
+      <td>2082.06</td>
+      <td>2106.04</td>
+      <td>2169.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1512.06</td>
+      <td>1227.10</td>
+      <td>2082.06</td>
+      <td>2082.06</td>
+      <td>1358.09</td>
+      <td>32.05</td>
+      <td>2082.06</td>
+      <td>0.00</td>
+      <td>28.02</td>
+      <td>88.07</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1536.04</td>
+      <td>1199.08</td>
+      <td>2106.04</td>
+      <td>2106.04</td>
+      <td>1330.07</td>
+      <td>12.05</td>
+      <td>2106.04</td>
+      <td>28.02</td>
+      <td>0.00</td>
+      <td>64.05</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1599.99</td>
+      <td>1139.03</td>
+      <td>2169.99</td>
+      <td>2169.99</td>
+      <td>1270.02</td>
+      <td>72.10</td>
+      <td>2169.99</td>
+      <td>88.07</td>
+      <td>64.05</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">res = pdist(verikumesi, 'chebyshev')
+pd.options.display.float_format = '{:.2f}'.format
+distance = pd.DataFrame(squareform(res), index=range(0,10), columns=range(0,10))
+distance
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00</td>
+      <td>441.00</td>
+      <td>512.00</td>
+      <td>512.00</td>
+      <td>457.00</td>
+      <td>520.00</td>
+      <td>512.00</td>
+      <td>520.00</td>
+      <td>520.00</td>
+      <td>520.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>441.00</td>
+      <td>0.00</td>
+      <td>832.00</td>
+      <td>832.00</td>
+      <td>103.00</td>
+      <td>354.00</td>
+      <td>832.00</td>
+      <td>354.00</td>
+      <td>354.00</td>
+      <td>354.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>512.00</td>
+      <td>832.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>729.00</td>
+      <td>1032.00</td>
+      <td>0.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>512.00</td>
+      <td>832.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>729.00</td>
+      <td>1032.00</td>
+      <td>0.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>457.00</td>
+      <td>103.00</td>
+      <td>729.00</td>
+      <td>729.00</td>
+      <td>0.00</td>
+      <td>434.00</td>
+      <td>729.00</td>
+      <td>434.00</td>
+      <td>434.00</td>
+      <td>434.00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>520.00</td>
+      <td>354.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+      <td>434.00</td>
+      <td>0.00</td>
+      <td>1032.00</td>
+      <td>24.00</td>
+      <td>5.00</td>
+      <td>64.00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>512.00</td>
+      <td>832.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>729.00</td>
+      <td>1032.00</td>
+      <td>0.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>520.00</td>
+      <td>354.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+      <td>434.00</td>
+      <td>24.00</td>
+      <td>1032.00</td>
+      <td>0.00</td>
+      <td>26.00</td>
+      <td>88.00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>520.00</td>
+      <td>354.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+      <td>434.00</td>
+      <td>5.00</td>
+      <td>1032.00</td>
+      <td>26.00</td>
+      <td>0.00</td>
+      <td>62.00</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>520.00</td>
+      <td>354.00</td>
+      <td>1032.00</td>
+      <td>1032.00</td>
+      <td>434.00</td>
+      <td>64.00</td>
+      <td>1032.00</td>
+      <td>88.00</td>
+      <td>62.00</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">res = pdist(verikumesi, 'jaccard')
+pd.options.display.float_format = '{:.2f}'.format
+distance = pd.DataFrame(squareform(res), index=range(0,10), columns=range(0,10))
+distance
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00</td>
+      <td>0.70</td>
+      <td>0.38</td>
+      <td>0.38</td>
+      <td>0.70</td>
+      <td>0.93</td>
+      <td>0.38</td>
+      <td>0.93</td>
+      <td>0.93</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>0.70</td>
+      <td>0.70</td>
+      <td>0.60</td>
+      <td>1.00</td>
+      <td>0.70</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.38</td>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.70</td>
+      <td>0.93</td>
+      <td>0.00</td>
+      <td>0.93</td>
+      <td>0.93</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.38</td>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.70</td>
+      <td>0.93</td>
+      <td>0.00</td>
+      <td>0.93</td>
+      <td>0.93</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.70</td>
+      <td>0.60</td>
+      <td>0.70</td>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.70</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.93</td>
+      <td>1.00</td>
+      <td>0.93</td>
+      <td>0.93</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.93</td>
+      <td>0.58</td>
+      <td>0.50</td>
+      <td>0.58</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.38</td>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.70</td>
+      <td>0.93</td>
+      <td>0.00</td>
+      <td>0.93</td>
+      <td>0.93</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.93</td>
+      <td>1.00</td>
+      <td>0.93</td>
+      <td>0.93</td>
+      <td>1.00</td>
+      <td>0.58</td>
+      <td>0.93</td>
+      <td>0.00</td>
+      <td>0.42</td>
+      <td>0.33</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.93</td>
+      <td>1.00</td>
+      <td>0.93</td>
+      <td>0.93</td>
+      <td>1.00</td>
+      <td>0.50</td>
+      <td>0.93</td>
+      <td>0.42</td>
+      <td>0.00</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.93</td>
+      <td>1.00</td>
+      <td>0.93</td>
+      <td>0.93</td>
+      <td>1.00</td>
+      <td>0.58</td>
+      <td>0.93</td>
+      <td>0.33</td>
+      <td>0.50</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/03-lab-5/"><span
+      aria-hidden="true">&larr;</span> </a></li>
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/03-lab-2/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

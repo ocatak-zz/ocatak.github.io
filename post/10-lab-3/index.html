@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/10-lab-3/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-3%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="10-hafta-lab-3-lstm-sınıflandırma">10. Hafta Lab-3: LSTM Sınıflandırma</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h3 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h3>
+
+<h4 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h4>
+
+<p>Bu lab çalışması kapsamında lab-1&rsquo;de kullanılan dökümanların <strong>tf-idf</strong> matrisi yerine lstm algoritması ile sınıflandırma modeli oluşturulacaktır.</p>
+
+<pre><code class="language-python">from urllib import request
+from bs4 import BeautifulSoup
+import numpy as np
+
+from keras.preprocessing.text import one_hot
+from keras.preprocessing.sequence import pad_sequences
+
+from keras.models import Sequential
+from keras.layers import Dense,Dropout
+from keras.layers import Flatten
+from keras.layers.embeddings import Embedding
+from sklearn.metrics import confusion_matrix
+
+import matplotlib.pyplot as plt
+</code></pre>
+
+<pre><code>c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+</code></pre>
+
+<h2 id="internet-üzerinde-bulunan-ekonomi-ve-spor-haberlerinin-sınıflandırılması">Internet üzerinde bulunan ekonomi ve spor haberlerinin sınıflandırılması</h2>
+
+<p>Bu çalışmada 11 ekonomi ve 11 spor haberi Internet üzerinde alınacaktır. HTML ve javasript etiketlerinin temizlenmesinden sonra derlem oluşturulmaktadır.</p>
+
+<pre><code class="language-python">urls = [&quot;http://www.bloomberght.com/yorum/cuneyt-basaran/2093520-uyuyan-dev-uyandi&quot;,
+                &quot;http://www.bloomberght.com/yorum/ali-cagataygelecege-bakis/2116104-fifa-goreve&quot;,
+                &quot;http://www.bloomberght.com/yorum/ahmet-oz/2075832-kisir-donguye-mi-giriyoruz&quot;,
+                &quot;http://www.bloomberght.com/yorum/gizem-oztok-altinsac/2113416-turkiyenin-ekonomi-sinavi&quot;,
+                &quot;http://www.bloomberght.com/yorum/ceren-dilekci/2115924-megabank-muammasi&quot;,
+                &quot;http://www.bloomberght.com/ht-yazarlar/cuneyt-basaran-2071/2116920-paketin-harcama-kalemleri&quot;,
+                &quot;http://www.bloomberght.com/ht-yazarlar/gokhan-sen/2079777-merkez-bankasina-sanatci-ruhu-gerekiyor&quot;,
+                &quot;http://www.bloomberght.com/ht-yazarlar/abdurrahman-yildirim/2116917-10-yil-once-serbest-10-yil-sonra-yasak&quot;,
+                &quot;http://www.bloomberght.com/ht-yazarlar/guntay-simsek/2116923-ihracatta-rekor-ithalatta-rekor-her-taraf-rekor&quot;,
+                &quot;http://spor.mynet.com/futbol/sampiyonlar-ligi/157184-jerome-boateng-den-cuneyt-cakir-a-elestiri.html&quot;,
+                &quot;http://www.hurriyet.com.tr/ekonomi/ihracat-nisan-ayinda-13-5-milyar-dolar-oldu-40822367&quot;,
+                &quot;http://ekonomi.haber7.com/ekonomi/haber/2614392-borcu-olanlar-dikkat-18-ay-taksit-yapilacak/?detay=1&quot;,
+             &quot;http://spor.mynet.com/fenerbahce/157181-giuliano-dan-aykut-kocaman-a-ovgu.html&quot;,
+             &quot;http://spor.mynet.com/galatasaray/157176-kaderi-degistiren-kebapcidaki-kavga.html&quot;,
+             &quot;http://spor.mynet.com/fenerbahce/157175-aziz-yildirim-in-secim-kozu.html&quot;,
+             &quot;http://spor.mynet.com/fenerbahce/157174-aykut-kocaman-dan-besiktas-iddiasi.html&quot;,
+             &quot;http://spor.mynet.com/basketbol/thy-euro-league/157173-fenerbahce-de-buyuk-surpriz.html&quot;,
+             &quot;http://spor.mynet.com/futbol/sampiyonlar-ligi/157170-mac-ozeti-real-madrid-2-2-bayern-munih-golleri-izle-cuneyt-cakir-penalti-izle.html&quot;,
+             &quot;http://spor.mynet.com/ingiltere/157168-cenk-tosun-icin-carpici-yorum-hayatta-kalmayi-basardi.html&quot;,
+             &quot;http://spor.mynet.com/besiktas/157129-besiktas-ta-atiba-nin-yerine-abdullahi-shehu.html&quot;,
+             &quot;http://www.hurriyet.com.tr/sporarena/besiktastan-olayli-fenerbahce-derbisi-kararina-itiraz-40822811&quot;,
+             &quot;http://www.hurriyet.com.tr/sporarena/devler-liginde-ilk-finalist-real-madrid-40822363&quot;]
+
+</code></pre>
+
+<pre><code class="language-python">docs = []
+for url in urls:
+    response = request.urlopen(url)
+    raw = response.read().decode('utf8')
+    soup = BeautifulSoup(raw, &quot;lxml&quot;)
+    [x.extract() for x in soup.findAll(['script', 'style'])]
+    raw = soup.get_text().strip().replace(&quot;\n&quot;, &quot; &quot;).lower()
+    for i in range(100):
+        raw = raw.replace(&quot;  &quot;,&quot; &quot;)
+    docs.append(raw)
+</code></pre>
+
+<pre><code class="language-python">y = np.concatenate((np.zeros(11), np.ones(11)))
+</code></pre>
+
+<p><strong>one_hot</strong> encoding yöntemi kullanılarak her bir kelime <em>integer encoding</em> oluşturulacaktır.</p>
+
+<pre><code class="language-python">vocab_size = 100000
+encoded_docs = [one_hot(d, vocab_size) for d in docs]
+print(docs[0][0:100])
+print(encoded_docs[0][0:10])
+</code></pre>
+
+<pre><code>cüneyt başaran - uyuyan dev uyandı - bloomberg ht menü tv piyasalar haberler tarım enerji ekonomi ve
+[93019, 13107, 25150, 84803, 1528, 70612, 46349, 45372, 9852, 30444]
+</code></pre>
+
+<pre><code class="language-python">max_length = 4500
+padded_docs = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
+</code></pre>
+
+<pre><code class="language-python"># define the model
+model = Sequential()
+model.add(Embedding(vocab_size, 50, input_length=max_length))
+model.add(Flatten())
+model.add(Dense(1, activation='sigmoid'))
+# compile the model
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['acc'])
+# summarize the model
+print(model.summary())
+
+# fit the model
+history = model.fit(padded_docs, y, epochs=50, verbose=1, validation_split=0.2)
+
+</code></pre>
+
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_1 (Embedding)      (None, 4500, 50)          5000000   
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 225000)            0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 225001    
+=================================================================
+Total params: 5,225,001
+Trainable params: 5,225,001
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 17 samples, validate on 5 samples
+Epoch 1/50
+17/17 [==============================] - 1s 81ms/step - loss: 0.6901 - acc: 0.5882 - val_loss: 3.2716 - val_acc: 0.0000e+00
+Epoch 2/50
+17/17 [==============================] - 0s 16ms/step - loss: 1.0750 - acc: 0.6471 - val_loss: 1.9049 - val_acc: 0.0000e+00
+Epoch 3/50
+17/17 [==============================] - 0s 15ms/step - loss: 0.5375 - acc: 0.6471 - val_loss: 0.6074 - val_acc: 1.0000
+Epoch 4/50
+17/17 [==============================] - 0s 15ms/step - loss: 0.3840 - acc: 1.0000 - val_loss: 0.3351 - val_acc: 1.0000
+Epoch 5/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.4747 - acc: 0.6471 - val_loss: 0.4433 - val_acc: 1.0000
+Epoch 6/50
+17/17 [==============================] - 0s 15ms/step - loss: 0.3097 - acc: 1.0000 - val_loss: 0.7773 - val_acc: 0.4000
+Epoch 7/50
+17/17 [==============================] - 0s 16ms/step - loss: 0.1581 - acc: 1.0000 - val_loss: 1.2544 - val_acc: 0.0000e+00
+Epoch 8/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.1101 - acc: 1.0000 - val_loss: 1.7079 - val_acc: 0.0000e+00
+Epoch 9/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.1057 - acc: 1.0000 - val_loss: 2.0174 - val_acc: 0.0000e+00
+Epoch 10/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0998 - acc: 1.0000 - val_loss: 2.1573 - val_acc: 0.0000e+00
+Epoch 11/50
+17/17 [==============================] - 0s 15ms/step - loss: 0.0813 - acc: 1.0000 - val_loss: 2.1627 - val_acc: 0.0000e+00
+Epoch 12/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0574 - acc: 1.0000 - val_loss: 2.0862 - val_acc: 0.0000e+00
+Epoch 13/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0370 - acc: 1.0000 - val_loss: 1.9714 - val_acc: 0.0000e+00
+Epoch 14/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0229 - acc: 1.0000 - val_loss: 1.8458 - val_acc: 0.0000e+00
+Epoch 15/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0144 - acc: 1.0000 - val_loss: 1.7239 - val_acc: 0.0000e+00
+Epoch 16/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0094 - acc: 1.0000 - val_loss: 1.6123 - val_acc: 0.0000e+00
+Epoch 17/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0065 - acc: 1.0000 - val_loss: 1.5130 - val_acc: 0.0000e+00
+Epoch 18/50
+17/17 [==============================] - 0s 15ms/step - loss: 0.0048 - acc: 1.0000 - val_loss: 1.4262 - val_acc: 0.0000e+00
+Epoch 19/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0038 - acc: 1.0000 - val_loss: 1.3510 - val_acc: 0.0000e+00
+Epoch 20/50
+17/17 [==============================] - 0s 16ms/step - loss: 0.0031 - acc: 1.0000 - val_loss: 1.2862 - val_acc: 0.0000e+00
+Epoch 21/50
+17/17 [==============================] - 0s 15ms/step - loss: 0.0026 - acc: 1.0000 - val_loss: 1.2305 - val_acc: 0.0000e+00
+Epoch 22/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0022 - acc: 1.0000 - val_loss: 1.1828 - val_acc: 0.0000e+00
+Epoch 23/50
+17/17 [==============================] - 0s 16ms/step - loss: 0.0020 - acc: 1.0000 - val_loss: 1.1421 - val_acc: 0.0000e+00
+Epoch 24/50
+17/17 [==============================] - 0s 16ms/step - loss: 0.0018 - acc: 1.0000 - val_loss: 1.1074 - val_acc: 0.0000e+00
+Epoch 25/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0016 - acc: 1.0000 - val_loss: 1.0778 - val_acc: 0.0000e+00
+Epoch 26/50
+17/17 [==============================] - 0s 15ms/step - loss: 0.0014 - acc: 1.0000 - val_loss: 1.0526 - val_acc: 0.0000e+00
+Epoch 27/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0013 - acc: 1.0000 - val_loss: 1.0314 - val_acc: 0.0000e+00
+Epoch 28/50
+17/17 [==============================] - 0s 14ms/step - loss: 0.0012 - acc: 1.0000 - val_loss: 1.0134 - val_acc: 0.0000e+00
+Epoch 29/50
+17/17 [==============================] - 0s 15ms/step - loss: 0.0011 - acc: 1.0000 - val_loss: 0.9984 - val_acc: 0.0000e+00
+Epoch 30/50
+17/17 [==============================] - 0s 15ms/step - loss: 0.0010 - acc: 1.0000 - val_loss: 0.9859 - val_acc: 0.0000e+00
+Epoch 31/50
+17/17 [==============================] - 0s 16ms/step - loss: 9.4947e-04 - acc: 1.0000 - val_loss: 0.9756 - val_acc: 0.0000e+00
+Epoch 32/50
+17/17 [==============================] - 0s 15ms/step - loss: 8.8437e-04 - acc: 1.0000 - val_loss: 0.9672 - val_acc: 0.0000e+00
+Epoch 33/50
+17/17 [==============================] - 0s 14ms/step - loss: 8.2629e-04 - acc: 1.0000 - val_loss: 0.9605 - val_acc: 0.0000e+00
+Epoch 34/50
+17/17 [==============================] - 0s 14ms/step - loss: 7.7432e-04 - acc: 1.0000 - val_loss: 0.9552 - val_acc: 0.0000e+00
+Epoch 35/50
+17/17 [==============================] - 0s 14ms/step - loss: 7.2762e-04 - acc: 1.0000 - val_loss: 0.9512 - val_acc: 0.0000e+00
+Epoch 36/50
+17/17 [==============================] - 0s 16ms/step - loss: 6.8562e-04 - acc: 1.0000 - val_loss: 0.9483 - val_acc: 0.0000e+00
+Epoch 37/50
+17/17 [==============================] - 0s 16ms/step - loss: 6.4772e-04 - acc: 1.0000 - val_loss: 0.9464 - val_acc: 0.0000e+00
+Epoch 38/50
+17/17 [==============================] - 0s 16ms/step - loss: 6.1342e-04 - acc: 1.0000 - val_loss: 0.9454 - val_acc: 0.0000e+00
+Epoch 39/50
+17/17 [==============================] - 0s 14ms/step - loss: 5.8231e-04 - acc: 1.0000 - val_loss: 0.9451 - val_acc: 0.0000e+00
+Epoch 40/50
+17/17 [==============================] - 0s 15ms/step - loss: 5.5407e-04 - acc: 1.0000 - val_loss: 0.9454 - val_acc: 0.0000e+00
+Epoch 41/50
+17/17 [==============================] - 0s 15ms/step - loss: 5.2833e-04 - acc: 1.0000 - val_loss: 0.9463 - val_acc: 0.0000e+00
+Epoch 42/50
+17/17 [==============================] - 0s 15ms/step - loss: 5.0485e-04 - acc: 1.0000 - val_loss: 0.9477 - val_acc: 0.0000e+00
+Epoch 43/50
+17/17 [==============================] - 0s 15ms/step - loss: 4.8337e-04 - acc: 1.0000 - val_loss: 0.9495 - val_acc: 0.0000e+00
+Epoch 44/50
+17/17 [==============================] - 0s 15ms/step - loss: 4.6366e-04 - acc: 1.0000 - val_loss: 0.9517 - val_acc: 0.0000e+00
+Epoch 45/50
+17/17 [==============================] - 0s 15ms/step - loss: 4.4557e-04 - acc: 1.0000 - val_loss: 0.9542 - val_acc: 0.0000e+00
+Epoch 46/50
+17/17 [==============================] - 0s 15ms/step - loss: 4.2893e-04 - acc: 1.0000 - val_loss: 0.9570 - val_acc: 0.0000e+00
+Epoch 47/50
+17/17 [==============================] - 0s 13ms/step - loss: 4.1356e-04 - acc: 1.0000 - val_loss: 0.9601 - val_acc: 0.0000e+00
+Epoch 48/50
+17/17 [==============================] - 0s 14ms/step - loss: 3.9938e-04 - acc: 1.0000 - val_loss: 0.9633 - val_acc: 0.0000e+00
+Epoch 49/50
+17/17 [==============================] - 0s 13ms/step - loss: 3.8622e-04 - acc: 1.0000 - val_loss: 0.9667 - val_acc: 0.0000e+00
+Epoch 50/50
+17/17 [==============================] - 0s 14ms/step - loss: 3.7403e-04 - acc: 1.0000 - val_loss: 0.9703 - val_acc: 0.0000e+00
+</code></pre>
+
+<pre><code class="language-python">y_hat = model.predict_classes(padded_docs)
+cm = confusion_matrix(y, y_hat)
+print(cm)
+
+</code></pre>
+
+<pre><code>[[11  0]
+ [ 5  6]]
+</code></pre>
+
+<pre><code class="language-python">
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<p><img src="10-lab-3_files/10-lab-3_11_0.png" alt="png" /></p>
+
+<p><img src="10-lab-3_files/10-lab-3_11_1.png" alt="png" /></p>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/10-lab-4/"><span
+      aria-hidden="true">&larr;</span> </a></li>
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/10-lab-2/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

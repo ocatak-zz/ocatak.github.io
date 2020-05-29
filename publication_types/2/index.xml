@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 on Dr. Ferhat Ozgur Catak</title>
+    <link>https://www.ozgurcatak.org/publication_types/2/</link>
+    <description>Recent content in 2 on Dr. Ferhat Ozgur Catak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020 Ferhat Ozgur Catak</copyright>
+    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.ozgurcatak.org/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Practical Implementation of Privacy Preserving Clustering Methods Using a Partially Homomorphic Encryption Algorithm</title>
+      <link>https://www.ozgurcatak.org/publication/2020-practical-phe/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/2020-practical-phe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed denial of service attack detection using autoencoder and deep neural networks</title>
+      <link>https://www.ozgurcatak.org/publication/2019-ios-ddos/</link>
+      <pubDate>Fri, 06 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/2019-ios-ddos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sensor Based Cyber Attack Detections in Critical Infrastructures Using Deep Learning Algorithms</title>
+      <link>https://www.ozgurcatak.org/publication/2019-sensor-based-detection/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/2019-sensor-based-detection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Two-Layer Malicious Network Flow Detection System with Sparse Linear Model Based Feature Selection</title>
+      <link>https://www.ozgurcatak.org/publication/ddos-jnsfsl/</link>
+      <pubDate>Mon, 31 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/ddos-jnsfsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CPP-ELM: Cryptographically Privacy-Preserving Extreme Learning Machine for Cloud Systems</title>
+      <link>https://www.ozgurcatak.org/publication/cpp-elm/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/cpp-elm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Classification with boosting of extreme learning machine over arbitrarily partitioned data</title>
+      <link>https://www.ozgurcatak.org/publication/boost-elm/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/boost-elm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Detection of Attack-Targeted Scans from The Apache HTTP Server Access Logs</title>
+      <link>https://www.ozgurcatak.org/publication/http-logs/</link>
+      <pubDate>Thu, 30 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/http-logs/</guid>
+      <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
+    </item>
+    
+    <item>
+      <title>Detection of Distributed Denial of Service Attacks Based on Ensemble Methods</title>
+      <link>https://www.ozgurcatak.org/publication/ensemble-ddos/</link>
+      <pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/ensemble-ddos/</guid>
+      <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+  <link rel="alternate" href="https://www.ozgurcatak.org/post/index.xml" type="application/rss+xml" title="Dr. Ferhat Ozgur Catak">
+  <link rel="feed" href="https://www.ozgurcatak.org/post/index.xml" type="application/rss+xml" title="Dr. Ferhat Ozgur Catak">
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title>Posts | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content="Posts - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Posts - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="universal-wrapper">
+
+  <h2>Posts</h2>
+
+  
+
+  
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/09-lab-3/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    9. Hafta Lab-3: AdaBoost BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında AdaBoost yöntemi ile topluluk sınıflandırma modeli oluşturulacaktır.
+from sklearn.datasets import make_classification from sklearn.svm import SVC from sklearn.tree import DecisionTreeClassifier from sklearn.metrics import confusion_matrix from sklearn.model_selection import train_test_split from sklearn.ensemble import AdaBoostClassifier import numpy as np np.random.seed(22)  Veri kümesi oluştur. X, y = make_classification(n_samples=10000,n_features=2, n_redundant=0, n_informative=1, n_clusters_per_class=1, class_sep=0.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/09-lab-3/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/09-lab-4/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    9. Hafta Lab-4: Prinicpal Component Analysis - Linear Discriminant Analysis BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında PCA ve LDA yöntemi ile boyut azaltma yapılacaktır.
+import matplotlib.pyplot as plt import numpy as np from sklearn.datasets import make_classification from sklearn.decomposition import PCA from sklearn.discriminant_analysis import LinearDiscriminantAnalysis np.random.seed(26)  Veri kümesi oluştur. X, y = make_classification(n_classes=3, n_samples=100000,n_features=100, n_redundant=0, n_informative=2, n_clusters_per_class=1, class_sep=0.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/09-lab-4/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/09-lab-5/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    9. Hafta Lab-5: Gaussian Anomaly Detection BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında anomali tespit yöntemi kullanılacaktır.
+import numpy as np import matplotlib.pyplot as plt  Normal dağılımın olasılık yoğunluk fonksiyonu (Probability Density Function - PDF) def normal(power, mean, std, val): a = 1/(np.sqrt(2*np.pi)*(std)) diff = np.abs(np.power(val-mean, power)) b = np.exp(-(diff)/(2*std*std)) return a*b  Normal dağılım gösteren bir veri kümesi oluşturalım mu, sigma = 0, 0.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/09-lab-5/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/09-lab-6/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    9. Hafta Lab-6: One-Class SVM BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında one-class svm ile anomali tespit yöntemi yapılacaktır.
+import numpy as np import matplotlib.pyplot as plt import matplotlib.font_manager from sklearn import svm  Örnek veri kümesi oluştur. train_size = 100000 test_size = 1000 X = 0.3 * np.random.randn(train_size, 2) X_train = np.r_[X + 2, X - 2] X = 0.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/09-lab-6/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/10-lab-1/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    10. Hafta Lab-1: TF-IDF BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında dökümanlardan tf-idf matrisi oluşturulacaktır.
+from sklearn.feature_extraction.text import CountVectorizer from sklearn.feature_extraction.text import TfidfVectorizer from bs4 import BeautifulSoup from urllib import request from sklearn.svm import SVC from sklearn.metrics import confusion_matrix import numpy as np np.set_printoptions(linewidth=160)  Örnek bir derlem olsun. 5 adet farklı dokumandan oluşan bir küme corpus = [&quot;Elma Portakal Portakal Elma&quot;, &quot;Elma Muz Elma Muz&quot;, &quot;Muz Elma Muz Muz Muz Elma&quot;, &quot;Muz Portakal Muz Muz Portakal Muz&quot;, &quot;Muz Elma Muz Muz Portakal Muz&quot;]  Bu derlem için sözlük oluşturup kelime frekanslarını sayalım vectorizer = CountVectorizer() vocab_freq = vectorizer.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/10-lab-1/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/10-lab-2/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    18 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    10. Hafta Lab-3: TF-IDF BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında dökümanlardan tf-idf matrisi oluşturulacaktır.
+from sklearn.datasets import fetch_20newsgroups from sklearn.svm import SVC from sklearn.feature_extraction.text import CountVectorizer from sklearn.ensemble import RandomForestClassifier from sklearn.feature_extraction.text import TfidfTransformer from sklearn.model_selection import train_test_split from sklearn.metrics import confusion_matrix, classification_report from sklearn.ensemble import BaggingClassifier import numpy as np from sklearn.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/10-lab-2/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/10-lab-3/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    10. Hafta Lab-3: LSTM Sınıflandırma BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında lab-1&rsquo;de kullanılan dökümanların tf-idf matrisi yerine lstm algoritması ile sınıflandırma modeli oluşturulacaktır.
+from urllib import request from bs4 import BeautifulSoup import numpy as np from keras.preprocessing.text import one_hot from keras.preprocessing.sequence import pad_sequences from keras.models import Sequential from keras.layers import Dense,Dropout from keras.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/10-lab-3/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/10-lab-4/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    10. Hafta Lab-4: LSTM Sınıflandırma BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında lab-2&rsquo;de kullanılan dökümanların tf-idf matrisi yerine lstm algoritması ile sınıflandırma modeli oluşturulacaktır.
+from sklearn.datasets import fetch_20newsgroups from sklearn.svm import SVC from sklearn.feature_extraction.text import CountVectorizer from sklearn.ensemble import RandomForestClassifier from sklearn.feature_extraction.text import TfidfTransformer from sklearn.model_selection import train_test_split from sklearn.metrics import confusion_matrix, classification_report from sklearn.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/10-lab-4/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/10-lab-5/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    10. Hafta Lab-5: TF-IDF Zararlı Yazılım Sınıflandırma BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında zararlı yazılımların (malware) API çağırımlarının tf-idf matrisi ile sınıflandırma modeli oluşturulacaktır. Malware Classification
+import pandas as pd from sklearn.utils import shuffle from sklearn.feature_extraction.text import TfidfVectorizer import numpy as np from sklearn.model_selection import train_test_split from keras.models import Sequential from keras.layers import Dense, Dropout import matplotlib.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/10-lab-5/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="https://www.ozgurcatak.org/post/10-lab-6/" itemprop="url"></a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    10. Hafta Lab-6: Android Zararlı Yazılım Sınıflandırma BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında android zararlı yazılımlarının (andorid malware) sınıflandırma modeli oluşturulacaktır. Mobile Malware Classification
+from arff2pandas import a2p from keras.models import Sequential from keras.layers import Dense, Dropout from sklearn.preprocessing import LabelEncoder from keras.utils import np_utils import matplotlib.pyplot as plt import numpy as np from sklearn.
+    
+  </div>
+  <p class="read-more">
+    <a href="https://www.ozgurcatak.org/post/10-lab-6/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+  
+
+  
+<nav>
+  <ul class="pager">
+    
+    <li><a href="https://www.ozgurcatak.org/post/page/3/">&lt;</a></li>
+    
+    
+    <li><a href="https://www.ozgurcatak.org/post/page/5/">&gt;</a></li>
+    
+  </ul>
+</nav>
+
+
+
+</div>
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

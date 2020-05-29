@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Dr. Ferhat Ozgur Catak</title>
+    <link>https://www.ozgurcatak.org/post/</link>
+    <description>Recent content in Posts on Dr. Ferhat Ozgur Catak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020 Ferhat Ozgur Catak</copyright>
+    <lastBuildDate>Sun, 24 May 2020 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.ozgurcatak.org/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Classification with Boosting of Extreme Learning Machine Over Arbitrarily Partitioned Data</title>
+      <link>https://www.ozgurcatak.org/post/mr-elm/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/mr-elm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lab-4:kNN - Karar Sınırları.</title>
+      <link>https://www.ozgurcatak.org/post/mal-api-2019/</link>
+      <pubDate>Sat, 10 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/mal-api-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Malware dataset for security researchers, data scientists.</title>
+      <link>https://www.ozgurcatak.org/post/mal-api-2019/</link>
+      <pubDate>Sat, 10 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/mal-api-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Siber Güvenlik için Makine Öğrenmesi ve Güvenli Model Eğitimi</title>
+      <link>https://www.ozgurcatak.org/post/siu2019_ozel_oturum/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/siu2019_ozel_oturum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/01-lin_reg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/01-lin_reg/</guid>
+      <description>1. Hafta Lab: Doğrusal Regresyon BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında doğrusal regresyon yöntemini sentetik bir kümesine uygulayacağız.
+# kutuphaleri yukle import pandas as pd import matplotlib.pyplot as plt  Pandas kütüphanesi kullanarak ds1.txt dosyası verikumesi degişkenine (dataframe) atanmaktadır. verikumesi değişkenin boyutları (21,2) olduğu bulunur. 21 satır ve 2 sütundan oluşmaktadır. $verikumesi \in \mathbb{R}^{21 \times 2}$</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/02-lab1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/02-lab1/</guid>
+      <description>2. Hafta Lab-1: Analitik Çözüm - Normal Denklem BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında doğrusal regresyon probleminin analitik çözümünde kullanılan normal denklemi sentetik bir kümesine uygulayacağız.
+import pandas as pd import numpy as np  Pandas kütüphanesi kullanarak ds2.txt dosyası verikumesi degişkenine (dataframe) atanmaktadır.
+# veri kumesini oku verikumesi = pd.read_csv(&amp;quot;ds2.txt&amp;quot;,delimiter=&amp;quot;\t&amp;quot;) verikumesi   .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/02-lab2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/02-lab2/</guid>
+      <description>2. Hafta Lab-2: Regularization BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında doğrusal regresyon probleminin gradient descent çözümünde kullanılan regularization yöntemini sentetik bir kümesine uygulayacağız.
+import numpy as np import pandas as pd from sklearn.linear_model import SGDRegressor  Pandas kütüphanesi kullanarak ds2.txt dosyası verikumesi degişkenine (dataframe) atanmaktadır.
+# veri kumesini oku verikumesi = pd.read_csv(&amp;quot;ds2.txt&amp;quot;,delimiter=&amp;quot;\t&amp;quot;) X = verikumesi.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/02-lab3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/02-lab3/</guid>
+      <description>2. Hafta Lab-3: Lojistik Regresyon BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında lojistik regresyon sınıflandırma yöntemini sentetik bir kümesine uygulayacağız.
+import numpy as np import pandas as pd from sklearn.linear_model import LogisticRegression from sklearn.model_selection import train_test_split # veri kumesini oku verikumesi = pd.read_csv(&amp;quot;ds_logreg.txt&amp;quot;,delimiter=&amp;quot;\t&amp;quot;) # ilk 10 satiri goster verikumesi.head(10)   .dataframe tbody tr th:only-of-type { vertical-align: middle; } .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/02-lab4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/02-lab4/</guid>
+      <description>2. Hafta Lab-4: KDDCUP&amp;rsquo;99 Veri kümesi - Lojistik Regresyon BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında KDDCUP&amp;rsquo;99 veri kümesinin lojistik regresyon algoritmasıyla sınıflandırma modelini oluşturacağız.
+import numpy as np import pandas as pd from sklearn.linear_model import LogisticRegression from sklearn.metrics import confusion_matrix from sklearn.model_selection import train_test_split  Pandas kütüphanesi sıkıştırılmış formatlardan veri okuyabilemktedir.
+# veri kumesini oku kolon_adlari = [&#39;duration&#39;,&#39;protocol_type&#39;,&#39;service&#39;,&#39;flag&#39;,&#39;src_bytes&#39;,&#39;dst_bytes&#39;,&#39;land&#39;,&#39;wrong_fragment&#39;,&#39;urgent&#39;, &#39;hot&#39;,&#39;num_failed_logins&#39;,&#39;logged_in&#39;,&#39;num_compromised&#39;,&#39;root_shell&#39;,&#39;su_attempted&#39;,&#39;num_root&#39;,&#39;num_file_creations&#39;, &#39;num_shells&#39;,&#39;num_access_files&#39;,&#39;num_outbound_cmds&#39;,&#39;is_host_login&#39;,&#39;is_guest_login&#39;,&#39;count&#39;,&#39;srv_count&#39;, &#39;serror_rate&#39;,&#39;srv_serror_rate&#39;,&#39;rerror_rate&#39;,&#39;srv_rerror_rate&#39;,&#39;same_srv_rate&#39;,&#39;diff_srv_rate&#39;,&#39;srv_diff_host_rate&#39;, &#39;dst_host_count&#39;,&#39;dst_host_srv_count&#39;,&#39;dst_host_same_srv_rate&#39;,&#39;dst_host_diff_srv_rate&#39;,&#39;dst_host_same_src_port_rate&#39;, &#39;dst_host_srv_diff_host_rate&#39;,&#39;dst_host_serror_rate&#39;,&#39;dst_host_srv_serror_rate&#39;,&#39;dst_host_rerror_rate&#39;, &#39;dst_host_srv_rerror_rate&#39;,&#39;label&#39;] verikumesi = pd.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/03-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/03-lab-1/</guid>
+      <description>3. Hafta Lab-1: $L2$ Regularization vs $\lambda$ BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında lojistik regresyon algoritmasında $L2$ regularization yönteminde $\lambda$ değeriyle ağırlık vektörünün $\mathbf{w}$ değişimi KDDCUP&amp;rsquo;99 veri kümesinde uygulayacağız.
+import numpy as np import pandas as pd from sklearn.linear_model import LogisticRegression import matplotlib.pyplot as plt  KDDCUP&amp;rsquo;99 veri kumesini oku
+# veri kumesini oku kolon_adlari = [&#39;duration&#39;,&#39;protocol_type&#39;,&#39;service&#39;,&#39;flag&#39;,&#39;src_bytes&#39;,&#39;dst_bytes&#39;,&#39;land&#39;,&#39;wrong_fragment&#39;,&#39;urgent&#39;, &#39;hot&#39;,&#39;num_failed_logins&#39;,&#39;logged_in&#39;,&#39;num_compromised&#39;,&#39;root_shell&#39;,&#39;su_attempted&#39;,&#39;num_root&#39;,&#39;num_file_creations&#39;, &#39;num_shells&#39;,&#39;num_access_files&#39;,&#39;num_outbound_cmds&#39;,&#39;is_host_login&#39;,&#39;is_guest_login&#39;,&#39;count&#39;,&#39;srv_count&#39;, &#39;serror_rate&#39;,&#39;srv_serror_rate&#39;,&#39;rerror_rate&#39;,&#39;srv_rerror_rate&#39;,&#39;same_srv_rate&#39;,&#39;diff_srv_rate&#39;,&#39;srv_diff_host_rate&#39;, &#39;dst_host_count&#39;,&#39;dst_host_srv_count&#39;,&#39;dst_host_same_srv_rate&#39;,&#39;dst_host_diff_srv_rate&#39;,&#39;dst_host_same_src_port_rate&#39;, &#39;dst_host_srv_diff_host_rate&#39;,&#39;dst_host_serror_rate&#39;,&#39;dst_host_srv_serror_rate&#39;,&#39;dst_host_rerror_rate&#39;, &#39;dst_host_srv_rerror_rate&#39;,&#39;label&#39;] verikumesi = pd.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/03-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/03-lab-2/</guid>
+      <description>3. Hafta Lab-2: $L1$ ve $L2$ Regularization Sonuçlarının İncelenmesi BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında lojistik regresyon algoritmasında $L2$ regularization yönteminde $\lambda$ değeriyle ağırlık vektörünün $\mathbf{w}$ değişimi KDDCUP&amp;rsquo;99 veri kümesinde uygulayacağız.
+import numpy as np import os import pandas as pd from sklearn.linear_model import LogisticRegression from sklearn.model_selection import train_test_split import matplotlib.pyplot as plt from sklearn.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/03-lab-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/03-lab-3/</guid>
+      <description>3. Hafta Lab-3: Uzaklıkların Bulunması BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında Chebysev, Jaccard, Euclidean, Cosine, Cityblock uzaklık/benzerliklerinin KDDCUP&amp;rsquo;99 veri kümesine uygulamalarını inceleyeceğiz.
+import numpy as np import pandas as pd from scipy.spatial.distance import squareform from scipy.spatial.distance import pdist  KDDCUP&amp;rsquo;99 Verikümesini oku
+# veri kumesini oku kolon_adlari = [&#39;duration&#39;,&#39;protocol_type&#39;,&#39;service&#39;,&#39;flag&#39;,&#39;src_bytes&#39;,&#39;dst_bytes&#39;,&#39;land&#39;,&#39;wrong_fragment&#39;,&#39;urgent&#39;, &#39;hot&#39;,&#39;num_failed_logins&#39;,&#39;logged_in&#39;,&#39;num_compromised&#39;,&#39;root_shell&#39;,&#39;su_attempted&#39;,&#39;num_root&#39;,&#39;num_file_creations&#39;, &#39;num_shells&#39;,&#39;num_access_files&#39;,&#39;num_outbound_cmds&#39;,&#39;is_host_login&#39;,&#39;is_guest_login&#39;,&#39;count&#39;,&#39;srv_count&#39;, &#39;serror_rate&#39;,&#39;srv_serror_rate&#39;,&#39;rerror_rate&#39;,&#39;srv_rerror_rate&#39;,&#39;same_srv_rate&#39;,&#39;diff_srv_rate&#39;,&#39;srv_diff_host_rate&#39;, &#39;dst_host_count&#39;,&#39;dst_host_srv_count&#39;,&#39;dst_host_same_srv_rate&#39;,&#39;dst_host_diff_srv_rate&#39;,&#39;dst_host_same_src_port_rate&#39;, &#39;dst_host_srv_diff_host_rate&#39;,&#39;dst_host_serror_rate&#39;,&#39;dst_host_srv_serror_rate&#39;,&#39;dst_host_rerror_rate&#39;, &#39;dst_host_srv_rerror_rate&#39;,&#39;label&#39;] verikumesi = pd.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/03-lab-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/03-lab-5/</guid>
+      <description>3. Hafta Lab-5: Karar Ağacı Algoritması BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında karar ağacı yöntemini tenis veri kümesinde uygulayacağız.
+import numpy as np import pandas as pd from sklearn.tree import DecisionTreeClassifier from sklearn.preprocessing import LabelEncoder from sklearn.metrics import accuracy_score from sklearn.cross_validation import train_test_split  c:\users\user\appdata\local\programs\python\python35\lib\site-packages\sklearn\cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/05-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/05-lab-1/</guid>
+      <description>5. Hafta Lab-1: Karar Ağaçları BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında karar ağacı yöntemini KDDCUP&amp;rsquo;99 veri kümesinde uygulayacağız.
+import numpy as np import pandas as pd from sklearn.model_selection import train_test_split from sklearn import tree import graphviz import pydot from graphviz import Source  KDDCUP&amp;rsquo;99 veri kumesini oku
+# veri kumesini oku kolon_adlari = [&#39;duration&#39;,&#39;protocol_type&#39;,&#39;service&#39;,&#39;flag&#39;,&#39;src_bytes&#39;,&#39;dst_bytes&#39;,&#39;land&#39;,&#39;wrong_fragment&#39;,&#39;urgent&#39;, &#39;hot&#39;,&#39;num_failed_logins&#39;,&#39;logged_in&#39;,&#39;num_compromised&#39;,&#39;root_shell&#39;,&#39;su_attempted&#39;,&#39;num_root&#39;,&#39;num_file_creations&#39;, &#39;num_shells&#39;,&#39;num_access_files&#39;,&#39;num_outbound_cmds&#39;,&#39;is_host_login&#39;,&#39;is_guest_login&#39;,&#39;count&#39;,&#39;srv_count&#39;, &#39;serror_rate&#39;,&#39;srv_serror_rate&#39;,&#39;rerror_rate&#39;,&#39;srv_rerror_rate&#39;,&#39;same_srv_rate&#39;,&#39;diff_srv_rate&#39;,&#39;srv_diff_host_rate&#39;, &#39;dst_host_count&#39;,&#39;dst_host_srv_count&#39;,&#39;dst_host_same_srv_rate&#39;,&#39;dst_host_diff_srv_rate&#39;,&#39;dst_host_same_src_port_rate&#39;, &#39;dst_host_srv_diff_host_rate&#39;,&#39;dst_host_serror_rate&#39;,&#39;dst_host_srv_serror_rate&#39;,&#39;dst_host_rerror_rate&#39;, &#39;dst_host_srv_rerror_rate&#39;,&#39;label&#39;] verikumesi = pd.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/05-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/05-lab-2/</guid>
+      <description>5. Hafta Lab-2: K-Means Kümeleme Algoritması BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında k-ortalamalar kümeleme yöntemini sentetik bir veri kümesinde uygulayacağız.
+from copy import deepcopy import numpy as np import pandas as pd from matplotlib import pyplot as plt from sklearn.datasets.samples_generator import make_blobs  Euclidean uzaklık hesaplamak için bir metod tanımlayalım
+def dist(a, b, ax=1): return np.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/05-lab-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/05-lab-3/</guid>
+      <description>5. Hafta Lab-3: K-Means Silhouette Analizi BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında k-ortalamalar kümeleme yöntemininde seçilen $k$ sayılarının Silhouette değerlerini sentetik bir veri kümesinde uygulayacağız.
+from sklearn.datasets import make_blobs from sklearn.cluster import KMeans from sklearn.metrics import silhouette_samples, silhouette_score import matplotlib.pyplot as plt import matplotlib.cm as cm import numpy as np  Kümeleme için sentetik bir veri kümesi oluştur.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/05-lab-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/05-lab-4/</guid>
+      <description>5. Hafta Lab-4: Hiyerarşik Kümeleme BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında hiyerarşik kümeleme yöntemini sentetik bir veri kümesinde uygulayacağız.
+from scipy.cluster import hierarchy import matplotlib.pyplot as plt from sklearn.datasets import make_blobs X, y = make_blobs(n_samples=20, n_features=2, centers=3, cluster_std=1, center_box=(-10.0, 10.0), shuffle=True, random_state=1) plt.scatter(X[:,0], X[:,1], c=&#39;black&#39;, s=7)  &amp;lt;matplotlib.collections.PathCollection at 0x2a7ffd82be0&amp;gt;  Hiyerarşik kümeleme algoritmasının gerçekleştirimi hem sklearn hem de scipy içinde yer almaktadır.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/06-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/06-lab-1/</guid>
+      <description>6. Hafta Lab-1: Doğrusal SVM Karar Sınırları BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında doğrusal ayrıştırılabilir bir veri kümesinin SVM karar sınırlarını belirleyeceğiz
+import numpy as np import matplotlib.pyplot as plt from sklearn import svm  100 adet ayrıştırılabilir veri örneği oluşturalım. İlk 50 örnek $0$ sınıf etiketine, diğer 50 örnek $+1$ sınıf etiketine sahip olsun.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/06-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/06-lab-2/</guid>
+      <description>6. Hafta Lab-2: Doğrusal SVM Karar Sınırları BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında doğrusal ayrıştırılabilir bir veri kümesinin SVM karar sınırlarınının $C$ parametresine göre değişimi incelenecektir.
+import matplotlib.pyplot as plt from sklearn.model_selection import train_test_split from sklearn import datasets from sklearn import svm from sklearn.metrics import accuracy_score import numpy as np import pandas as pd  Veri kümesi oluştur</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/06-lab-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/06-lab-3/</guid>
+      <description>6. Hafta Lab-3: SVM Çekirdek Fonks.yonları BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışmasında doğrusal ayrıştırılabilir bir veri kümesi kullanılarak SVM çekirdek fonksiyonları incelenecektir.
+import numpy as np import matplotlib.pyplot as plt from sklearn import svm, datasets from sklearn.model_selection import train_test_split from sklearn import svm from sklearn.preprocessing import MinMaxScaler from matplotlib.colors import ListedColormap cmap_light = ListedColormap([&#39;#00AAAA&#39;, &#39;#00FFAA&#39;, &#39;#AAAAFF&#39;])  Veri kümesi oluştur</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/07-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/07-lab-1/</guid>
+      <description>7. Hafta Lab-1: Yapay Sinir Ağları BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak import pandas as pd import numpy as np from sklearn.cross_validation import train_test_split from sklearn.metrics import classification_report,confusion_matrix,accuracy_score,roc_curve import matplotlib.pyplot as plt from IPython.display import Image  c:\users\user\appdata\local\programs\python\python35\lib\site-packages\sklearn\cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/07-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/07-lab-2/</guid>
+      <description>7. Hafta Lab-2: Yapay Sinir Ağları BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak import pandas as pd import numpy as np from sklearn.cross_validation import train_test_split from sklearn.metrics import classification_report,confusion_matrix,accuracy_score,roc_curve import matplotlib.pyplot as plt from IPython.display import Markdown, display from sklearn.preprocessing import LabelEncoder from keras.utils import np_utils from IPython.display import Image  c:\users\user\appdata\local\programs\python\python35\lib\site-packages\sklearn\cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/07-lab-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/07-lab-3/</guid>
+      <description>7. Hafta Lab-3: Yapay Sinir Ağları BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak import pandas as pd import numpy as np from sklearn.cross_validation import train_test_split from sklearn.metrics import classification_report,confusion_matrix,accuracy_score,roc_curve import matplotlib.pyplot as plt from IPython.display import Markdown, display from sklearn.preprocessing import LabelEncoder from keras.utils import np_utils from IPython.display import Image  c:\users\user\appdata\local\programs\python\python35\lib\site-packages\sklearn\cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/07-lab-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/07-lab-4/</guid>
+      <description>7. Hafta Lab-4: Yapay Sinir Ağları BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak from keras.layers import Input, Dense from keras.models import Model from keras.datasets import mnist import numpy as np from IPython.display import Image  c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/08-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/08-lab-1/</guid>
+      <description>8. Hafta Lab-1: Evrişimli Derin Öğrenme - Convolutional Deep Learning BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında CNN ile el yazısı tanıma uygulaması yapılacaktır.
+from keras.datasets import mnist import matplotlib.pyplot as plt from IPython.display import Image  c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/08-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/08-lab-2/</guid>
+      <description>8. Hafta Lab-2: Word Embeddings BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak import matplotlib.pyplot as plt from keras.datasets import imdb from keras import preprocessing from keras.layers.embeddings import Embedding from keras.utils import plot_model from IPython.display import Image import numpy as np  c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/08-lab-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/08-lab-3/</guid>
+      <description>8. Hafta Lab-3: Recurrent Neural Networks BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak import matplotlib.pyplot as plt from keras.datasets import imdb from keras import preprocessing from keras.layers.embeddings import Embedding import numpy as np from keras.utils import plot_model from IPython.display import Image  c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/08-lab-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/08-lab-4/</guid>
+      <description>8. Hafta Lab-2: LSTM Networks BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak import matplotlib.pyplot as plt from keras.datasets import imdb from keras import preprocessing from keras.layers.embeddings import Embedding from keras.utils import plot_model from IPython.display import Image  IMDB veri kümesini kullan. # En cok kullanılan kelime sayısı max_features = 10000 # 100 kelimeden sonra yorumları kes maxlen = 50 (X_train, y_train), (X_test, y_test) = imdb.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/09-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/09-lab-1/</guid>
+      <description>9. Hafta Lab-1: Bagging BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında bagging yöntemi ile topluluk sınıflandırma modeli oluşturulacaktır.
+from sklearn.datasets import make_classification from sklearn.neighbors import KNeighborsClassifier from sklearn.svm import SVC from sklearn.tree import DecisionTreeClassifier from sklearn.ensemble import BaggingClassifier from sklearn.metrics import confusion_matrix from sklearn.model_selection import train_test_split import numpy as np #np.random.seed(22)  Veri kümesi oluştur.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/09-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/09-lab-2/</guid>
+      <description>9. Hafta Lab-2: Random Forest BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında Random Forest yöntemi ile topluluk sınıflandırma modeli oluşturulacaktır.
+from sklearn.datasets import make_classification from sklearn.model_selection import train_test_split from sklearn.ensemble import RandomForestClassifier from sklearn.metrics import confusion_matrix from sklearn import tree import numpy as np np.random.seed(22)  Veri kümesi oluştur. X, y = make_classification(n_samples=100000,n_features=2, n_redundant=0, n_informative=1, n_clusters_per_class=1, class_sep=0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/09-lab-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/09-lab-3/</guid>
+      <description>9. Hafta Lab-3: AdaBoost BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında AdaBoost yöntemi ile topluluk sınıflandırma modeli oluşturulacaktır.
+from sklearn.datasets import make_classification from sklearn.svm import SVC from sklearn.tree import DecisionTreeClassifier from sklearn.metrics import confusion_matrix from sklearn.model_selection import train_test_split from sklearn.ensemble import AdaBoostClassifier import numpy as np np.random.seed(22)  Veri kümesi oluştur. X, y = make_classification(n_samples=10000,n_features=2, n_redundant=0, n_informative=1, n_clusters_per_class=1, class_sep=0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/09-lab-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/09-lab-4/</guid>
+      <description>9. Hafta Lab-4: Prinicpal Component Analysis - Linear Discriminant Analysis BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında PCA ve LDA yöntemi ile boyut azaltma yapılacaktır.
+import matplotlib.pyplot as plt import numpy as np from sklearn.datasets import make_classification from sklearn.decomposition import PCA from sklearn.discriminant_analysis import LinearDiscriminantAnalysis np.random.seed(26)  Veri kümesi oluştur. X, y = make_classification(n_classes=3, n_samples=100000,n_features=100, n_redundant=0, n_informative=2, n_clusters_per_class=1, class_sep=0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/09-lab-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/09-lab-5/</guid>
+      <description>9. Hafta Lab-5: Gaussian Anomaly Detection BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında anomali tespit yöntemi kullanılacaktır.
+import numpy as np import matplotlib.pyplot as plt  Normal dağılımın olasılık yoğunluk fonksiyonu (Probability Density Function - PDF) def normal(power, mean, std, val): a = 1/(np.sqrt(2*np.pi)*(std)) diff = np.abs(np.power(val-mean, power)) b = np.exp(-(diff)/(2*std*std)) return a*b  Normal dağılım gösteren bir veri kümesi oluşturalım mu, sigma = 0, 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/09-lab-6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/09-lab-6/</guid>
+      <description>9. Hafta Lab-6: One-Class SVM BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında one-class svm ile anomali tespit yöntemi yapılacaktır.
+import numpy as np import matplotlib.pyplot as plt import matplotlib.font_manager from sklearn import svm  Örnek veri kümesi oluştur. train_size = 100000 test_size = 1000 X = 0.3 * np.random.randn(train_size, 2) X_train = np.r_[X + 2, X - 2] X = 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/10-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/10-lab-1/</guid>
+      <description>10. Hafta Lab-1: TF-IDF BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında dökümanlardan tf-idf matrisi oluşturulacaktır.
+from sklearn.feature_extraction.text import CountVectorizer from sklearn.feature_extraction.text import TfidfVectorizer from bs4 import BeautifulSoup from urllib import request from sklearn.svm import SVC from sklearn.metrics import confusion_matrix import numpy as np np.set_printoptions(linewidth=160)  Örnek bir derlem olsun. 5 adet farklı dokumandan oluşan bir küme corpus = [&amp;quot;Elma Portakal Portakal Elma&amp;quot;, &amp;quot;Elma Muz Elma Muz&amp;quot;, &amp;quot;Muz Elma Muz Muz Muz Elma&amp;quot;, &amp;quot;Muz Portakal Muz Muz Portakal Muz&amp;quot;, &amp;quot;Muz Elma Muz Muz Portakal Muz&amp;quot;]  Bu derlem için sözlük oluşturup kelime frekanslarını sayalım vectorizer = CountVectorizer() vocab_freq = vectorizer.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/10-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/10-lab-2/</guid>
+      <description>10. Hafta Lab-3: TF-IDF BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında dökümanlardan tf-idf matrisi oluşturulacaktır.
+from sklearn.datasets import fetch_20newsgroups from sklearn.svm import SVC from sklearn.feature_extraction.text import CountVectorizer from sklearn.ensemble import RandomForestClassifier from sklearn.feature_extraction.text import TfidfTransformer from sklearn.model_selection import train_test_split from sklearn.metrics import confusion_matrix, classification_report from sklearn.ensemble import BaggingClassifier import numpy as np from sklearn.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/10-lab-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/10-lab-3/</guid>
+      <description>10. Hafta Lab-3: LSTM Sınıflandırma BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında lab-1&amp;rsquo;de kullanılan dökümanların tf-idf matrisi yerine lstm algoritması ile sınıflandırma modeli oluşturulacaktır.
+from urllib import request from bs4 import BeautifulSoup import numpy as np from keras.preprocessing.text import one_hot from keras.preprocessing.sequence import pad_sequences from keras.models import Sequential from keras.layers import Dense,Dropout from keras.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/10-lab-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/10-lab-4/</guid>
+      <description>10. Hafta Lab-4: LSTM Sınıflandırma BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında lab-2&amp;rsquo;de kullanılan dökümanların tf-idf matrisi yerine lstm algoritması ile sınıflandırma modeli oluşturulacaktır.
+from sklearn.datasets import fetch_20newsgroups from sklearn.svm import SVC from sklearn.feature_extraction.text import CountVectorizer from sklearn.ensemble import RandomForestClassifier from sklearn.feature_extraction.text import TfidfTransformer from sklearn.model_selection import train_test_split from sklearn.metrics import confusion_matrix, classification_report from sklearn.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/10-lab-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/10-lab-5/</guid>
+      <description>10. Hafta Lab-5: TF-IDF Zararlı Yazılım Sınıflandırma BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında zararlı yazılımların (malware) API çağırımlarının tf-idf matrisi ile sınıflandırma modeli oluşturulacaktır. Malware Classification
+import pandas as pd from sklearn.utils import shuffle from sklearn.feature_extraction.text import TfidfVectorizer import numpy as np from sklearn.model_selection import train_test_split from keras.models import Sequential from keras.layers import Dense, Dropout import matplotlib.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/10-lab-6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/10-lab-6/</guid>
+      <description>10. Hafta Lab-6: Android Zararlı Yazılım Sınıflandırma BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında android zararlı yazılımlarının (andorid malware) sınıflandırma modeli oluşturulacaktır. Mobile Malware Classification
+from arff2pandas import a2p from keras.models import Sequential from keras.layers import Dense, Dropout from sklearn.preprocessing import LabelEncoder from keras.utils import np_utils import matplotlib.pyplot as plt import numpy as np from sklearn.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/11-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/11-lab-1/</guid>
+      <description>11. Hafta Lab-1: Parola Oluşturma BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında rockyou.txt veri kümesi kullanılarak parolalar oluşturulacaktır.
+import sys import numpy from keras.models import Sequential from keras.layers import Dense from keras.layers import Dropout from keras.layers import LSTM from keras.callbacks import ModelCheckpoint from keras.utils import np_utils import io import random  c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/11-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/11-lab-2/</guid>
+      <description>11. Hafta Lab-2: Malware Images BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında Android zararlı yazılımlarının image haline getirilip sınıflandırma modeli oluşturulması anlatılacaktır.
+from keras.models import Sequential import numpy as np from keras.preprocessing.image import array_to_img, img_to_array, load_img from keras.utils import np_utils from sklearn.preprocessing import LabelEncoder import cv2 from sklearn.model_selection import train_test_split from keras.layers.convolutional import Conv2D from keras.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/11-lab-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/11-lab-3/</guid>
+      <description>11. Hafta Lab-2: Biyometrik Kimlik Doğrulama BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında biyometrik kimlik doğrulama modeli geliştirilecektir.
+from arff2pandas import a2p from sklearn.preprocessing import LabelEncoder from keras.utils import np_utils from keras.models import Sequential from keras.layers import Dense, Dropout from sklearn.metrics import confusion_matrix import matplotlib.pyplot as plt import numpy as np from keras.callbacks import ModelCheckpoint np.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/12-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/12-lab-1/</guid>
+      <description>12. Hafta Lab-1: Generative Adversarial Networks BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında mnist veri kümesi kullanılarak GAN modeli (Çekişmeli Üretici Ağ) oluşturulacaktır.
+import numpy as np from tqdm import tqdm import matplotlib.pyplot as plt from keras.layers import Input from keras.models import Model, Sequential from keras.layers.core import Dense, Dropout from keras.layers.advanced_activations import LeakyReLU from keras.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/13-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/13-lab-1/</guid>
+      <description>13. Hafta Lab-1: Adversarial Machine Learning: Fast gradient sign method (FGSM) ve Targeted fast gradient sign method (T-FGSM) BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında mnist veri kümesi kullanılarak Fast gradient sign method (FGSM) ve Targeted fast gradient sign method (T-FGSM) yöntemleri ile adversarial veri kümesi oluşturulacaktır.
+import numpy as np from keras import backend import tensorflow as tf from keras.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/13-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/13-lab-2/</guid>
+      <description>13. Hafta Lab-2: Adversarial Machine Learning: Jacobian-based Saliency Map Attack BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında mnist veri kümesi kullanılarak Jacobian-based Saliency Map Attack (JBSM) yöntemi ile adversarial veri kümesi oluşturulacaktır.
+import numpy as np from keras import backend import tensorflow as tf from keras.callbacks import ModelCheckpoint from matplotlib import gridspec from cleverhans.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.ozgurcatak.org/post/13-lab-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/post/13-lab-3/</guid>
+      <description>13. Hafta Lab-3: Adversarial Machine Learning: DeepFool ve Virtual Adversarial Method (VAM) BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri İstanbul Şehir Üni. - Bilgi Güvenliği Müh. Dr. Ferhat Özgür Çatak Bu lab çalışması kapsamında mnist veri kümesi kullanılarak DeepFool ve Virtual Adversarial Method (VAM) yöntemleri ile adversarial veri kümesi oluşturulacaktır.
+import numpy as np from keras import backend import tensorflow as tf from keras.callbacks import ModelCheckpoint from matplotlib import gridspec from cleverhans.</description>
+    </item>
+    
+  </channel>
+</rss>

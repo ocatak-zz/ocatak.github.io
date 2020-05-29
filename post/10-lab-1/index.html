@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/10-lab-1/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-1%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-1%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-1%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-1%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f10-lab-1%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="10-hafta-lab-1-tf-idf">10. Hafta Lab-1: TF-IDF</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h3 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h3>
+
+<h4 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h4>
+
+<p>Bu lab çalışması kapsamında dökümanlardan <strong>tf-idf</strong> matrisi oluşturulacaktır.</p>
+
+<pre><code class="language-python">from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from bs4 import BeautifulSoup
+from urllib import request
+from sklearn.svm import SVC
+from sklearn.metrics import confusion_matrix
+import numpy as np
+
+np.set_printoptions(linewidth=160)
+</code></pre>
+
+<h3 id="örnek-bir-derlem-olsun-5-adet-farklı-dokumandan-oluşan-bir-küme">Örnek bir derlem olsun. 5 adet farklı dokumandan oluşan bir küme</h3>
+
+<pre><code class="language-python">corpus = [&quot;Elma Portakal Portakal Elma&quot;,
+          &quot;Elma Muz Elma Muz&quot;,
+          &quot;Muz Elma Muz Muz Muz Elma&quot;,
+          &quot;Muz Portakal Muz Muz Portakal Muz&quot;,
+          &quot;Muz Elma Muz Muz Portakal Muz&quot;]
+</code></pre>
+
+<h3 id="bu-derlem-için-sözlük-oluşturup-kelime-frekanslarını-sayalım">Bu derlem için sözlük oluşturup kelime frekanslarını sayalım</h3>
+
+<pre><code class="language-python">vectorizer = CountVectorizer()
+vocab_freq = vectorizer.fit_transform(corpus)
+print(vectorizer.vocabulary_)
+print(vocab_freq)
+</code></pre>
+
+<pre><code>{'elma': 0, 'portakal': 2, 'muz': 1}
+  (0, 2)    2
+  (0, 0)    2
+  (1, 1)    2
+  (1, 0)    2
+  (2, 1)    4
+  (2, 0)    2
+  (3, 1)    4
+  (3, 2)    2
+  (4, 1)    4
+  (4, 2)    1
+  (4, 0)    1
+</code></pre>
+
+<h4 id="frekansların-olduğu-vocab-freq-değişkeni-sparse-bir-matrisdir-bunu-dense-halke-getirelim">Frekansların olduğu <em>vocab_freq</em> değişkeni <em>sparse</em> bir matrisdir. Bunu <em>dense</em> halke getirelim.</h4>
+
+<pre><code class="language-python">print(vocab_freq.todense())
+</code></pre>
+
+<pre><code>[[2 0 2]
+ [2 2 0]
+ [2 4 0]
+ [0 4 2]
+ [1 4 1]]
+</code></pre>
+
+<h2 id="tf-idf-matrisinin-oluşturulması">TF-IDF matrisinin oluşturulması</h2>
+
+<pre><code class="language-python">vectorizer = TfidfVectorizer()
+vectorizer.fit(corpus)
+corpus_vec = vectorizer.transform(corpus).todense()
+corpus_vec
+</code></pre>
+
+<pre><code>matrix([[0.64374446, 0.        , 0.76524053],
+        [0.70710678, 0.70710678, 0.        ],
+        [0.4472136 , 0.89442719, 0.        ],
+        [0.        , 0.85962194, 0.51093065],
+        [0.23304334, 0.93217336, 0.2770264 ]])
+</code></pre>
+
+<h3 id="derlemde-yer-alan-kelimelerin-idf-değerleri">Derlemde yer alan kelimelerin idf değerleri</h3>
+
+<pre><code class="language-python">print(vectorizer.vocabulary_)
+print(vectorizer.idf_)
+</code></pre>
+
+<pre><code>{'elma': 0, 'portakal': 2, 'muz': 1}
+[1.18232156 1.18232156 1.40546511]
+</code></pre>
+
+<h2 id="internet-üzerinde-bulunan-ekonomi-ve-spor-haberlerinin-sınıflandırılması">Internet üzerinde bulunan ekonomi ve spor haberlerinin sınıflandırılması</h2>
+
+<p>Bu çalışmada 11 ekonomi ve 11 spor haberi Internet üzerinde alınacaktır. HTML ve javasript etiketlerinin temizlenmesinden sonra derlem oluşturulmaktadır.</p>
+
+<pre><code class="language-python">urls = [&quot;http://www.bloomberght.com/yorum/cuneyt-basaran/2093520-uyuyan-dev-uyandi&quot;,
+                &quot;http://www.bloomberght.com/yorum/ali-cagataygelecege-bakis/2116104-fifa-goreve&quot;,
+                &quot;http://www.bloomberght.com/yorum/ahmet-oz/2075832-kisir-donguye-mi-giriyoruz&quot;,
+                &quot;http://www.bloomberght.com/yorum/gizem-oztok-altinsac/2113416-turkiyenin-ekonomi-sinavi&quot;,
+                &quot;http://www.bloomberght.com/yorum/ceren-dilekci/2115924-megabank-muammasi&quot;,
+                &quot;http://www.bloomberght.com/ht-yazarlar/cuneyt-basaran-2071/2116920-paketin-harcama-kalemleri&quot;,
+                &quot;http://www.bloomberght.com/ht-yazarlar/gokhan-sen/2079777-merkez-bankasina-sanatci-ruhu-gerekiyor&quot;,
+                &quot;http://www.bloomberght.com/ht-yazarlar/abdurrahman-yildirim/2116917-10-yil-once-serbest-10-yil-sonra-yasak&quot;,
+                &quot;http://www.bloomberght.com/ht-yazarlar/guntay-simsek/2116923-ihracatta-rekor-ithalatta-rekor-her-taraf-rekor&quot;,
+                &quot;http://spor.mynet.com/futbol/sampiyonlar-ligi/157184-jerome-boateng-den-cuneyt-cakir-a-elestiri.html&quot;,
+                &quot;http://www.hurriyet.com.tr/ekonomi/ihracat-nisan-ayinda-13-5-milyar-dolar-oldu-40822367&quot;,
+                &quot;http://ekonomi.haber7.com/ekonomi/haber/2614392-borcu-olanlar-dikkat-18-ay-taksit-yapilacak/?detay=1&quot;,
+             &quot;http://spor.mynet.com/fenerbahce/157181-giuliano-dan-aykut-kocaman-a-ovgu.html&quot;,
+             &quot;http://spor.mynet.com/galatasaray/157176-kaderi-degistiren-kebapcidaki-kavga.html&quot;,
+             &quot;http://spor.mynet.com/fenerbahce/157175-aziz-yildirim-in-secim-kozu.html&quot;,
+             &quot;http://spor.mynet.com/fenerbahce/157174-aykut-kocaman-dan-besiktas-iddiasi.html&quot;,
+             &quot;http://spor.mynet.com/basketbol/thy-euro-league/157173-fenerbahce-de-buyuk-surpriz.html&quot;,
+             &quot;http://spor.mynet.com/futbol/sampiyonlar-ligi/157170-mac-ozeti-real-madrid-2-2-bayern-munih-golleri-izle-cuneyt-cakir-penalti-izle.html&quot;,
+             &quot;http://spor.mynet.com/ingiltere/157168-cenk-tosun-icin-carpici-yorum-hayatta-kalmayi-basardi.html&quot;,
+             &quot;http://spor.mynet.com/besiktas/157129-besiktas-ta-atiba-nin-yerine-abdullahi-shehu.html&quot;,
+             &quot;http://www.hurriyet.com.tr/sporarena/besiktastan-olayli-fenerbahce-derbisi-kararina-itiraz-40822811&quot;,
+             &quot;http://www.hurriyet.com.tr/sporarena/devler-liginde-ilk-finalist-real-madrid-40822363&quot;]
+</code></pre>
+
+<pre><code class="language-python">corpus = []
+for url in urls:
+    response = request.urlopen(url)
+    raw = response.read().decode('utf8')
+    soup = BeautifulSoup(raw, &quot;lxml&quot;)
+    [x.extract() for x in soup.findAll(['script', 'style'])]
+    raw = soup.get_text()
+    corpus.append(raw)
+    
+</code></pre>
+
+<pre><code class="language-python">corpus[0]
+</code></pre>
+
+<pre><code>'  \n\n\n\n\n\n\n\n\n\nCüneyt Başaran - Uyuyan dev uyandı - Bloomberg HT\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMENÜ\n TV\n\n\n\nPiyasalar\n\n\n\n\n\nHaberler\n\n\n\n\n\nTarım\n\n\n\n\n\nEnerji\n\n\n\n\n\nEkonomi Verileri\n\n\n\n\n\nKripto Para\n\n\n Yazarlar\n Video\n Biyografi\n Üye Girişi\n\n\n\n\n\n\n\n\n\n\n\n\n \nBIST 100\n\n104.726\n\n\n\n\n\n\n% 0,42\n\n\n\nUSD/TRY\n\n4,1658\n\n\n\n\n\n\n% 1,50\n\n\n\nEUR/TRY\n\n4,9872\n\n\n\n\n\n\n% 1,33\n\n\n\nEUR/USD\n\n1,1968\n\n\n\n\n\n\n% -0,21\n\n\n\nFAİZ\n\n14,61\n\n\n\n\n\n\n0,29\n\n\n\nALTIN/ONS\n\n1.306,90\n\n\n\n\n\n\n% 0,23\n\n\n\nBRENT\n\n72,72\n\n\n\n\n\n\n% -0,56\n\n\n\n\n \n\nTVRadyo\n\n\n\n\n\n\n\n\n\n\nPiyasalarBorsaBISTAlt EndekslerHisse SenetleriDünya BorsalarıDövizAltın - EmtiaFaiz - BonoAlternatifHaberlerTarımEnerjiEkonomi VerileriBloomberght Güven EndeksiMerkez Bankası VerileriKripto Para\nYazarlar\n\nVideo\n\nGaleri\n\n\n TV\n\nÜyelik\n\nHoş geldiniz\n\n(Bilgilerimi Güncelle)\nÇIKIŞ\n\n\n\n\n\n\n\nÜyelik  | Şifremi Unuttum\n\nGİRİŞ\n\n\n\nBiyografi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n SON DAKİKA \n\n\n\n\n\n\n\n\n\n\n\n Manşetler :\n\n ERDOĞAN İÇİN ADAYLIK BAŞVURUSU/ BAŞBAKAN YILDIRIM VE BAHÇELİ, YSK\'YA BİRLİKTE GİDECEK- HTBIST 100 ENDEKSİ YÜZDE 0.42 YÜKSELİŞLE 104 BİN 725 PUANDAN GÜNÜ TAMAMLADIAYM CHP\'NİN SEÇİM GÜVENLİĞİNE İLİŞKİN İTİRAZINI ESASTAN GÖRÜŞECEK-HTABD\'DE ADP ÖZEL SEKTÖR İSTİHDAMI NİSAN’DA 204 BİN ARTTI, BEKLENTİ 198 BİN , ÖNCEKİ 241 BİNŞİMŞEK: SEÇİMLERİN ERKENE ALINMIŞ OLMASI SİYASİ BELİRSİZLİĞİ AZALTTIŞİMŞEK: TÜKETİCİ KREDİLERİNDEKİ YAVAŞLAMA CARİ AÇIKTAKİ ARTIŞI SINIRLAYACAKBAŞBAKAN YARDIMCISI ŞİMŞEK: CARİ AÇIKTAKİ ARTIŞ BÜYÜK İHTİMAL GEÇİCİMHP, CUMHURBAŞKANI ERDOĞAN\'I ADAY GÖSTERMEK İÇİN GRUP KARARI ALDITARIM BAKANI FAKIBABA: RUSYA\'NIN DOMATES KISITLAMASINI KALDIRMASI OLUMLU TARIM BAKANI FAKIBABA: DEVLET, ÖZEL SEKTÖR İLE BİRLİKTE HAREKET EDEBİLİR\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n \n\n \n\n\n \n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCüneyt Başaran\n\n\n\n\n\n\n\n \n\n\n\n\nDiğer Yazıları\n06 Şubat 2018 Salı, 16:58\n\n\n\n\n\n\n\nUyuyan dev uyandı\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMerakınızı daha fazla arttırmayayım. Yazımızın konusu II. Dünya Savaşı ya da Pearl Harbour bombalanması değil. Bahsettiğim uyanış “Küresel tahvil faizlerinde görülen yükseliş”.\nBu satırların yazıldığı sırada ABD’den Ocak ayı işsizlik rakamı geldi , yüzde 4.1 işsizlik var ABD’de ve bu oran son 40 yılın en düşük işsizliği. Ama bundan daha etkileyici bir veri daha geldi ABD’den..“Ücretlerdeki artış”.\xa0 Son gelen veriye göre ABD’de ortalama maaşlarda yıllık yüzde 2.9 artış gerçekleşmiş. Bu ne demek? En net ifadeyle “ABD’de son 2 yılın en yüksek maaş artışından bahsediyoruz” demek!\nBiraz daha geriye gidelim..\nGeçen hafta ABD’de 2017 büyüme rakamı açıklandı; yüzde 2.6. Kulağa çok etkileyici gelmemiş olabilir. O zaman bir de şunu dinleyin “2018 yılında ABD ekonomisinin yüzde 2.7-2.9 arasında büyümesi bekleniyor. Böylece ABD kesintisiz olarak 9 yıldır ortalama yüzde 2 büyümüş olacak” Diğer yandan ABD’yi 2008 yılında krize götüren konut sektöründe ortalama ev fiyatları, aylık satılan ev rakamları 2008 krizine yakalamış ve ülkenin çoğu yerinde üzerine çıkmış durumda. \xa0\nSadece ABD değil, gelişmiş ülkelerin hepsi toparlıyor..\n2018 yılı gelişmiş ülkeler için 2011\'den sonra büyüme anlamında en iyi yıl olacak. IMF’nin tahminlerine göre Euro Bölgesi\'nde yüzde 2.2, Japonya’da yüzde 1.5 büyüme bekleniyor. 2018 yılında küresel büyüme oranı yüzde 3.9 olacak! 2008 krizi öncesi yüzde 4.5 ortalamaları henüz yakalayamadık ama son 8 yıldır hiç bu kadar yaklaşmamıştık!\nSonunda faizler de büyüme – enflasyon sarmalını fiyatlamaya başladı\nHer gülün dikeni olduğu gibi küresel büyümenin de bir dikeni var “artan enflasyon beklentileri”. Mevcut durumda enflasyon hiçbir gelişmiş ülkede alarm vermiyor. Hatta ABD’deki yüzde 1.7-18 , AB’deki 1.5- 1.6 seviyeleri hala oldukça düşük. Ama bir süredir enflasyon tarafındaki gelişmeleri endişe ile izleyen faiz tarafı artık rahat değil. Önce merkez bankaların tahvil alımlarını bitirip \xa0/ azaltıp normalleşme çabaları, üzerine artan emtia fiyatları, yukarı revize edilen büyüme verileri ve en nihayetinde son dönemde gelen güçlü istihdam ve artan ücretler sonunda küresel tahvil faizlerini yerinde oynattı.\nABD 10 yıllık tahvil faizi 4 yılın en yükseğinde\nAslında kısa vadeli ABD tahvil faizleri bir süredir yukarıda bahsettiğim endişeleri ve FED faiz artışlarını fiyatlıyordu. 2 yıllık, 5 yıllık tahvil faizleri bundan 2 -3 ay önce 7-8 yılın en yüksek seviyesine çıkmıştı. Ancak sessiz kalan uzun vadeli; 10 yıllık, 30 yıllık tahvillerdi. ABD’de, Almanya’da, Japonya’da faizlerdeki getiri eğrisi aynı şeyi söylüyordu; “Kısa vadede büyüme gelmiş olabilir ancak kalıcı değil. Bu işin sonu yeniden resesyona gider”\nAncak yıl başından beri yaşanan ve nihayet dün gelen güçlü verilerle perçinlenen durum şudur ki “Büyüme kalıcı , enflasyon da yakın zaman kendin gösterecek”. İşte bu algının değişmesiyle küresel tahvil piyasasında bir nevi “Cin şişeden çıktı”. Satışların hızlanmasıyla 10 yıllık ABD tahvil faizi yüzde 2.85’i, 30 yıllık ise yüzde 3.10’ları gördü. Alman 10 yıllık tahvillerinde de yüzde 0.8’ler görüldü.\nKüresel ölçekte artık faizler eskiden olduğu ve uzun süredir alıştığımız gibi düşük değil. Üstelik büyük ihtimalle daha da artacak. Artık buna alışmamız lazım. Buna göre maliyet hesabı yapmamız gerekiyor. Çünkü ülkemize gelen doğrudan yatırımın yüzde 75’i ya da sıcak paranın yüzde 90’nın menşei ABD Doları \xa0ya da Euro olduğunu düşünürsek işin kaynağında maliyetlerin hızla yükseliyor olmasının bizi de yakın zamanda etkilemesi kaçınılmaz olacaktır.\n\xa0 \n \nBU YAZIYA YORUM YAZ \n\n\n\n\n\n\n\xa0\n\n\nGÖNDER\n\n\n\n\n\n26 Mart 2018 Pazartesi, 12:04\nMisafir\nSorun siyasi ise para politikası ile sorunu çözemezsiniz.Bunu kayıtlara geçirin.\n\n\n\n\n \n\n\n\n\n\n \n \n\r\n            ÖNE ÇIKAN HABERLER\r\n        \n\n\n\n\n\nPfizer\'ın ilk çeyrek karı tahminleri aştı\n\n\n\n\n\nMerck\'in ilk çeyrek karı tahminleri karşıladı\n\n\n\n\n\n&quot;TCMB\'nin enflasyon tahminleri bankanın güvenirliğini etk...\n\n\n\n\n\nSocGen ve Rabobank\'tan TL değerlendirmesi\n\n\n\n\n\nBakan Fakıbaba Bloomberg HT Tarım Zirvesi\'nde \n\n\n\n\n\n \n \n\r\n\t\t\tÖNE ÇIKAN VİDEOLAR\r\n\t\t\n\n\n\n\nTCMB\'den faiz artışı gelir mi? \n\n\n\n\nProf. Dr. Sarı: Balıkçılıkta riskleri değil krizi yönetmeye çalışıyoruz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n                            Sitemizdeki veriler Foreks tarafından sağlanmaktadır. NASDAQ, Dow Jones Industrial Average, SHCOM, FTSE 100, CAC 40, DAX 30, Hang Seng, IBEX 35, BOVESPA, VİOP ve Tahvil-bono verileri 15 dakika; CME, NYMEX VE S&amp;P verileri 10 dakika gecikmeli verilmektedir. YASAL UYARI © 2018                            Kayıtlı Elektronik Posta Adresi : cgorsel@hs03.kep.tr\r\n                        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKATEGORİ\n\n\n\nALTIN FİYATLARI\nEKONOMİ HABERLERİ\nDÖVİZ KURLARI\nEKONOMİ GÜNDEMİ\nHİSSE SENETLERİ\nBORSA İSTANBUL\nGİZLİLİK POLİTİKASI\n\n\n\n\nBORSA HABERLERİ\nDÜNYA BORSALARI\nCANLI YAYIN\nKÜNYE\nİLETİŞİM\nİZLEYİCİ TEMSİLCİSİ\nKULLANIM KOŞULLARI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nC Görsel Yayınları A.Ş. Üretim ve Tasarım\n\nBilgi Grubu\n\nCBG.\n\n\n\n\n Yukarı\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n'
+</code></pre>
+
+<h3 id="bu-derlem-için-tf-idf-matrisi">Bu derlem için <strong>tf-idf</strong> matrisi</h3>
+
+<pre><code class="language-python">vect_tr = TfidfVectorizer()
+X= vect_tr.fit_transform(corpus)
+
+</code></pre>
+
+<h4 id="oluşan-matrisin-boyutları">Oluşan matrisin boyutları</h4>
+
+<pre><code class="language-python">X.shape
+</code></pre>
+
+<pre><code>(22, 5577)
+</code></pre>
+
+<h3 id="ilk-100-kelime-ve-idf-değerleri">İlk 100 kelime ve <strong>idf</strong> değerleri</h3>
+
+<pre><code class="language-python">print(list(vect_tr.vocabulary_.keys())[0:100])
+print(vect_tr.idf_[0:100])
+</code></pre>
+
+<pre><code>['bekleyeceğiz', 'kstürfutbolbasketbolvoleyboli', 'aşkın', 'yasi', 'bahsederim', 'bizi', 'asya', 'hakemi', 'ismi', 'gideceksin', 'endeksli', 'yaşamamış', 'geriye', 'ortaklığında', 'kız', 'penaltıydı', 'almayı', 'futbolcularıyla', 'değerleme', 'lezzetleruğur', 'tepkisidünyanın', 'ülkesi', '198', 'zafer', 'alanlariyazarlari', 'ölçülerde', 'çılgın', 'üste', 'oyna', 'baba', 'sene', 'puanlık', 'sanayiinde', 'cenkten', 'maddi', 'gülün', 'edip', 'laf', 'içeriden', 'mamulleri', '720', 'çektiği', 'isteğinden', 'azaltıp', 'slertv', 'sadece', 'artar', 'büyümüş', 'kaynağına', 'ticaret', 'hutchinson', 'oynamaç', 'goodison', 'alınmasındaki', 'öderlerse', 'ihracında', 'enflasyondaki', 'şırnakbartınardahaniğdır', 'bitiş', 'birliklerimizdeki', 'yapan', 'etme', 'bölgesinde', 'co', 'şenlikli', 'taşıyan', 'yazık', 'eller', 'ssk', 'harcadıklarını', 'firmalarımız', 'harry', 'balkanlar', 'edilen', 'olacağı', 'trink', 'grup', 'talimatlarına', 'op', 'tuttu', 'oluveri', 'hamle', 'bulunmuş', 'açıklanan', 'taçtan', 'ilinden', 'istismarı', 'milat', 'köşesindeki', 'tahkime', 'moody', 'tff', 'futbolcuları', 'içecekler', 'eur', 'nasıl', 'fati', 'sso', 'gi', 'verilmektedir']
+[2.18958407 1.83290912 1.49643689 3.03688193 2.18958407 3.44234704 3.44234704 1.13976194 2.74919985 3.44234704 3.44234704 3.44234704 1.93826964 2.74919985
+ 1.30228087 1.65058757 3.03688193 1.83290912 2.74919985 3.44234704 3.03688193 1.57054486 3.44234704 3.44234704 3.03688193 1.42744401 3.44234704 3.44234704
+ 3.44234704 2.18958407 3.44234704 3.44234704 3.44234704 1.73759894 3.44234704 1.42744401 3.44234704 2.5260563  3.44234704 2.5260563  3.44234704 3.44234704
+ 3.44234704 3.03688193 2.5260563  3.03688193 3.44234704 2.34373475 3.44234704 2.34373475 2.74919985 3.03688193 3.44234704 3.03688193 1.83290912 3.44234704
+ 2.74919985 3.44234704 3.44234704 3.44234704 3.44234704 2.05605267 2.74919985 3.44234704 3.03688193 3.44234704 3.03688193 3.44234704 3.44234704 3.44234704
+ 3.44234704 2.74919985 1.93826964 2.74919985 1.         3.03688193 3.44234704 3.44234704 3.03688193 3.44234704 3.44234704 1.83290912 3.03688193 1.83290912
+ 3.03688193 3.44234704 3.44234704 2.18958407 3.44234704 3.44234704 3.44234704 1.83290912 1.83290912 2.05605267 3.44234704 2.74919985 3.03688193 2.5260563
+ 3.44234704 3.44234704]
+</code></pre>
+
+<h3 id="tf-idf-matrisi"><em>tf-idf</em> matrisi</h3>
+
+<pre><code class="language-python">X
+y = np.concatenate((np.zeros(11), np.ones(11)))
+y
+</code></pre>
+
+<pre><code>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+</code></pre>
+
+<h1 id="svm-algoritması-ile-sınıflandırma">SVM algoritması ile sınıflandırma</h1>
+
+<pre><code class="language-python">clf = SVC(verbose=False, kernel=&quot;poly&quot;)
+clf.fit(X,y)
+y_hat =clf.predict(X)
+cm = confusion_matrix(y,y_hat)
+cm
+</code></pre>
+
+<pre><code>array([[11,  0],
+       [ 0, 11]], dtype=int64)
+</code></pre>
+
+<h1 id="deep-neural-netwroks-ile-sınıflandırma">Deep Neural Netwroks ile sınıflandırma</h1>
+
+<pre><code class="language-python">from keras.models import Sequential
+from keras.layers import Dense, Dropout
+import matplotlib.pyplot as plt
+
+model = Sequential()
+model.add(Dense(500, input_dim=X.shape[1], activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.2))
+model.add(Dense(1000, activation='tanh', kernel_initializer='uniform'))
+model.add(Dropout(0.2))
+model.add(Dense(500, activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.2))
+model.add(Dense(1, activation='sigmoid', kernel_initializer='uniform'))
+model.compile(loss=&quot;binary_crossentropy&quot;, optimizer=&quot;adam&quot;, metrics=['accuracy'])
+model.summary()
+
+</code></pre>
+
+<pre><code class="language-python">history = model.fit(X, y, epochs=10, batch_size=500, verbose=1,
+                    validation_split=0.2)
+</code></pre>
+
+<pre><code class="language-python">y_hat = model.predict_classes(X)
+cm = confusion_matrix(y, y_hat)
+print(cm)
+</code></pre>
+
+<pre><code class="language-python">plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/10-lab-2/"><span
+      aria-hidden="true">&larr;</span> </a></li>
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/09-lab-6/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

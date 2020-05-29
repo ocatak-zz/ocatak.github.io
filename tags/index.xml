@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Dr. Ferhat Ozgur Catak</title>
+    <link>https://www.ozgurcatak.org/tags/</link>
+    <description>Recent content in Tags on Dr. Ferhat Ozgur Catak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020 Ferhat Ozgur Catak</copyright>
+    <lastBuildDate>Sun, 04 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.ozgurcatak.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>deep-learning</title>
+      <link>https://www.ozgurcatak.org/tags/deep-learning/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://www.ozgurcatak.org/tags/machine-learning/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Content tagged as &#39;Academic&#39;</title>
+      <link>https://www.ozgurcatak.org/tags/academic/</link>
+      <pubDate>Tue, 17 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/tags/academic/</guid>
+      <description>Here is a list of all the content that has been tagged as academic.</description>
+    </item>
+    
+  </channel>
+</rss>

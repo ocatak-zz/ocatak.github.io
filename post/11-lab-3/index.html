@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.56.2" />
+  <meta name="author" content="Dr. Ferhat Ozgur Catak">
+  <meta name="description" content="AI&amp;Security Researcher">
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+
+
+  
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="https://www.ozgurcatak.org/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-108796420-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+
+  <link rel="icon" type="image/png" href="https://www.ozgurcatak.org/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://www.ozgurcatak.org/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://www.ozgurcatak.org/post/11-lab-3/">
+
+  
+  <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://www.ozgurcatak.org"
+    },
+    "articleSection" : "",
+    "name" : "Ferhat Ozgur Catak",
+	"jobTitle": "AI Scientist",
+    "description" : "Research about Cyber Security, Artificial Intelligence, Machine Learning and Deep Learning",
+    "url" : "http://www.ozgurcatak.org",
+	"worksFor": {
+      "@type": "Organization",
+      "name": "Norwegian University of Science and Technology"
+    },
+    "keywords" : [ "Artificial Intelligence","Machine learning","Cyber security" ],
+    "sameAs": [
+    "http://www.linkedin.com/in/ozgurcatak/",
+    "https://scholar.google.com.tr/citations?user=qPzUoDYAAAAJ&hl=en"
+  ]
+}
+</script>
+
+
+  <title> | Dr. Ferhat Ozgur Catak</title>
+
+  <meta content="cyber security, machine learning, artificial intelligence, dataset" name="keywords">
+
+<meta content='http://www.ozgurcatak.org/' property='og:url'/>
+<meta content=" - Dr. Ferhat Ozgur Catak" property="og:title">
+<meta content=" - " property="og:description">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": " - Blog post",
+  "datePublished": "25.05.2020",
+  "dateModified": "25.05.2020",
+  "image":"https://www.ozgurcatak.org/img/foc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ferhat Ozgur Catak"
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Ferhat Ozgur Catak",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ozgurcatak.org/img/foc.jpg"
+    }
+  },
+  "description": "AI&Security Researcher",
+  "keywords": ["keras","machine learning","deep learning"]
+}
+</script>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="https://www.ozgurcatak.org/">Dr. Ferhat Ozgur Catak</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/courses/">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/publication/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://www.ozgurcatak.org/about/">
+            
+            <span>About</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name"></h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      0001-01-01
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f11-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f11-lab-3%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f11-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f11-lab-3%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fwww.ozgurcatak.org%2fpost%2f11-lab-3%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="11-hafta-lab-2-biyometrik-kimlik-doğrulama">11. Hafta Lab-2: Biyometrik Kimlik Doğrulama</h1>
+
+<h2 id="bgm-565-siber-güvenlik-için-makine-öğrenme-yöntemleri">BGM 565: Siber Güvenlik için Makine Öğrenme Yöntemleri</h2>
+
+<h2 id="istanbul-şehir-üni-bilgi-güvenliği-müh">İstanbul Şehir Üni. - Bilgi Güvenliği Müh.</h2>
+
+<h3 id="dr-ferhat-özgür-çatak">Dr. Ferhat Özgür Çatak</h3>
+
+<p>Bu lab çalışması kapsamında biyometrik kimlik doğrulama modeli geliştirilecektir.</p>
+
+<pre><code class="language-python">from arff2pandas import a2p
+from sklearn.preprocessing import LabelEncoder
+from keras.utils import np_utils
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+import numpy as np
+from keras.callbacks import ModelCheckpoint
+
+np.set_printoptions(linewidth=260)
+</code></pre>
+
+<pre><code>c:\users\user\appdata\local\programs\python\python35\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+</code></pre>
+
+<h3 id="veri-kümesini-yükle">Veri kümesini yükle</h3>
+
+<pre><code class="language-python">f = &quot;dataset.arff&quot;
+df = a2p.load(open(f,'r'))
+df = df.dropna()
+X = df.as_matrix()
+</code></pre>
+
+<h3 id="3-etiket-için-ilgili-kolonları-seç">3 etiket için ilgili kolonları seç</h3>
+
+<pre><code class="language-python">y_user_id = df.iloc[:,0].as_matrix()
+y_phone_id = df['phone id@{1,2,3,4,5}'].as_matrix()
+y_doc_id = df['doc id@{1,2,3,4,5,6,7}'].as_matrix()
+</code></pre>
+
+<h3 id="hedef-etiket-içeren-kolonları-sil">Hedef etiket içeren kolonları sil</h3>
+
+<pre><code class="language-python">df.drop(df.columns[[0]], axis=1, inplace=True)
+df.drop(['phone id@{1,2,3,4,5}','doc id@{1,2,3,4,5,6,7}'], axis=1, inplace=True)
+</code></pre>
+
+<h1 id="modelleri-oluştur">Modelleri oluştur</h1>
+
+<h3 id="user-modeli">User modeli</h3>
+
+<pre><code class="language-python">encoder_user_id = LabelEncoder()
+encoder_user_id.fit(y_user_id)
+encoded_Y_user_id = encoder_user_id.transform(y_user_id)
+dummy_Y_user_id = np_utils.to_categorical(encoded_Y_user_id)
+
+model = Sequential()
+model.add(Dense(500, input_dim=X.shape[1], activation='hard_sigmoid', kernel_initializer='uniform' ))
+model.add(Dropout(0.01))
+model.add(Dense(1000, activation='hard_sigmoid', kernel_initializer='uniform'))
+model.add(Dropout(0.01))
+model.add(Dense(500, activation='hard_sigmoid', kernel_initializer='uniform' ))
+model.add(Dropout(0.01))
+model.add(Dense(dummy_Y_user_id.shape[1], activation='softmax', kernel_initializer='uniform'))
+
+model.compile(loss=&quot;categorical_crossentropy&quot;, optimizer=&quot;adam&quot;, metrics=['accuracy'])
+model.summary()
+
+filepath=&quot;03-model-user.hdf5&quot;
+checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+callbacks_list = [checkpoint]
+
+model.load_weights(filepath)
+
+history = model.fit(X, dummy_Y_user_id, callbacks=callbacks_list, 
+                validation_split=0.3, epochs=10, batch_size=1000, verbose=1)
+
+y_hat = model.predict_classes(X)
+cm = confusion_matrix(encoded_Y_user_id, y_hat)
+print(cm)
+
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 500)               17500     
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 500)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 1000)              501000    
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 1000)              0         
+_________________________________________________________________
+dense_3 (Dense)              (None, 500)               500500    
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 500)               0         
+_________________________________________________________________
+dense_4 (Dense)              (None, 41)                20541     
+=================================================================
+Total params: 1,039,541
+Trainable params: 1,039,541
+Non-trainable params: 0
+_________________________________________________________________
+Train on 14593 samples, validate on 6255 samples
+Epoch 1/10
+14593/14593 [==============================] - 9s 595us/step - loss: 2.1423 - acc: 0.3798 - val_loss: 15.8263 - val_acc: 0.0000e+00
+
+Epoch 00001: loss improved from inf to 2.14235, saving model to 03-model-user.hdf5
+Epoch 2/10
+14593/14593 [==============================] - 9s 601us/step - loss: 1.8411 - acc: 0.4344 - val_loss: 15.8320 - val_acc: 1.5987e-04
+
+Epoch 00002: loss improved from 2.14235 to 1.84115, saving model to 03-model-user.hdf5
+Epoch 3/10
+14593/14593 [==============================] - 10s 652us/step - loss: 1.7683 - acc: 0.4564 - val_loss: 15.8225 - val_acc: 1.5987e-04
+
+Epoch 00003: loss improved from 1.84115 to 1.76835, saving model to 03-model-user.hdf5
+Epoch 4/10
+14593/14593 [==============================] - 10s 653us/step - loss: 1.7316 - acc: 0.4695 - val_loss: 15.8235 - val_acc: 1.5987e-04
+
+Epoch 00004: loss improved from 1.76835 to 1.73165, saving model to 03-model-user.hdf5
+Epoch 5/10
+14593/14593 [==============================] - 11s 724us/step - loss: 1.7266 - acc: 0.4692 - val_loss: 15.8284 - val_acc: 0.0000e+00
+
+Epoch 00005: loss improved from 1.73165 to 1.72659, saving model to 03-model-user.hdf5
+Epoch 6/10
+14593/14593 [==============================] - 11s 754us/step - loss: 1.7087 - acc: 0.4706 - val_loss: 15.8317 - val_acc: 0.0000e+00
+
+Epoch 00006: loss improved from 1.72659 to 1.70871, saving model to 03-model-user.hdf5
+Epoch 7/10
+14593/14593 [==============================] - 11s 757us/step - loss: 1.7233 - acc: 0.4680 - val_loss: 15.8265 - val_acc: 0.0000e+00
+
+Epoch 00007: loss did not improve
+Epoch 8/10
+14593/14593 [==============================] - 10s 669us/step - loss: 1.7442 - acc: 0.4664 - val_loss: 15.8162 - val_acc: 1.5987e-04
+
+Epoch 00008: loss did not improve
+Epoch 9/10
+14593/14593 [==============================] - 9s 589us/step - loss: 1.7673 - acc: 0.4604 - val_loss: 15.8312 - val_acc: 0.0000e+00
+
+Epoch 00009: loss did not improve
+Epoch 10/10
+14593/14593 [==============================] - 9s 597us/step - loss: 1.7480 - acc: 0.4618 - val_loss: 15.8221 - val_acc: 6.3949e-04
+
+Epoch 00010: loss did not improve
+[[250   0   0 ...   3  48   0]
+ [  2   0   0 ...  11 223   0]
+ [  1   0   0 ...  12 243   0]
+ ...
+ [ 11   0   0 ... 176 160   0]
+ [  7   0   0 ...   8 532   0]
+ [ 18   0   0 ...  66 140   0]]
+</code></pre>
+
+<p><img src="11-lab-3_files/11-lab-3_9_1.png" alt="png" /></p>
+
+<p><img src="11-lab-3_files/11-lab-3_9_2.png" alt="png" /></p>
+
+<h3 id="phone-modeli">Phone modeli</h3>
+
+<pre><code class="language-python">encoder_phone_id = LabelEncoder()
+encoder_phone_id.fit(y_phone_id)
+encoded_Y_phone_id = encoder_user_id.transform(y_phone_id)
+dummy_Y_phone_id = np_utils.to_categorical(encoded_Y_phone_id)
+
+filepath=&quot;03-model-phone.hdf5&quot;
+checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+callbacks_list = [checkpoint]
+
+model = Sequential()
+model.add(Dense(500, input_dim=X.shape[1], activation='hard_sigmoid', kernel_initializer='uniform' ))
+model.add(Dropout(0.01))
+model.add(Dense(1000, activation='hard_sigmoid', kernel_initializer='uniform'))
+model.add(Dropout(0.01))
+model.add(Dense(500, activation='hard_sigmoid', kernel_initializer='uniform' ))
+model.add(Dropout(0.01))
+model.add(Dense(dummy_Y_phone_id.shape[1], activation='softmax', kernel_initializer='uniform'))
+
+model.compile(loss=&quot;categorical_crossentropy&quot;, optimizer=&quot;adam&quot;, metrics=['accuracy'])
+model.summary()
+
+model.load_weights(filepath)
+
+history = model.fit(X, dummy_Y_phone_id, callbacks=callbacks_list, 
+                validation_split=0.3, epochs=10, batch_size=1000, verbose=1)
+
+y_hat = model.predict_classes(X)
+cm = confusion_matrix(encoded_Y_phone_id, y_hat)
+print(cm)
+
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_5 (Dense)              (None, 500)               17500     
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 500)               0         
+_________________________________________________________________
+dense_6 (Dense)              (None, 1000)              501000    
+_________________________________________________________________
+dropout_5 (Dropout)          (None, 1000)              0         
+_________________________________________________________________
+dense_7 (Dense)              (None, 500)               500500    
+_________________________________________________________________
+dropout_6 (Dropout)          (None, 500)               0         
+_________________________________________________________________
+dense_8 (Dense)              (None, 37)                18537     
+=================================================================
+Total params: 1,037,537
+Trainable params: 1,037,537
+Non-trainable params: 0
+_________________________________________________________________
+Train on 14593 samples, validate on 6255 samples
+Epoch 1/10
+14593/14593 [==============================] - 13s 882us/step - loss: 1.2995 - acc: 0.5131 - val_loss: 1.7030 - val_acc: 0.4368
+
+Epoch 00001: loss improved from inf to 1.29947, saving model to 03-model-phone.hdf5
+Epoch 2/10
+14593/14593 [==============================] - 10s 705us/step - loss: 0.9953 - acc: 0.5939 - val_loss: 1.2361 - val_acc: 0.5225
+
+Epoch 00002: loss improved from 1.29947 to 0.99532, saving model to 03-model-phone.hdf5
+Epoch 3/10
+14593/14593 [==============================] - 11s 756us/step - loss: 0.9325 - acc: 0.6212 - val_loss: 1.2485 - val_acc: 0.5405
+
+Epoch 00003: loss improved from 0.99532 to 0.93250, saving model to 03-model-phone.hdf5
+Epoch 4/10
+14593/14593 [==============================] - 12s 856us/step - loss: 0.9020 - acc: 0.6375 - val_loss: 1.2629 - val_acc: 0.5225
+
+Epoch 00004: loss improved from 0.93250 to 0.90202, saving model to 03-model-phone.hdf5
+Epoch 5/10
+14593/14593 [==============================] - 13s 915us/step - loss: 0.8833 - acc: 0.6459 - val_loss: 1.2422 - val_acc: 0.5687
+
+Epoch 00005: loss improved from 0.90202 to 0.88332, saving model to 03-model-phone.hdf5
+Epoch 6/10
+14593/14593 [==============================] - 11s 781us/step - loss: 0.8707 - acc: 0.6535 - val_loss: 1.2750 - val_acc: 0.5332
+
+Epoch 00006: loss improved from 0.88332 to 0.87074, saving model to 03-model-phone.hdf5
+Epoch 7/10
+14593/14593 [==============================] - 12s 846us/step - loss: 0.8837 - acc: 0.6422 - val_loss: 1.1708 - val_acc: 0.5827
+
+Epoch 00007: loss did not improve
+Epoch 8/10
+14593/14593 [==============================] - 10s 705us/step - loss: 0.8872 - acc: 0.6415 - val_loss: 1.2524 - val_acc: 0.5269
+
+Epoch 00008: loss did not improve
+Epoch 9/10
+14593/14593 [==============================] - 9s 596us/step - loss: 0.8833 - acc: 0.6421 - val_loss: 1.2381 - val_acc: 0.5632
+
+Epoch 00009: loss did not improve
+Epoch 10/10
+14593/14593 [==============================] - 9s 613us/step - loss: 0.9006 - acc: 0.6314 - val_loss: 1.2776 - val_acc: 0.5049
+
+Epoch 00010: loss did not improve
+[[1011  839  697    9   39]
+ [ 477 5382  692  275  283]
+ [ 598 1899 4130   85  203]
+ [   2  630  232  968  268]
+ [   3  373  274  151 1328]]
+</code></pre>
+
+<p><img src="11-lab-3_files/11-lab-3_11_1.png" alt="png" /></p>
+
+<p><img src="11-lab-3_files/11-lab-3_11_2.png" alt="png" /></p>
+
+<h3 id="document-modeli">Document Modeli</h3>
+
+<pre><code class="language-python">encoder_doc_id = LabelEncoder()
+encoder_doc_id.fit(y_doc_id)
+encoded_Y_doc_id = encoder_doc_id.transform(y_doc_id)
+dummy_Y_doc_id = np_utils.to_categorical(encoded_Y_doc_id)
+
+filepath=&quot;03-model-doc.hdf5&quot;
+checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+callbacks_list = [checkpoint]
+
+model = Sequential()
+model.add(Dense(500, input_dim=X.shape[1], activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.01))
+model.add(Dense(1000, activation='tanh', kernel_initializer='uniform'))
+model.add(Dropout(0.01))
+model.add(Dense(500, activation='tanh', kernel_initializer='uniform' ))
+model.add(Dropout(0.01))
+model.add(Dense(dummy_Y_doc_id.shape[1], activation='softmax', kernel_initializer='uniform'))
+
+model.compile(loss=&quot;categorical_crossentropy&quot;, optimizer=&quot;adam&quot;, metrics=['accuracy'])
+model.summary()
+
+model.load_weights(filepath)
+
+history = model.fit(X, dummy_Y_doc_id, callbacks=callbacks_list, 
+                validation_split=0.3, epochs=10, batch_size=1000, verbose=1)
+
+y_hat = model.predict_classes(X)
+cm = confusion_matrix(encoded_Y_doc_id, y_hat)
+print(cm)
+
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('dogruluk', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+
+plt.ylabel('kayip', fontsize=18)
+plt.xlabel('epoch', fontsize=18)
+plt.legend(['train', 'test'], loc='upper left')
+
+plt.show()
+</code></pre>
+
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_25 (Dense)             (None, 500)               17500     
+_________________________________________________________________
+dropout_19 (Dropout)         (None, 500)               0         
+_________________________________________________________________
+dense_26 (Dense)             (None, 1000)              501000    
+_________________________________________________________________
+dropout_20 (Dropout)         (None, 1000)              0         
+_________________________________________________________________
+dense_27 (Dense)             (None, 500)               500500    
+_________________________________________________________________
+dropout_21 (Dropout)         (None, 500)               0         
+_________________________________________________________________
+dense_28 (Dense)             (None, 7)                 3507      
+=================================================================
+Total params: 1,022,507
+Trainable params: 1,022,507
+Non-trainable params: 0
+_________________________________________________________________
+Train on 14593 samples, validate on 6255 samples
+Epoch 1/10
+14593/14593 [==============================] - 32s 2ms/step - loss: 2.1841 - acc: 0.3145 - val_loss: 1.6493 - val_acc: 0.2958
+
+Epoch 00001: loss improved from inf to 2.18409, saving model to 03-model-doc.hdf5
+Epoch 2/10
+14593/14593 [==============================] - 41s 3ms/step - loss: 1.4642 - acc: 0.3430 - val_loss: 1.4391 - val_acc: 0.3108
+
+Epoch 00002: loss improved from 2.18409 to 1.46419, saving model to 03-model-doc.hdf5
+Epoch 3/10
+14593/14593 [==============================] - 42s 3ms/step - loss: 1.3794 - acc: 0.3641 - val_loss: 1.4299 - val_acc: 0.3421
+
+Epoch 00003: loss improved from 1.46419 to 1.37938, saving model to 03-model-doc.hdf5
+Epoch 4/10
+14593/14593 [==============================] - 41s 3ms/step - loss: 1.3477 - acc: 0.3845 - val_loss: 1.3841 - val_acc: 0.3456
+
+Epoch 00004: loss improved from 1.37938 to 1.34767, saving model to 03-model-doc.hdf5
+Epoch 5/10
+14593/14593 [==============================] - 29s 2ms/step - loss: 1.3035 - acc: 0.3992 - val_loss: 1.3819 - val_acc: 0.3842
+
+Epoch 00005: loss improved from 1.34767 to 1.30350, saving model to 03-model-doc.hdf5
+Epoch 6/10
+14593/14593 [==============================] - 24s 2ms/step - loss: 1.2630 - acc: 0.4464 - val_loss: 1.2864 - val_acc: 0.4339
+
+Epoch 00006: loss improved from 1.30350 to 1.26302, saving model to 03-model-doc.hdf5
+Epoch 7/10
+14593/14593 [==============================] - 26s 2ms/step - loss: 1.1891 - acc: 0.4914 - val_loss: 1.2211 - val_acc: 0.4737
+
+Epoch 00007: loss improved from 1.26302 to 1.18907, saving model to 03-model-doc.hdf5
+Epoch 8/10
+14593/14593 [==============================] - 29s 2ms/step - loss: 1.1601 - acc: 0.4978 - val_loss: 1.2337 - val_acc: 0.4654
+
+Epoch 00008: loss improved from 1.18907 to 1.16012, saving model to 03-model-doc.hdf5
+Epoch 9/10
+14593/14593 [==============================] - 41s 3ms/step - loss: 1.1068 - acc: 0.5258 - val_loss: 1.1362 - val_acc: 0.5071
+
+Epoch 00009: loss improved from 1.16012 to 1.10678, saving model to 03-model-doc.hdf5
+Epoch 10/10
+14593/14593 [==============================] - 25s 2ms/step - loss: 1.0579 - acc: 0.5529 - val_loss: 1.3229 - val_acc: 0.4177
+
+Epoch 00010: loss improved from 1.10678 to 1.05790, saving model to 03-model-doc.hdf5
+[[3060  230   11  136  161    0    1]
+ [2427 1693   51  194  167    0    0]
+ [ 378 1999  859  145  183    2    0]
+ [ 188  119   56 2096 1075    7    1]
+ [ 159   80   47 1913 1344   12    0]
+ [   3   31  151   23   30  561    1]
+ [  39   15   15  693  468   15    9]]
+</code></pre>
+
+<p><img src="11-lab-3_files/11-lab-3_13_1.png" alt="png" /></p>
+
+<p><img src="11-lab-3_files/11-lab-3_13_2.png" alt="png" /></p>
+
+<pre><code class="language-python">
+</code></pre>
+
+    </div>
+
+    
+
+  </div>
+
+</article>
+
+
+
+
+
+<div class="container article-widget">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://www.ozgurcatak.org/post/12-lab-1/"><span
+      aria-hidden="true">&larr;</span> </a></li>
+    
+
+    
+    <li class="next"><a href="https://www.ozgurcatak.org/post/11-lab-2/"> <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2020 Ferhat Ozgur Catak &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCkMkY14tJ7mmuTxaELB34vGjC8xWLR5G0"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.ozgurcatak.org/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+
