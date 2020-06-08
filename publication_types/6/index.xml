@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>6 on Dr. Ferhat Ozgur Catak</title>
+    <link>https://www.ozgurcatak.org/publication_types/6/</link>
+    <description>Recent content in 6 on Dr. Ferhat Ozgur Catak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020 Ferhat Ozgur Catak</copyright>
+    <lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.ozgurcatak.org/publication_types/6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Transfer Learning Based Convolutional Neural Network For COVID-19 Detection With X-Ray Images</title>
+      <link>https://www.ozgurcatak.org/publication/2020-deep-learning-covid19/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/2020-deep-learning-covid19/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
