@@ -48,5 +48,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>CloudSVM: Training an SVM Classifier in Cloud Computing Systems</title>
+      <link>https://www.ozgurcatak.org/publication/2013-cloud-mapreduce-svm-classifier/</link>
+      <pubDate>Sat, 01 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/2013-cloud-mapreduce-svm-classifier/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
