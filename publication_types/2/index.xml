@@ -84,5 +84,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>A MapReduce-based distributed SVM algorithm for binary classification</title>
+      <link>https://www.ozgurcatak.org/publication/2016-map-reduce-binary-svm/</link>
+      <pubDate>Fri, 01 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ozgurcatak.org/publication/2016-map-reduce-binary-svm/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
